@@ -1,14 +1,13 @@
 package com.company.model;
 
 import java.util.HashMap;
-import com.company.model.Item;
 
 public class Inventory {
-    HashMap<Item,Integer> items;
-    private  int capacity;
+    private HashMap<Item,Integer> items;
+    private int capacity;
 
-    public Inventory(HashMap<Item, Integer> items, int capacity) {
-        this.items = items;
+    public Inventory(HashMap<Item,Integer> items, int capacity) {
+        this.items = new HashMap<Item,Integer>();
         this.capacity = capacity;
     }
 

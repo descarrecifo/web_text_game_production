@@ -15,17 +15,19 @@ public class Character {
     private int dextery;
     private int money;
 
+    public Character(String name){
+        this.name = name;
+    }
+
+    public Character(String name, int level){
+        this.name = name;
+        this.level = level;
+    }
+
     public Character(String name, int level,String charClass){
         this.name = name;
         this.level = level;
         this.charClass = charClass;
-    }
-
-
-    public Character(String name){
-        this.name = name;
-        this.level = 0;
-        this.charClass = "";
     }
 
     public Character(String name,int level, String charClass, int experiencePoints, int lifePoints, int manaPoints, int strength, int defense, int speed, int dextery, int money) {
@@ -83,6 +85,7 @@ public class Character {
     public int getMoney() {
         return money;
     }
+
     public void setName(String name) {
         this.name = name;
     }

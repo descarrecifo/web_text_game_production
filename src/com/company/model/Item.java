@@ -9,6 +9,13 @@ public class Item {
     private int price;
     ArrayList<String> characteristic;
 
+    public Item(String name, String type, String description, int price){
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.price = price;
+    }
+
     public Item(String name, String type, String description, int price, ArrayList<String> characteristic) {
         this.name = name;
         this.type = type;
