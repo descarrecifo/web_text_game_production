@@ -1,4 +1,5 @@
 package com.company;
+import static com.company.view.IOView.mainLoopView;
 
 import com.company.model.Character;
 import com.company.model.Inventory;
@@ -32,5 +33,11 @@ public class Main {
             }
             if(level>player.getLevel())break;
         }
+
+        //we are starting the main loop
+        mainLoopView();
+
+        //Exit program
+        System.out.println("\nExperamos verte pronto, aventurero!");
     }
 }
