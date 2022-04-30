@@ -14,20 +14,20 @@ public class FrontController {
     public static void mainLoopController(String value) {
         switch (value) {
             case "1" -> {
+                Character player = new Character("Player", 1);
+                Item testItem = new Item("Test Item", "testing", "A testing item", 1);
+                HashMap<Item, Integer> items = new HashMap<>();
+                Inventory playerInventory = new Inventory(items, 5);
                 while (true){
-                    Character player = new Character("Player", 1);
-                    Item testItem = new Item("Test Item", "testing", "A testing item", 1);
-                    HashMap<Item, Integer> items = new HashMap<>();
-                    Inventory playerInventory = new Inventory(items, 5);
-
                     int level = enemyLevel(player);
                     player.setLevel(player.getLevel()+1);
 
                     fightResult(level, player);
-                    if(player.getLevel()>=level){
+                    if(level>player.getLevel()){
+                        break;
+                    }else{
                         addItemToInventory(items,playerInventory);
                     }
-                    if(level>player.getLevel())break;
                 }
             }
             default -> System.out.println("Invalid option\n");

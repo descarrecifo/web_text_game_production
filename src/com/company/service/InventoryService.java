@@ -8,13 +8,13 @@ import java.util.Random;
 public class InventoryService {
 
     public static Item createItem(){
-        int value = new Random().nextInt((3-1)+1);
+        int value = new Random().nextInt((4-1)+1);
 
         Item reward;
 
         switch (value){
-            case 1 -> reward = new Item("Tunic", "cloth", "A simple tunic", 2);
-            case 2 -> reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 1);
+            case 1 -> reward = new Item("Tunic", "cloth", "A simple tunic", 3);
+            case 2 -> reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 2);
             case 3 -> reward = new Item("Sword", "weapon", "A simple sword", 7);
             default -> reward = new Item("Healing herb", "herb", "This herb has medicinal capabilities ", 1);
         }
@@ -22,7 +22,8 @@ public class InventoryService {
         return reward;
     }
 
-    public int compareItems(HashMap<Item, Integer> items,Item newItemToAdd){
-        return items.get(items.keySet()).compareTo(items.get(newItemToAdd));
+    public static boolean compareItems(HashMap<Item, Integer> items,Item newItemToAdd){
+            return items.containsKey(newItemToAdd);
+
     }
 }
