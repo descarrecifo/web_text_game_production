@@ -1,5 +1,5 @@
 package com.company;
-import static com.company.view.IOView.OptionsMainMenu;
+import static com.company.view.IOView.optionsMainMenu;
 
 public class Main {
 
@@ -7,7 +7,7 @@ public class Main {
         // write your code here
 
         //we are starting the main loop
-        OptionsMainMenu();
+        optionsMainMenu();
 
     }
 }
