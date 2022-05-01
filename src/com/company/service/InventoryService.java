@@ -13,12 +13,11 @@ public class InventoryService {
         Item reward;
 
         switch (value){
-            case 1 -> reward = new Item("Tunic", "cloth", "A simple tunic", 3);
-            case 2 -> reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 2);
+            case 1 -> reward = new Item("Tunic", "cloth", "A simple tunic", 2);
+            case 2 -> reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 1);
             case 3 -> reward = new Item("Sword", "weapon", "A simple sword", 7);
             default -> reward = new Item("Healing herb", "herb", "This herb has medicinal capabilities ", 1);
         }
-
         return reward;
     }
 

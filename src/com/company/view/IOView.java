@@ -17,7 +17,7 @@ public class IOView {
 
                 case "1" -> mainLoopController("1");
                 case "2" -> {
-                    break;
+                    return;
                 }
                 default -> System.out.println("Opcion invalida \n");
                 }

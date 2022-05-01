@@ -10,11 +10,11 @@ public class FightService {
         int playerLevel = player.getLevel();
         int enemyLevel;
 
-       /* if (playerLevel <= 5) {
+       if (playerLevel <= 5) {
             enemyLevel = playerLevel;
-        } else {*/
+        } else {
             enemyLevel = new Random().nextInt(((playerLevel + 1) - (playerLevel - 1))+1) + playerLevel;
-        //}
+        }
         return enemyLevel;
     }
 }

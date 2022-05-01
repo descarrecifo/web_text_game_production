@@ -3,8 +3,6 @@ package com.company.controller;
 import com.company.model.Inventory;
 import com.company.model.Item;
 
-import com.company.service.InventoryService.*;
-
 import java.util.HashMap;
 
 import static com.company.service.InventoryService.compareItems;
@@ -24,11 +22,10 @@ public class InventoryController {
             }
             playerInventory.setItems(items);
             playerInventory.setCapacity(playerInventory.getCapacity()-1);
-              
         }else{
             System.out.println("Your inventory is full, you can't get more items");
         }
-        System.out.println(playerInventory);
+        //System.out.println(playerInventory);
     }
 
 }

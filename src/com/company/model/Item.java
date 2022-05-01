@@ -87,7 +87,7 @@ public class Item {
     public int hashCode()
     {
         int result = name.hashCode();
-        result = 31 * result + price;
+        result = 42 * result + price;
         return result;
     }
 
