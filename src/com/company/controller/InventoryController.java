@@ -2,6 +2,7 @@ package com.company.controller;
 
 import com.company.model.Inventory;
 import com.company.model.Item;
+import com.company.model.Player;
 
 import java.util.HashMap;
 
@@ -10,7 +11,11 @@ import static com.company.service.InventoryService.createItem;
 
 public class InventoryController {
 
-    public static void addItemToInventory(HashMap<Item, Integer> items, Inventory playerInventory){
+    public static void showInventory(Player player){
+        player.getInventory().getItems().forEach((k, v) -> System.out.format("key: %s, value: %d%n", k, v));
+    }
+
+    public static Inventory addItemToInventory(HashMap<Item, Integer> items, Inventory playerInventory){
         Item newItem = createItem();
         if(playerInventory.getCapacity()>0) {
             if(compareItems(playerInventory.getItems(), newItem)) {
@@ -26,6 +31,7 @@ public class InventoryController {
             System.out.println("Your inventory is full, you can't get more items");
         }
         //System.out.println(playerInventory);
+        return playerInventory;
     }
 
 }

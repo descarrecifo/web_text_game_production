@@ -1,7 +1,5 @@
 package com.company.model;
 
-import com.sun.source.tree.ReturnTree;
-
 public class Character {
     private String name;
     private int level;
@@ -42,6 +40,7 @@ public class Character {
         this.dextery = dextery;
         this.money = money;
     }
+
     public  String getName() {
         return name;
     }

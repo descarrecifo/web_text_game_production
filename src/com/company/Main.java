@@ -1,18 +1,19 @@
 package com.company;
-import static com.company.view.IOView.mainLoopView;
+import com.company.model.Player;
+
+import static com.company.controller.CharacterController.createPlayer;
+//import static com.company.view.IOView.mainLoopView;
 import static com.company.view.IOView.optionsMainMenu;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        //we are starting the main loop
-        mainLoopView();
-
         // write your code here
+        Player player = createPlayer();
 
         //we are starting the main loop
-        optionsMainMenu();
+        optionsMainMenu(player);
 
     }
 }

@@ -1,10 +1,18 @@
 package com.company.model;
-import com.company.model.Inventory;
 
-public class Player {
-  private   Inventory inventory;
+public class Player extends Character {
+  private  Inventory inventory;
 
-    public Player(Inventory inventory) {
+    public Player(String name, int level, Inventory inventory) {
+        super(name, level);
+        this.inventory = inventory;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
 }

@@ -1,11 +1,28 @@
 package com.company.frontcontroller;
 
+import com.company.model.Player;
+
+
+import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.FightController.fighting;
+import static com.company.controller.InventoryController.showInventory;
 
 public class FrontController {
-    public static void mainLoopController(String value) {
+    public static void mainLoopController(String value, Player player) {
+//       Player player;
+//       isCreated() ? player = fighting(player)  : player = createPlayer();
         switch (value) {
-            case "1" -> fighting();
+            case "1" -> player = fighting(player);
+            case "2" -> showInventory(player);
         }
     }
+
+//    public static boolean isCreated(){
+//        Player player = null;
+//        if(player == null){
+//            return false;
+//        }else{
+//            return true;
+//        }
+//    }
 }
