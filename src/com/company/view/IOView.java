@@ -6,10 +6,10 @@ import static com.company.view.View.*;
 
 
 public class IOView {
-
+    static Scanner reader = new Scanner(System.in);
     // Options Main Menu
     public static void optionsMainMenu() {
-        Scanner reader = new Scanner(System.in);
+
 
         while (true) {
 
@@ -26,14 +26,14 @@ public class IOView {
 
                 }
                 default -> {
-                    System.out.println("Opcion invalida Menu Principal");
+                    System.out.println("Unknown command. Try again");
                 }
             }
         }
     }
     // Options Menu New Game
     public static void OptionsMenuNewGame() {
-        Scanner reader = new Scanner(System.in);
+
 
         while (true) {
             menuNewGameView();
@@ -42,29 +42,38 @@ public class IOView {
             switch (keyMenuNewGame) {
 
                 case "1" -> {
-                    System.out.println("Opciones Lucha");
-                    System.out.println("OK. Volvemos a Menu principal");
-                    optionsMainMenu(); //return
+                    System.out.println("Fight options");
+                    ShowFight();
+                    pressKeyToContinue();
+                    OptionsMenuNewGame();
+
                 }
 
                 case "2" -> {
-                    System.out.println("Opciones Inventario");
-                    System.out.println("OK. Volvemos a Menu principal");
-                    optionsMainMenu(); //return
+                    System.out.println("Inventory options");
+                    showInventory();
+                    pressKeyToContinue();
+                    OptionsMenuNewGame();
+                    //System.out.println("Return main menu");
+                    //optionsMainMenu(); //return
                 }
                 case "3" -> {
-                    System.out.println("Volvemos al menu principal");
+                    System.out.println("Return to Main Menu");
                     optionsMainMenu(); //return
 
 
                 }
                 default -> {
-                    System.out.println("Opcion invalida Menu Juego. Reinténtalo");
+                    System.out.println("Unknown order. Try again");
                     OptionsMenuNewGame();
                 }
             }
         }
 
+    }
+    // Key to continue. Key is residual
+    private static void pressKeyToContinue() {
+        String keyToContinue = reader.nextLine();
     }
 
 
