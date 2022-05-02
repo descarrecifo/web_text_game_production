@@ -12,8 +12,9 @@ import static com.company.service.InventoryService.createItem;
 public class InventoryController {
 
     public static void showInventory(Player player){
-        player.getInventory().getItems().forEach((k, v) -> System.out.format("key: %s, value: %d%n", k, v));
-    }
+        player.getInventory().getItems().forEach((k, v) -> System.out.format("Name: " + k.getName() + " | Quantity: x"+v+"\n"));
+//                "key: %s, value: %d%n", k, v));
+  }
 
     public static Inventory addItemToInventory(HashMap<Item, Integer> items, Inventory playerInventory){
         Item newItem = createItem();
