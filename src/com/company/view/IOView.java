@@ -4,6 +4,8 @@ package com.company.view;
 import com.company.model.Player;
 
 import java.util.Scanner;
+
+import static com.company.controller.CharacterController.createPlayer;
 import static com.company.view.View.*;
 
 
@@ -55,10 +57,10 @@ public class IOView {
 //                    //optionsMainMenu(); //return
 //                }
                 case "3" -> {
-                    System.out.println("Volvemos al menu principal");
-                    return;
+                    System.out.println("Return to Main Menu");
+                    optionsMainMenu(createPlayer());
 //                    System.out.println("Return to Main Menu");
-//                    optionsMainMenu(); //return
+//                     //return
                 }
                 default -> System.out.println("Unknown order. Try again");
             }
@@ -89,11 +91,11 @@ public class IOView {
 //            }
 //        }
 
-
-    public static void mainMenu(){
-        System.out.println("****************************************************");
-        System.out.println("1- Nueva partida");
-        System.out.println("2- Salir");
-        System.out.println("****************************************************");
-    }
+//
+//    public static void mainMenu(){
+//        System.out.println("****************************************************");
+//        System.out.println("1- Nueva partida");
+//        System.out.println("2- Salir");
+//        System.out.println("****************************************************");
+//    }
 }
