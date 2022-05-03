@@ -5,7 +5,7 @@ public class Character {
     private int level;
     private String charClass;
     private int experiencePoints;
-    private int lifePoints;
+    private int healthPoints;
     private int manaPoints;
     private int strength;
     private int defense;
@@ -28,11 +28,20 @@ public class Character {
         this.charClass = charClass;
     }
 
-    public Character(String name,int level, String charClass, int experiencePoints, int lifePoints, int manaPoints, int strength, int defense, int speed, int dextery, int money) {
+    public Character(String name, int level, int healthPoints, int strength, int defense, int speed){
+        this.name = name;
+        this.level = level;
+        this.healthPoints = healthPoints;
+        this.strength = strength;
+        this.defense = defense;
+        this.speed = speed;
+    }
+
+    public Character(String name,int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dextery, int money) {
         this.level = level;
         this.charClass = charClass;
         this.experiencePoints = experiencePoints;
-        this.lifePoints = lifePoints;
+        this.healthPoints = healthPoints;
         this.manaPoints = manaPoints;
         this.strength = strength;
         this.defense = defense;
@@ -57,8 +66,8 @@ public class Character {
         return experiencePoints;
     }
 
-    public int getLifePoints() {
-        return lifePoints;
+    public int getHealthPoints() {
+        return healthPoints;
     }
 
     public int getManaPoints() {
@@ -101,8 +110,8 @@ public class Character {
         this.experiencePoints = experiencePoints;
     }
 
-    public void setLifePoints(int lifePoints) {
-        this.lifePoints = lifePoints;
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
     }
 
     public void setManaPoints(int manaPoints) {
@@ -136,7 +145,7 @@ public class Character {
                 "level=" + level +
                 ", charClass='" + charClass + '\'' +
                 ", experiencePoints=" + experiencePoints +
-                ", lifePoints=" + lifePoints +
+                ", healthPoints=" + healthPoints +
                 ", manaPoints=" + manaPoints +
                 ", strength=" + strength +
                 ", defense=" + defense +

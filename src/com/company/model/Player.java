@@ -8,6 +8,11 @@ public class Player extends Character {
         this.inventory = inventory;
     }
 
+    public Player(String name, int level, Inventory inventory, int healthPoints, int strength, int defense, int speed){
+        super(name, level, healthPoints, strength, defense, speed);
+        this.inventory = inventory;
+    }
+
     public Inventory getInventory() {
         return inventory;
     }
