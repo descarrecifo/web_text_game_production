@@ -1,6 +1,7 @@
 package com.company.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Item {
     private String name;
@@ -9,6 +10,7 @@ public class Item {
     private int price;
     //ArrayList<String> characteristic;
     //www3schools.com/java/java_hashmap.asp
+    HashMap<String,String> itemHash = new HashMap<String,String>();
 
     public Item(String name, String type, String description, int price){
         this.name = name;
