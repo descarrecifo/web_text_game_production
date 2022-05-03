@@ -10,6 +10,7 @@ public class Item {
     private int price;
     //ArrayList<String> characteristic;
     //www3schools.com/java/java_hashmap.asp
+    //
     private HashMap<String,String> itemHash;
 
     public Item(String name, String type, String description, int price) {
