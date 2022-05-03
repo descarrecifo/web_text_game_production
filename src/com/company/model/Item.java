@@ -7,7 +7,8 @@ public class Item {
     private String type;
     private String description;
     private int price;
-    ArrayList<String> characteristic;
+    //ArrayList<String> characteristic;
+    //www3schools.com/java/java_hashmap.asp
 
     public Item(String name, String type, String description, int price){
         this.name = name;
