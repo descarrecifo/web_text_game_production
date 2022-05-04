@@ -8,8 +8,8 @@ public class Player extends Character {
         this.inventory = inventory;
     }
 
-    public Player(String name, int level, Inventory inventory, int healthPoints, int strength, int defense, int speed){
-        super(name, level, healthPoints, strength, defense, speed);
+    public Player(String name, int level, Inventory inventory, int healthPoints, int strength, int defense, int speed, int dexterity){
+        super(name, level, healthPoints, strength, defense, speed, dexterity);
         this.inventory = inventory;
     }
 

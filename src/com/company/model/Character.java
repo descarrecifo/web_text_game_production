@@ -10,7 +10,7 @@ public class Character {
     private int strength;
     private int defense;
     private int speed;
-    private int dextery;
+    private int dexterity;
     private int money;
 
     public Character(String name){
@@ -28,16 +28,17 @@ public class Character {
         this.charClass = charClass;
     }
 
-    public Character(String name, int level, int healthPoints, int strength, int defense, int speed){
+    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity){
         this.name = name;
         this.level = level;
         this.healthPoints = healthPoints;
         this.strength = strength;
         this.defense = defense;
         this.speed = speed;
+        this.dexterity = dexterity;
     }
 
-    public Character(String name,int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dextery, int money) {
+    public Character(String name,int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
         this.level = level;
         this.charClass = charClass;
         this.experiencePoints = experiencePoints;
@@ -46,7 +47,7 @@ public class Character {
         this.strength = strength;
         this.defense = defense;
         this.speed = speed;
-        this.dextery = dextery;
+        this.dexterity = dexterity;
         this.money = money;
     }
 
@@ -86,8 +87,8 @@ public class Character {
         return speed;
     }
 
-    public int getDextery() {
-        return dextery;
+    public int getDexterity() {
+        return dexterity;
     }
 
     public int getMoney() {
@@ -130,8 +131,8 @@ public class Character {
         this.speed = speed;
     }
 
-    public void setDextery(int dextery) {
-        this.dextery = dextery;
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
     }
 
     public void setMoney(int money) {
@@ -150,7 +151,7 @@ public class Character {
                 ", strength=" + strength +
                 ", defense=" + defense +
                 ", speed=" + speed +
-                ", dextery=" + dextery +
+                ", dexterity=" + dexterity +
                 ", money=" + money +
                 '}';
     }
