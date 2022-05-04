@@ -10,15 +10,23 @@ public class Item {
     private int price;
     //ArrayList<String> characteristic;
     //www3schools.com/java/java_hashmap.asp
-    //
-    private HashMap<String,String> itemHash;
+     HashMap<String,String> itemHabilities;
+
+
+    public Item(String name , String type , String description , int price , HashMap<String, String> itemHabilities) {
+        this.name = name;
+        this.type = type;
+        this.description = description;
+        this.price = price;
+        this.itemHabilities = itemHabilities;
+    }
 
     public Item(String name, String type, String description, int price) {
         this.name = name;
         this.type = type;
         this.description = description;
         this.price = price;
-        this.itemHash = new HashMap<>();
+        this.itemHabilities = new HashMap<>();
     }
 
     public String getName() {
@@ -37,12 +45,12 @@ public class Item {
         return price;
     }
 
-    public HashMap<String, String> getItemHash() {
-        return itemHash;
+    public HashMap<String, String> getItemHabilities() {
+        return itemHabilities;
     }
 
-    public void setItemHash(HashMap<String, String> itemHash) {
-        this.itemHash = itemHash;
+    public void setItemHabilities(HashMap<String, String> itemHabilities) {
+        this.itemHabilities = itemHabilities;
     }
 
     public void setName(String name) {

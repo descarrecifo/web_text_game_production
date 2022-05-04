@@ -11,6 +11,16 @@ public class InventoryService {
         int value = new Random().nextInt((4-1)+1);
 
         Item reward;
+//        Item prova = new Item();
+//
+//        prova.getItemHabilities().put
+
+
+//        reward.setItemHash("attack","5");
+//        reward.setItemHash("defense","3");
+//        reward.setItemHash("speed","2");
+
+
 
         switch (value){
             case 1 -> reward = new Item("Tunic", "cloth", "A simple tunic", 2);
