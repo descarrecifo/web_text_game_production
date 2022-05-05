@@ -5,14 +5,14 @@ import com.company.model.Player;
 
 import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.FightController.fighting;
-import static com.company.controller.InventoryController.showInventory;
+import static com.company.view.InventoryView.showInventory;
 
 public class FrontController {
     public static void mainLoopController(String value, Player player) {
 //       Player player;
 //       isCreated() ? player = fighting(player)  : player = createPlayer();
         switch (value) {
-            case "1" -> player = fighting(player);
+            case "1" -> fighting(player);
             case "2" -> showInventory(player);
         }
     }
