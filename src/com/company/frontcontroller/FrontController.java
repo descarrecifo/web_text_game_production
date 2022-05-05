@@ -2,8 +2,6 @@ package com.company.frontcontroller;
 
 import com.company.model.Player;
 
-
-import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.FightController.fighting;
 import static com.company.view.InventoryView.showInventory;
 
