@@ -10,24 +10,37 @@ public class InventoryService {
     public static Item createItem(){
         int value = new Random().nextInt((4-1)+1);
 
-        Item reward;
 
-//        Item prova = new Item();
-//
-//        prova.getItemHabilities().put
+        Item reward = new Item();
 
-
-//        reward.setItemHash("attack","5");
-//        reward.setItemHash("defense","3");
-//        reward.setItemHash("speed","2");
+        HashMap<String,String> valueInitals = new HashMap();
+        valueInitals.put("attack","5");
+        valueInitals.put("defense","3");
+        valueInitals.put("speed","1");
 
 
 
         switch (value){
-            case 1 -> reward = new Item("Tunic", "cloth", "A simple tunic", 2);
-            case 2 -> reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 1);
-            case 3 -> reward = new Item("Sword", "weapon", "A simple sword", 7);
-            default -> reward = new Item("Healing herb", "herb", "This herb has medicinal capabilities ", 1);
+            case 1 -> {
+                valueInitals.put("attack","5");
+                valueInitals.put("defense","3");
+                valueInitals.put("speed","1");
+                reward = new Item("Tunic", "cloth", "A simple tunic", 2,valueInitals);
+            }
+            case 2 -> {
+                valueInitals.put("attack" , "7");
+                valueInitals.put("defense","4");
+                valueInitals.put("speed","2");
+                reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 1,valueInitals);
+            }
+
+            case 3 ->{
+                    valueInitals.put("attack","10");
+                    valueInitals.put("defense","5");
+                    valueInitals.put("speed","4");
+                    reward = new Item("Sword", "weapon", "A simple sword", 7,valueInitals);
+            }
+            default -> reward = new Item("Healing herb", "herb", "This herb has medicinal capabilities ", 1,valueInitals);
         }
         return reward;
     }

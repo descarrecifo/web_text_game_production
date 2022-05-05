@@ -29,6 +29,10 @@ public class Item {
         this.itemHabilities = new HashMap<>();
     }
 
+    public Item() {
+
+    }
+
     public String getName() {
         return name;
     }
