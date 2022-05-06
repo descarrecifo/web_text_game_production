@@ -46,15 +46,7 @@ public class Menu{
 
     }
 
-   /* public static void chooseCharClass(){
-        System.out.println("Choose your class");
-        System.out.println("******************");
-        System.out.println("* 1-Guerrero     *");
-        System.out.println("* 2-Mago         *");
-        System.out.println("* 3-Cazador      *");
-        System.out.println("******************");
 
-    }*/
 
 
     //  Game Over or Menu Exit
