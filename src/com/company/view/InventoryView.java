@@ -10,7 +10,6 @@ public class InventoryView {
     }
 
     public static void addItemToInventoryMessage(String value, Item newItem){
-        String message;
         switch (value) {
             case "1" -> System.out.println("Same item: " + newItem.getName());
             case "2" -> System.out.println("New item: " + newItem.getName());
