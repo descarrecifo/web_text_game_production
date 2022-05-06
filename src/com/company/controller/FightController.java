@@ -3,9 +3,12 @@ package com.company.controller;
 import com.company.model.Character;
 import com.company.model.Player;
 
+import java.util.Scanner;
+
 import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.InventoryController.addItemToInventory;
 import static com.company.service.FightService.enemyLevel;
+import static com.company.view.IOView.createCharacter;
 import static com.company.view.IOView.optionsMainMenu;
 
 public class FightController {
@@ -14,7 +17,7 @@ public class FightController {
             int level = enemyLevel(player);
             player.setLevel(player.getLevel() + 1);
             fightResult(level, player);
-            if (level > player.getLevel()) optionsMainMenu(createPlayer());
+            if (level > player.getLevel()) createCharacter();
             else {
                 System.out.println("You have leveled up! Your level is now "+player.getLevel());
                 player.setInventory(addItemToInventory(player.getInventory().getItems(), player.getInventory()));
