@@ -4,7 +4,7 @@ import com.company.utils.Utilities;
 
 import java.util.Scanner;
 
-public class Menu{
+public class Menu{ //TODO visual of menus
 
     //Main Menu
     public static void mainMenuView() {
