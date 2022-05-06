@@ -1,13 +1,15 @@
 package com.company.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Item {
     private String name;
     private String type;
     private String description;
     private int price;
-    ArrayList<String> characteristic;
+     HashMap<String,String> itemHabilities;
+
 
     public Item(String name, String type, String description, int price){
         this.name = name;
