@@ -1,27 +1,36 @@
 package com.company.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Item {
     private String name;
     private String type;
     private String description;
     private int price;
-    ArrayList<String> characteristic;
+    //ArrayList<String> characteristic;
+    //www3schools.com/java/java_hashmap.asp
+     HashMap<String,String> itemHabilities;
 
-    public Item(String name, String type, String description, int price){
+
+    public Item(String name , String type , String description , int price , HashMap<String, String> itemHabilities) {
         this.name = name;
         this.type = type;
         this.description = description;
         this.price = price;
+        this.itemHabilities = itemHabilities;
     }
 
-    public Item(String name, String type, String description, int price, ArrayList<String> characteristic) {
+    public Item(String name, String type, String description, int price) {
         this.name = name;
         this.type = type;
         this.description = description;
         this.price = price;
-        this.characteristic = characteristic;
+        this.itemHabilities = new HashMap<>();
+    }
+
+    public Item() {
+
     }
 
     public String getName() {
@@ -38,6 +47,14 @@ public class Item {
 
     public int getPrice() {
         return price;
+    }
+
+    public HashMap<String, String> getItemHabilities() {
+        return itemHabilities;
+    }
+
+    public void setItemHabilities(HashMap<String, String> itemHabilities) {
+        this.itemHabilities = itemHabilities;
     }
 
     public void setName(String name) {
