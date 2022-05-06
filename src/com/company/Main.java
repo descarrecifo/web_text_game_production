@@ -10,11 +10,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // write your code here
-       // Player player = createPlayer();
-
-
-        //we are starting the main loop
         optionsMainMenu();
 
     }

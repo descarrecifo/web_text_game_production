@@ -9,8 +9,7 @@ import java.util.Random;
 import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.InventoryController.addItemToInventory;
 import static com.company.view.FightView.fightingMessages;
-import static com.company.view.IOView.OptionsMenuNewGame;
-import static com.company.view.IOView.optionsMainMenu;
+import static com.company.view.IOView.*;
 
 public class FightService {
 
@@ -59,7 +58,7 @@ public class FightService {
     }
 
     public static void fightResult(NPC enemy, Player player, String nextTurn) {
-        if (player.getHealthPoints() <= 0) optionsMainMenu(createPlayer());
+        if (player.getHealthPoints() <= 0) optionsMainMenu();
         else if (enemy.getHealthPoints() <= 0) {
             player.setLevel(player.getLevel() + 1);
             fightingMessages("9", enemy, player);
