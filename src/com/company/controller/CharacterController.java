@@ -1,11 +1,9 @@
 package com.company.controller;
 
-import com.company.model.Character;
 import com.company.model.Inventory;
 import com.company.model.Item;
 import com.company.model.NPC;
 import com.company.model.Player;
-import com.company.utils.Utilities;
 
 import java.util.HashMap;
 
@@ -17,33 +15,31 @@ import static com.company.service.InventoryService.createItem;
 
 import static com.company.view.IOView.OptionsMenuNewGame;
 
-import static com.company.view.IOView.optionsMainMenu;
-import static com.company.view.Menu.menuNewGameView;
 
 public class
 
 CharacterController {
 
-    public static void createPlayer(String name , String charclass) {
+    public static void createPlayer(String name , String charClass) {
         HashMap<Item, Integer> items = new HashMap<>();
         Inventory playerInventory = new Inventory(items, 10);
 
-        switch (charclass){
-            case "Guerrero" -> {Player player = new Player("Player", 1, playerInventory, 100, 10, 15, 10, 15);
+        switch (charClass){
+            case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15);
                 Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 OptionsMenuNewGame(player);
             }
 
-            case "Mago" ->  {Player player = new Player("Player", 1, playerInventory, 100, 10, 15, 10, 15);
+            case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15);
                 Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 OptionsMenuNewGame(player);
             }
 
-            case "Cazador" ->  {Player player = new Player("Player", 1, playerInventory, 100, 10, 15, 10, 15);
+            case "Hunter" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25);
                 Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
