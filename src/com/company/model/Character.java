@@ -13,6 +13,8 @@ public class Character {
     private int dexterity;
     private int money;
 
+    public Character(){}
+
     public Character(String name){
         this.name = name;
     }

@@ -1,25 +1,27 @@
 package com.company.view;
+import com.company.model.Player;
+import com.company.utils.Utilities;
 
-public class View {
+import java.util.Scanner;
+
+public class Menu{
 
     //Main Menu
     public static void mainMenuView() {
-        System.out.println("****************************************************");
-        System.out.println("1- New Game");
-        //System.out.println("****************************************************");
-        System.out.println("2- Exit");
-        System.out.println("****************************************************");
+        System.out.println("***************************************");
+        System.out.println("* 1- New Game                         *");
+        System.out.println("* 2- Exit                             *");
+        System.out.println("***************************************");
     }
 
     // Menu New Game
 
     public static void menuNewGameView() {
-        System.out.println("****************************************************");
-        System.out.println("1- Fight");
-        System.out.println("2- Inventory");
-        //System.out.println("****************************************************");
-        System.out.println("3- Return ");
-        System.out.println("****************************************************");
+        System.out.println("***********PARTIDA*******************");
+        System.out.println("* 1- Fight                          *");
+        System.out.println("* 2- Inventory                      *");
+        System.out.println("* 3- Return                         *");
+        System.out.println("*************************************");
     }
 
     public static void ShowFight() {
@@ -45,11 +47,28 @@ public class View {
     }
 
 
+
+
     //  Game Over or Menu Exit
-    public static void gameFinishView(){
+  /*  public static void gameFinishView(){
         //Exit program
-            System.out.println("We hope to see you soon, adventurer!");
+        System.out.println("We hope to see you soon, adventurer!");
         System.exit(0);
 
     }
+    public static void createCharacter(Scanner scanner){
+        System.out.println("Create Character");
+        String name = Utilities.ask(scanner,"Name?");
+        chooseCharClass();
+
+        String charClass= Utilities.ask(scanner,"CharClass?");
+        System.out.println("Eres " + name + " un " + charClass + "." + " Preparate para tu gran aventura!");
+
+
+    }*/
+
+
+
+
+
 }

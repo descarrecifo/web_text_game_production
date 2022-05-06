@@ -1,27 +1,59 @@
 package com.company.controller;
 
+import com.company.model.Character;
 import com.company.model.Inventory;
 import com.company.model.Item;
 import com.company.model.NPC;
 import com.company.model.Player;
+import com.company.utils.Utilities;
 
 import java.util.HashMap;
+
+
 import java.util.Random;
 
 import static com.company.service.InventoryService.createItem;
 
-public class CharacterController {
 
-    public static Player createPlayer() {
+import static com.company.view.IOView.OptionsMenuNewGame;
+
+import static com.company.view.IOView.optionsMainMenu;
+import static com.company.view.Menu.menuNewGameView;
+
+public class
+
+CharacterController {
+
+    public static void createPlayer(String name , String charclass) {
         HashMap<Item, Integer> items = new HashMap<>();
         Inventory playerInventory = new Inventory(items, 10);
-        Player player = new Player("Player", 1, playerInventory, 100, 10, 15, 10, 15);
-        Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
-        items.put(newItem, 1);
-        player.getInventory().setItems(items);
 
-        return player;
+        switch (charclass){
+            case "Guerrero" -> {Player player = new Player("Player", 1, playerInventory, 100, 10, 15, 10, 15);
+                Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
+                items.put(newItem, 1);
+                player.getInventory().setItems(items);
+                OptionsMenuNewGame(player);
+            }
+
+            case "Mago" ->  {Player player = new Player("Player", 1, playerInventory, 100, 10, 15, 10, 15);
+                Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
+                items.put(newItem, 1);
+                player.getInventory().setItems(items);
+                OptionsMenuNewGame(player);
+            }
+
+            case "Cazador" ->  {Player player = new Player("Player", 1, playerInventory, 100, 10, 15, 10, 15);
+                Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
+                items.put(newItem, 1);
+                player.getInventory().setItems(items);
+                OptionsMenuNewGame(player);
+            }
+        }
+
+
     }
+
 
     public static NPC createEnemyPlaceholder(){
         NPC enemy;
@@ -37,4 +69,5 @@ public class CharacterController {
 
         return enemy;
     }
+
 }

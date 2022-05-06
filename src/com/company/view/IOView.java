@@ -2,18 +2,20 @@
 package com.company.view;
 
 import com.company.model.Player;
+import com.company.utils.Utilities;
 
 import java.util.Scanner;
 
+//import static com.company.controller.CharacterController.createCharacter;
 import static com.company.controller.CharacterController.createPlayer;
-import static com.company.view.View.*;
+import static com.company.view.Menu.*;
 
 
 import static com.company.frontcontroller.FrontController.mainLoopController;
 
 public class IOView {
 
-    public static void optionsMainMenu(Player player) {
+    public static void optionsMainMenu() {
         Scanner reader = new Scanner(System.in);
 
         while (true) {
@@ -22,7 +24,11 @@ public class IOView {
             String keyMenuMain = reader.nextLine();
             switch (keyMenuMain) {
 
-                case "1" -> OptionsMenuNewGame(player);
+                //case "1" -> OptionsMenuNewGame(player);
+                 case "1" -> {
+                    createCharacter();
+
+                }
                 case "2" -> gameFinishView();
                 default -> System.out.println("Unknown command. Try again");
             }
@@ -30,6 +36,7 @@ public class IOView {
     }
 
     public static void OptionsMenuNewGame(Player player) {
+
         Scanner reader = new Scanner(System.in);
 
         while (true) {
@@ -38,7 +45,7 @@ public class IOView {
 
             switch (keyMenuNewGame) {
 
-                case "1" -> mainLoopController("1", player);
+                case "1" ->mainLoopController("1", player);
 //                case "1" -> {
 //                    System.out.println("Fight options");
 //                    ShowFight();
@@ -58,7 +65,7 @@ public class IOView {
 //                }
                 case "3" -> {
                     System.out.println("Return to Main Menu");
-                    optionsMainMenu(createPlayer());
+                    optionsMainMenu();
 //                    System.out.println("Return to Main Menu");
 //                     //return
                 }
@@ -66,6 +73,55 @@ public class IOView {
             }
         }
     }
+
+
+    public static void OptionsChar(String name) {
+
+        Scanner reader = new Scanner(System.in);
+
+
+        while (true) {
+            System.out.println("Choose your class");
+            System.out.println("******************");
+            System.out.println("* 1-Guerrero     *");
+            System.out.println("* 2-Mago         *");
+            System.out.println("* 3-Cazador      *");
+            System.out.println("******************");
+            String opchar = reader.nextLine();
+
+
+            switch (opchar) {
+                case "1" ->  createPlayer(name,"Guerrero");
+
+
+                case "2" -> createPlayer(name,"Mago");
+
+                case "3" -> createPlayer(name,"Cazador");
+            }
+
+        }
+
+    }
+    //  Game Over or Menu Exit
+    public static void gameFinishView(){
+        //Exit program
+        System.out.println("We hope to see you soon, adventurer!");
+        System.exit(0);
+
+    }
+    public static void createCharacter(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Create Character");
+        String name = Utilities.ask(scanner,"Name?");
+        OptionsChar(name);
+
+        String charClass= Utilities.ask(scanner,"CharClass?");
+        System.out.println("Eres " + name + "un" + charClass +  "Preparate para tu gran aventura!");
+
+
+    }
+
+
 //    // Key to continue. Key is residual
 //    private static void pressKeyToContinue() {
 //        String keyToContinue = reader.nextLine();
