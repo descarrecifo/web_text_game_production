@@ -59,12 +59,8 @@ public class FightService {
     public static void fightResult(NPC enemy, Player player, String nextTurn) {
         if (player.getHealthPoints() <= 0) mainLoopView();
         else if (enemy.getHealthPoints() <= 0) {
-            player.setLevel(player.getLevel() + 1);
+            levelUp(player);
             fightingMessages("9", enemy, player);
-            player.setHealthPoints(player.getHealthPoints() + 50);
-            player.setStrength(player.getStrength() + 5);
-            player.setDefense(player.getDefense() + 5);
-            player.setSpeed(player.getSpeed() + 5);
             fightingMessages("10", enemy, player);
             player.setInventory(addItemToInventory(player.getInventory().getItems(), player.getInventory()));
             gameLoopView(player);
@@ -89,6 +85,14 @@ public class FightService {
 
     public static int fightDamage(Character attacker, Character defender) {
         return (attacker.getStrength() * (attacker.getStrength() / defender.getDefense()) + 5);
+    }
+
+    public static void levelUp(Player player){
+        player.setLevel(player.getLevel() + 1);
+        player.setHealthPoints(player.getHealthPoints() + 50);
+        player.setStrength(player.getStrength() + 5);
+        player.setDefense(player.getDefense() + 5);
+        player.setSpeed(player.getSpeed() + 5);
     }
 
 }
