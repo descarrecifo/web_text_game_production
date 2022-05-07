@@ -6,7 +6,6 @@ import com.company.model.Player;
 
 import java.util.Random;
 
-import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.InventoryController.addItemToInventory;
 import static com.company.view.FightView.fightingMessages;
 import static com.company.view.IOView.*;
@@ -58,7 +57,7 @@ public class FightService {
     }
 
     public static void fightResult(NPC enemy, Player player, String nextTurn) {
-        if (player.getHealthPoints() <= 0) optionsMainMenu();
+        if (player.getHealthPoints() <= 0) mainLoopView();
         else if (enemy.getHealthPoints() <= 0) {
             player.setLevel(player.getLevel() + 1);
             fightingMessages("9", enemy, player);
@@ -68,7 +67,7 @@ public class FightService {
             player.setSpeed(player.getSpeed() + 5);
             fightingMessages("10", enemy, player);
             player.setInventory(addItemToInventory(player.getInventory().getItems(), player.getInventory()));
-            OptionsMenuNewGame(player);
+            gameLoopView(player);
         } else {
 //            fightingMessages("11", enemy, player);
             switch (nextTurn){
