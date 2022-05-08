@@ -44,7 +44,8 @@ public class IOView {
 
                 case "1" -> gameLoopController("1", player);
                 case "2" -> gameLoopController("2", player);
-                case "3" -> {
+                case "3" -> gameLoopController("3", player);
+                case "4" -> {
                     System.out.println("Return to Main Menu");
                     mainLoopView();
                 }

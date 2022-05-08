@@ -21,8 +21,8 @@ public class FightView {
             case "8" -> System.out.println("Your enemy has failed, they will try again!");
             case "9" -> System.out.println("You have leveled up! Your level is now " +YELLOW_BRIGHT+ player.getLevel()+ANSI_RESET);
             case "10" -> System.out.println("You're stronger! Now your strength is " +YELLOW_BRIGHT+ player.getStrength() +ANSI_RESET + ", your defense is "
-                    +YELLOW_BRIGHT+ player.getDefense() +ANSI_RESET + ", your speed is "
-                    +YELLOW_BRIGHT+ player.getSpeed() +ANSI_RESET + " and you have " +YELLOW_BRIGHT+ player.getHealthPoints() + " HP"+ANSI_RESET);
+                    +YELLOW_BRIGHT+ player.getDefense() +ANSI_RESET + ", your speed is "+YELLOW_BRIGHT+ player.getSpeed() +ANSI_RESET + ", your dexterity is "
+                    +YELLOW_BRIGHT+ player.getDexterity() +ANSI_RESET + " and you have " +YELLOW_BRIGHT+ player.getHealthPoints() + " HP"+ANSI_RESET);
             case "11" -> System.out.println("You need to attack again");
         }
     }
