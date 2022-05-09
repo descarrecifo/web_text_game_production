@@ -10,6 +10,7 @@ import static com.company.controller.CharacterController.createPlayer;
 import static com.company.frontcontroller.FrontController.gameLoopController;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.BRONZE_UNDERLINED;
+import static com.company.view.CharacterView.showClass;
 import static com.company.view.Menu.*;
 
 
@@ -26,7 +27,7 @@ public class IOView {
             String keyMenuMain = reader.nextLine();
             switch (keyMenuMain) {
                 case "1" -> mainLoopController("1");
-                case "2" -> mainLoopController("2");
+                case "2" -> finishGameView();
                 default -> System.out.println("Unknown command. Try again");
             }
         }
@@ -45,10 +46,7 @@ public class IOView {
                 case "1" -> gameLoopController("1", player);
                 case "2" -> gameLoopController("2", player);
                 case "3" -> gameLoopController("3", player);
-                case "4" -> {
-                    System.out.println("Return to Main Menu");
-                    mainLoopView();
-                }
+                case "4" -> mainLoopView();
                 default -> System.out.println("Unknown command. Try again");
             }
         }

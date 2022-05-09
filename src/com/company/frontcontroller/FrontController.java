@@ -12,7 +12,6 @@ public class FrontController {
     public static void mainLoopController(String value) {
         switch (value) {
             case "1" -> createCharacter();
-            case "2" -> finishGameView();
         }
     }
     public  static void gameLoopController(String value, Player player){
