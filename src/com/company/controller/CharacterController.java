@@ -6,15 +6,11 @@ import com.company.model.NPC;
 import com.company.model.Player;
 
 import java.util.HashMap;
-
-
 import java.util.Random;
 
 import static com.company.service.InventoryService.createItem;
 
-
-import static com.company.view.IOView.OptionsMenuNewGame;
-
+import static com.company.view.IOView.gameLoopView;
 
 public class
 
@@ -25,31 +21,28 @@ CharacterController {
         Inventory playerInventory = new Inventory(items, 10);
 
         switch (charClass){
-            case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15);
-                Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
+            case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15, "Warrior");
+                Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
-                OptionsMenuNewGame(player);
+                gameLoopView(player);
             }
 
-            case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15);
-                Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
+            case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15, "Mage");
+                Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
-                OptionsMenuNewGame(player);
+                gameLoopView(player);
             }
 
-            case "Hunter" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25);
-                Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2);
+            case "Hunter" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25, "Hunter");
+                Item newItem = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
-                OptionsMenuNewGame(player);
+                gameLoopView(player);
             }
         }
-
-
     }
-
 
     public static NPC createEnemyPlaceholder(){
         NPC enemy;
@@ -57,10 +50,10 @@ CharacterController {
         int value = new Random().nextInt((4-1)+1);
 
         switch (value){
-            case 1 -> enemy = new NPC("Goblin", 5, createItem(), 20, 20, 5, 25, 25);
-            case 2 -> enemy = new NPC("Wolf", 5, createItem(), 10, 10, 15, 35, 5);
-            case 3 -> enemy = new NPC("Burglar", 5, createItem(), 25, 15, 15, 15, 15);
-            default -> enemy = new NPC("Soldier", 5, createItem(), 50, 25, 15, 5, 10);
+            case 1 -> enemy = new NPC("Goblin", 5, createItem(), 20, 20, 5, 25, 25, null);
+            case 2 -> enemy = new NPC("Wolf", 5, createItem(), 10, 10, 15, 35, 5, null);
+            case 3 -> enemy = new NPC("Burglar", 5, createItem(), 25, 15, 15, 15, 15, null);
+            default -> enemy = new NPC("Soldier", 5, createItem(), 50, 25, 15, 5, 10, null);
         }
 
         return enemy;
