@@ -16,7 +16,8 @@ public class InventoryView {
         player.getInventory().getItems().forEach((k, v) -> System.out.format(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" "+ i.getAndIncrement() + ". Name: " +YELLOW_BRIGHT
                 + k.getInventoryName() +ANSI_RESET+ " | Quantity: x" +YELLOW_BRIGHT+ v+ANSI_RESET+"               "+ ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"
                 + ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"    Description: "+YELLOW_BRIGHT + k.getDescription()+ANSI_RESET+ ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"
-                +ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"));
+                +ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"+"Attack: "
+                +k.getItemHabilities().get("attack")+" Defense "+k.getItemHabilities().get("defense")+" Speed "+k.getItemHabilities().get("speed")));
 //                "key: %s, value: %d%n", k, v));
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                                        "+ANSI_RESET);
         System.out.println(" ");
@@ -30,3 +31,4 @@ public class InventoryView {
         }
     }
 }
+
