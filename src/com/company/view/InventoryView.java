@@ -10,13 +10,15 @@ import static com.company.utils.Utilities.*;
 public class InventoryView {
     public static void showInventory(Player player) {
         AtomicInteger i = new AtomicInteger(1);
+
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                                        "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                       "+BRONZE_UNDERLINED+"INVENTORY"+ANSI_RESET+"                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         player.getInventory().getItems().forEach((k, v) -> System.out.format(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" "+ i.getAndIncrement() + ". Name: " +YELLOW_BRIGHT
                 + k.getInventoryName() +ANSI_RESET+ " | Quantity: x" +YELLOW_BRIGHT+ v+ANSI_RESET+"               "+ ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"
                 + ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"    Description: "+YELLOW_BRIGHT + k.getDescription()+ANSI_RESET+ ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"
-                +ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"));
+                +ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Attack: "
+                +YELLOW_BRIGHT +k.getItemHabilities().get("attack")+ANSI_RESET+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Defense "+YELLOW_BRIGHT+k.getItemHabilities().get("defense")+ANSI_RESET+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"\n"+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Speed "+YELLOW_BRIGHT +k.getItemHabilities().get("speed")+ANSI_RESET+"\n\n"));
 //                "key: %s, value: %d%n", k, v));
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                                        "+ANSI_RESET);
         System.out.println(" ");
@@ -30,3 +32,4 @@ public class InventoryView {
         }
     }
 }
+
