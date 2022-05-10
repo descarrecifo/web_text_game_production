@@ -11,6 +11,7 @@ import static com.company.frontcontroller.FrontController.gameLoopController;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.BRONZE_UNDERLINED;
 import static com.company.view.CharacterView.showClass;
+import static com.company.view.InventoryView.showInventory;
 import static com.company.view.Menu.*;
 
 
@@ -72,6 +73,19 @@ public class IOView {
                 case "3" -> createPlayer(name, "Hunter");
                 default -> System.out.println("Invalid option");
             }
+
+        }
+    }
+
+    public static void inventoryUseItem(Player player){
+        Scanner reader = new Scanner(System.in);
+        while(true){
+            showInventory(player);
+            String exit = reader.nextLine();
+
+            if(exit.equals("0")) break;
+            System.out.println();
+
 
         }
     }
