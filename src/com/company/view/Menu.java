@@ -4,33 +4,32 @@ import com.company.utils.Utilities;
 
 import java.util.Scanner;
 
+import static com.company.utils.Utilities.*;
+
 public class Menu{
 
     //Main Menu
     public static void mainMenuView() {
-        System.out.println("**************************************");
-        System.out.println("* 1- New Game                        *");
-        System.out.println("* 2- Exit                            *");
-        System.out.println("**************************************");
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                                      "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"             "+BRONZE_UNDERLINED+"MAIN MENU"+ANSI_RESET+"              "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                    "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1- New Game                        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2- Exit                            "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                                      "+ANSI_RESET);
+        System.out.println("Choose an option");
     }
 
     // Menu New Game
     public static void menuNewGameView() {
-        System.out.println("************************************");
-        System.out.println("* 1- Fight                         *");
-        System.out.println("* 2- Inventory                     *");
-        System.out.println("* 3- Return                        *");
-        System.out.println("************************************");
-    }
-
-
-    public static void showClass(){
-        System.out.println("Choose your class");
-        System.out.println("******************");
-        System.out.println("* 1-Warrior      *");
-        System.out.println("* 2-Mage         *");
-        System.out.println("* 3-Hunter       *");
-        System.out.println("******************");
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                                    "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"            "+BRONZE_UNDERLINED+"MAIN GAME"+ANSI_RESET+"             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                  "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1- Fight                         "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2- Inventory                     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3- Character                     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4- Return to Main Menu           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                                    "+ANSI_RESET);
+        System.out.println("Choose an option");
     }
 
 }
