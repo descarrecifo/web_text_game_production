@@ -8,7 +8,7 @@ public class Item {
     private String type;
     private String description;
     private int price;
-    HashMap<String, Integer> itemHabilities;
+    private HashMap<String, Integer> itemHabilities;
 
     public Item(String name , String inventoryName , String type , String description , int price , HashMap<String, Integer> itemHabilities){
         this.name = name;
@@ -16,17 +16,11 @@ public class Item {
         this.type = type;
         this.description = description;
         this.price = price;
-        this.itemHabilities = new HashMap<String, Integer>();
+       // this.itemHabilities = new HashMap<String, Integer>();
+        this.itemHabilities = itemHabilities;
     }
 
-//    public Item(String name, String type, String description, int price,  HashMap itemHabilities) {
-//        this.name = name;
-//        this.type = type;
-//        this.description = description;
-//        this.price = price;
-//        this.itemHabilities = new HashMap<String, Integer>();
-//    }
-//
+
     public Item(){
     }
 

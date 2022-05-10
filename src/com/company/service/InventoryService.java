@@ -12,12 +12,13 @@ public class InventoryService {
 
         Item reward = new Item();
 
-        HashMap<String, Integer> itemHabilities = new HashMap();
+
+        HashMap<String, Integer> itemHabilities = new HashMap<>();
 
         switch (value) {
             case 1 ->{
-                itemHabilities.put("attack" , 51);
-                itemHabilities.put("defense" , 3);
+                itemHabilities.put("attack" , 5);
+                itemHabilities.put("defense" , 4);
                 itemHabilities.put("speed" , 1);
                 reward = new Item("Tunic" , "Tunic         " , "cloth" , "A simple tunic                       " , 2 , itemHabilities);
             }

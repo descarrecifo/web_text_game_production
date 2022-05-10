@@ -20,9 +20,9 @@ CharacterController {
         HashMap<Item, Integer> items = new HashMap<>();
         Inventory playerInventory = new Inventory(items, 10);
 
-        HashMap<String,Integer> itemHabilities = new HashMap();
+        HashMap<String,Integer> itemHabilities = new HashMap<>();
         itemHabilities.put("attack",5);
-        itemHabilities.put("defense",3);
+        itemHabilities.put("defense",4);
         itemHabilities.put("speed",1);
 
 
