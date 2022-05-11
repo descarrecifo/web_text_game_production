@@ -11,6 +11,7 @@ import static com.company.frontcontroller.FrontController.gameLoopController;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.BRONZE_UNDERLINED;
 import static com.company.view.CharacterView.showClass;
+import static com.company.view.InventoryView.showInventory;
 import static com.company.view.Menu.*;
 
 
@@ -54,7 +55,7 @@ public class IOView {
 
     public static void createCharacter() {
         Scanner reader = new Scanner(System.in);
-        System.out.println("          "+BRONZE_UNDERLINED+"CHARACTER CREATION"+ANSI_RESET);
+        System.out.println("          " + BRONZE_UNDERLINED + "CHARACTER CREATION" + ANSI_RESET);
         String name = Utilities.ask(reader, "What's your name?");
         charClassElection(name);
     }
