@@ -14,13 +14,6 @@ public class Item {
     public Item(){
     }
 
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
 
     public Item(String name , String inventoryName , String type , String description , int price , HashMap<String, Integer> itemHabilities){
         this.name = name;
@@ -28,7 +21,6 @@ public class Item {
         this.type = type;
         this.description = description;
         this.price = price;
-       // this.itemHabilities = new HashMap<String, Integer>();
         this.itemHabilities = itemHabilities;
     }
 
@@ -40,6 +32,13 @@ public class Item {
         this.itemHabilities = itemHabilities;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
 
     public String getName() {
@@ -119,7 +118,8 @@ public class Item {
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", description='" + description + '\'' +
-                ", price=" + price +
+                ", price=" + price + '\'' +
+                ", index=" + index +
                 '}';
     }
 }

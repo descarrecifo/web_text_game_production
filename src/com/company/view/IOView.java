@@ -55,7 +55,7 @@ public class IOView {
 
     public static void createCharacter() {
         Scanner reader = new Scanner(System.in);
-        System.out.println("          "+BRONZE_UNDERLINED+"CHARACTER CREATION"+ANSI_RESET);
+        System.out.println("          " + BRONZE_UNDERLINED + "CHARACTER CREATION" + ANSI_RESET);
         String name = Utilities.ask(reader, "What's your name?");
         charClassElection(name);
     }
@@ -73,19 +73,6 @@ public class IOView {
                 case "3" -> createPlayer(name, "Hunter");
                 default -> System.out.println("Invalid option");
             }
-
-        }
-    }
-
-    public static void inventoryUseItem(Player player){
-        Scanner reader = new Scanner(System.in);
-        while(true){
-            showInventory(player);
-            String exit = reader.nextLine();
-
-            if(exit.equals("0")) break;
-            System.out.println();
-
 
         }
     }
