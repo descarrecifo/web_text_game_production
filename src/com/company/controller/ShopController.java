@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 import static com.company.service.InventoryService.compareItems;
 import static com.company.service.InventoryService.createItem;
-import static com.company.view.InventoryView.addItemToInventoryMessage;
 import static com.company.view.ShopView.buying;
 
 public class ShopController {
