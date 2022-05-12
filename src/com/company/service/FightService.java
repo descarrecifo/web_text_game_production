@@ -36,7 +36,6 @@ public class FightService {
             fightingMessages("1", enemy, player);
             player.setHealthPoints(player.getHealthPoints() - fightDamage(enemy, player));
             fightingMessages("3", enemy, player);
-//            System.out.println(player.getHealthPoints());
             fightResult(enemy, player, "player");
         } else {
             fightingMessages("5", enemy, player);
@@ -49,7 +48,6 @@ public class FightService {
             fightingMessages("2", enemy, player);
             enemy.setHealthPoints(enemy.getHealthPoints() - fightDamage(player, enemy));
             fightingMessages("4", enemy, player);
-//            System.out.println(enemy.getHealthPoints());
             fightResult(enemy, player, "enemy");
         } else {
             fightingMessages("6", enemy, player);

@@ -7,7 +7,6 @@ import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.company.controller.ShopController.shoppingSystem;
-import static com.company.service.InventoryService.equippingObject;
 import static com.company.service.ShopService.itemPriceCalculation;
 import static com.company.utils.Utilities.*;
 import static com.company.utils.Utilities.ANSI_RESET;
@@ -59,12 +58,12 @@ public class ShopView {
         while (true) {
             showShopInventory(shopInventory);
             String option = reader.nextLine();
-            try {
-                if (Integer.parseInt(option) == 0) break;
-                else equippingObject(player, Integer.parseInt(option));
-            } catch (Exception e) {
-                System.out.println("Invalid option");
-            }
+//            try {
+//                if (Integer.parseInt(option) == 0) break;
+//                else equippingObject(player, Integer.parseInt(option));
+//            } catch (Exception e) {
+//                System.out.println("Invalid option");
+//            }
         }
     }
 

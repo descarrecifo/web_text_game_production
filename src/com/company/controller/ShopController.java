@@ -6,10 +6,10 @@ import com.company.model.Player;
 
 import java.util.HashMap;
 
+import static com.company.service.InventoryService.compareItems;
 import static com.company.service.InventoryService.createItem;
-import static com.company.service.ShopService.itemPriceCalculation;
+import static com.company.view.InventoryView.addItemToInventoryMessage;
 import static com.company.view.ShopView.buying;
-import static com.company.view.ShopView.showShopInventory;
 
 public class ShopController {
 
@@ -18,7 +18,11 @@ public class ShopController {
         Inventory shopInventory = new Inventory(items, 100);
         for(int i = 0; i<100; i++){
             Item newItem = createItem();
-            items.put(newItem, 1);
+            if (compareItems(shopInventory.getItems(), newItem)) {
+                items.replace(newItem, items.get(newItem) + 1);
+            } else {
+                items.put(newItem, 1);
+            }
             shopInventory.setItems(items);
             shopInventory.setCapacity(shopInventory.getCapacity() - 1);
         }
