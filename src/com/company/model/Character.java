@@ -34,7 +34,7 @@ public class Character {
         this.charClass = charClass;
     }
 
-    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass){
+    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money){
         this.name = name;
         this.level = level;
         this.healthPoints = healthPoints;
@@ -43,6 +43,7 @@ public class Character {
         this.speed = speed;
         this.dexterity = dexterity;
         this.charClass = charClass;
+        this.money = money;
     }
 
     public int getTotalStrength() {

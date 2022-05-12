@@ -22,10 +22,8 @@ CharacterController {
 
         HashMap<String,Integer> itemHabilities = new HashMap<>();
 
-
-
         switch (charClass){
-            case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15, "Warrior");
+            case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15, "Warrior", 5);
                 itemHabilities.put("attack" , 4);
                 itemHabilities.put("defense" , 0);
                 itemHabilities.put("speed" , 0);
@@ -36,7 +34,7 @@ CharacterController {
                 gameLoopView(player);
             }
 
-            case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15, "Mage");
+            case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15, "Mage", 5);
                 itemHabilities.put("attack" , 0);
                 itemHabilities.put("defense" , 1);
                 itemHabilities.put("speed" , 0);
@@ -47,11 +45,22 @@ CharacterController {
                 gameLoopView(player);
             }
 
-            case "Hunter" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25, "Hunter");
+            case "Hunter" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25, "Hunter", 5);
                 itemHabilities.put("attack" , 2);
                 itemHabilities.put("defense" ,0);
                 itemHabilities.put("speed" , 0);
                 Item newItem = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4 , itemHabilities);
+                items.put(newItem, 1);
+                player.getInventory().setItems(items);
+                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
+                gameLoopView(player);
+            }
+
+            case "Monk" ->  {Player player = new Player(name, 1, playerInventory, 90, 15, 10, 25, 25, "Monk", 5);
+                itemHabilities.put("attack", 1);
+                itemHabilities.put("defense", 0);
+                itemHabilities.put("speed", 0);
+                Item newItem = new Item("Wooden stick", "Wooden stick  ", "weapon", "A simple stick made of wood          ", 1, itemHabilities);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -63,13 +72,15 @@ CharacterController {
     public static NPC createEnemyPlaceholder(){
         NPC enemy;
 
-        int value = new Random().nextInt((4-1)+1);
+        int value = new Random().nextInt((6-1)+1);
 
         switch (value){
-            case 1 -> enemy = new NPC("Goblin", 5, createItem(), 20, 20, 5, 25, 25, null);
-            case 2 -> enemy = new NPC("Wolf", 5, createItem(), 10, 10, 15, 35, 5, null);
-            case 3 -> enemy = new NPC("Burglar", 5, createItem(), 25, 15, 15, 15, 15, null);
-            default -> enemy = new NPC("Soldier", 5, createItem(), 50, 25, 15, 5, 10, null);
+            case 1 -> enemy = new NPC("Goblin", 5, createItem(), 20, 20, 5, 25, 25, null, 5);
+            case 2 -> enemy = new NPC("Wolf", 5, createItem(), 10, 10, 15, 35, 5, null,0);
+            case 3 -> enemy = new NPC("Burglar", 5, createItem(), 25, 15, 15, 15, 15, null, 20);
+            case 4 -> enemy = new NPC("Witch", 5, createItem(), 20, 10, 15, 25, 15, null, 5);
+            case 5 -> enemy = new NPC("Ratman", 5, createItem(), 25, 20, 10, 20, 10, null, 0);
+            default -> enemy = new NPC("Soldier", 5, createItem(), 50, 25, 15, 5, 10, null, 15);
         }
 
         return enemy;

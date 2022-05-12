@@ -47,7 +47,8 @@ public class IOView {
                 case "1" -> gameLoopController("1", player);
                 case "2" -> gameLoopController("2", player);
                 case "3" -> gameLoopController("3", player);
-                case "4" -> mainLoopView();
+                case "4" -> gameLoopController("4", player);
+                case "5" -> mainLoopView();
                 default -> System.out.println("Unknown command. Try again");
             }
         }
@@ -71,6 +72,7 @@ public class IOView {
                 case "1" -> createPlayer(name, "Warrior");
                 case "2" -> createPlayer(name, "Mage");
                 case "3" -> createPlayer(name, "Hunter");
+                case "4" -> createPlayer(name, "Monk");
                 default -> System.out.println("Invalid option");
             }
 

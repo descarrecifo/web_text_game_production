@@ -7,6 +7,7 @@ import com.company.model.Player;
 import java.util.Random;
 
 import static com.company.controller.InventoryController.addItemToInventory;
+import static com.company.service.CharacterService.addingMoney;
 import static com.company.view.FightView.fightingMessages;
 import static com.company.view.IOView.*;
 
@@ -63,6 +64,7 @@ public class FightService {
             fightingMessages("9", enemy, player);
             fightingMessages("10", enemy, player);
             player.setInventory(addItemToInventory(player.getInventory().getItems(), player.getInventory()));
+            addingMoney(player, enemy);
             gameLoopView(player);
         } else {
 //            fightingMessages("11", enemy, player);
@@ -71,6 +73,9 @@ public class FightService {
                 case "player" -> playerTurn(enemy, player);
             }
         }
+    }
+
+    private static void addMoney(Player player, NPC enemy) {
     }
 
     public static boolean attackSuccess(Character attacker, Character defender) {
