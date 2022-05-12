@@ -14,7 +14,7 @@ import static com.company.view.InventoryView.inventoryUseItem;
 public class InventoryService {
 
     public static Item createItem() {
-        int value = new Random().nextInt((5 - 1) + 1);
+        int value = new Random().nextInt((6 - 1) + 1);
 
         var reward = new Item();
 
@@ -45,6 +45,12 @@ public class InventoryService {
                 itemHabilities.put("speed", 0);
                 reward = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4, itemHabilities);
             }
+            case 5 -> {
+                itemHabilities.put("attack", 0);
+                itemHabilities.put("defense", 7);
+                itemHabilities.put("speed", -2);
+                reward = new Item("Great armour", "Great armour  ", "armour", "A heavy armour with a good defense   ", 15, itemHabilities);
+            }
             default -> {
                 itemHabilities.put("attack", 0);
                 itemHabilities.put("defense", 0);
@@ -64,6 +70,7 @@ public class InventoryService {
             if (item.getIndex() == option){
                 System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
                 player.getInventory().getItems().replace(item, player.getInventory().getItems().get(item) - 1);
+                player.getInventory().setCapacity(player.getInventory().getCapacity() + 1);
                 if (player.getInventory().getItems().get(item) < 1) {
                     player.getInventory().getItems().remove(item);
                 }

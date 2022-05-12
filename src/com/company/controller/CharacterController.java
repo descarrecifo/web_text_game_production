@@ -32,6 +32,7 @@ CharacterController {
                 Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7 , itemHabilities);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
+                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
                 gameLoopView(player);
             }
 
@@ -42,6 +43,7 @@ CharacterController {
                 Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2 , itemHabilities);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
+                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
                 gameLoopView(player);
             }
 
@@ -52,6 +54,7 @@ CharacterController {
                 Item newItem = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4 , itemHabilities);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
+                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
                 gameLoopView(player);
             }
         }
