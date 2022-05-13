@@ -3,13 +3,12 @@ package com.company.model;
 import java.util.HashMap;
 
 public class Item {
-    private String name;
-    private String inventoryName;
-    private String type;
-    private String description;
-    private int price;
+    private String name,
+            inventoryName,
+            type,
+            description;
+    private int price, index;
     private HashMap<String, Integer> itemHabilities;
-    private int index;
 
     public Item(){
     }

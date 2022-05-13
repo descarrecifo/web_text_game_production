@@ -1,40 +1,41 @@
 package com.company.model;
 
 public class Character {
-    private String name;
-    private int level;
-    private String charClass;
-    private int experiencePoints;
-    private int healthPoints;
-    private int manaPoints;
-    private int strength;
-    private int defense;
-    private int speed;
-    private int dexterity;
-    private int money;
-    private int totalStrength;
-    private int totalDefense;
-    private int totalSpeed;
-    private int totalHealthPoints;
+    private String name,
+            charClass;
+    private int level,
+            experiencePoints,
+            healthPoints,
+            manaPoints,
+            strength,
+            defense,
+            speed,
+            dexterity,
+            money,
+            totalStrength,
+            totalDefense,
+            totalSpeed,
+            totalHealthPoints;
 
-    public Character(){}
+    public Character() {
+    }
 
-    public Character(String name){
+    public Character(String name) {
         this.name = name;
     }
 
-    public Character(String name, int level){
+    public Character(String name, int level) {
         this.name = name;
         this.level = level;
     }
 
-    public Character(String name, int level,String charClass){
+    public Character(String name, int level, String charClass) {
         this.name = name;
         this.level = level;
         this.charClass = charClass;
     }
 
-    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money){
+    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money) {
         this.name = name;
         this.level = level;
         this.healthPoints = healthPoints;
@@ -91,7 +92,7 @@ public class Character {
         this.money = money;
     }
 
-    public  String getName() {
+    public String getName() {
         return name;
     }
 

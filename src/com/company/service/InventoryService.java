@@ -14,7 +14,7 @@ import static com.company.utils.Utilities.YELLOW_BRIGHT;
 public class InventoryService {
 
     public static Item createItem() {
-        int value = new Random().nextInt((6 - 1) + 1);
+        int value = new Random().nextInt((7 - 1) + 1);
 
         var reward = new Item();
 
@@ -50,6 +50,12 @@ public class InventoryService {
                 itemHabilities.put("defense", 7);
                 itemHabilities.put("speed", -2);
                 reward = new Item("Great armour", "Great armour  ", "armour", "A heavy armour with a good defense   ", 15, itemHabilities);
+            }
+            case 6 -> {
+                itemHabilities.put("attack", 0);
+                itemHabilities.put("defense", 2);
+                itemHabilities.put("speed", 0);
+                reward = new Item("Helmet", "Helmet        ", "armour", "A basic iron helmet                  ", 5, itemHabilities);
             }
             default -> {
                 itemHabilities.put("attack", 0);
