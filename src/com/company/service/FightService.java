@@ -1,6 +1,7 @@
 package com.company.service;
 
 import com.company.model.Character;
+import com.company.model.Item;
 import com.company.model.NPC;
 import com.company.model.Player;
 
@@ -61,7 +62,8 @@ public class FightService {
             levelUp(player);
             fightingMessages("9", enemy, player);
             fightingMessages("10", enemy, player);
-            player.setInventory(addItemToInventory(player.getInventory().getItems(), player.getInventory()));
+            Item newItem = enemy.getTreasure();
+            player.setInventory(addItemToInventory(player.getInventory().getItems(), player.getInventory(), newItem));
             addingMoney(player, enemy);
             gameLoopView(player);
         } else {
@@ -71,9 +73,6 @@ public class FightService {
                 case "player" -> playerTurn(enemy, player);
             }
         }
-    }
-
-    private static void addMoney(Player player, NPC enemy) {
     }
 
     public static boolean attackSuccess(Character attacker, Character defender) {

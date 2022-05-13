@@ -11,7 +11,6 @@ import static com.company.frontcontroller.FrontController.gameLoopController;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.BRONZE_UNDERLINED;
 import static com.company.view.CharacterView.showClass;
-import static com.company.view.InventoryView.showInventory;
 import static com.company.view.Menu.*;
 
 
@@ -69,10 +68,12 @@ public class IOView {
             String charClassOption = reader.nextLine();
 
             switch (charClassOption) {
-                case "1" -> createPlayer(name, "Warrior");
+                case "1" -> createPlayer(name, "Cleric");
                 case "2" -> createPlayer(name, "Mage");
-                case "3" -> createPlayer(name, "Hunter");
-                case "4" -> createPlayer(name, "Monk");
+                case "3" -> createPlayer(name, "Monk");
+                case "4" -> createPlayer(name, "Paladin");
+                case "5" -> createPlayer(name, "Ranger");
+                case "6" -> createPlayer(name, "Warrior");
                 default -> System.out.println("Invalid option");
             }
 

@@ -7,9 +7,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+import static com.company.controller.InventoryController.removeItemFromInventory;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.YELLOW_BRIGHT;
-import static com.company.view.InventoryView.inventoryUseItem;
 
 public class InventoryService {
 
@@ -69,11 +69,7 @@ public class InventoryService {
         for (Item item : new ArrayList<>(player.getInventory().getItems().keySet())){
             if (item.getIndex() == option){
                 System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
-                player.getInventory().getItems().replace(item, player.getInventory().getItems().get(item) - 1);
-                player.getInventory().setCapacity(player.getInventory().getCapacity() + 1);
-                if (player.getInventory().getItems().get(item) < 1) {
-                    player.getInventory().getItems().remove(item);
-                }
+                removeItemFromInventory(player.getInventory(), item);
             }
         }
     }

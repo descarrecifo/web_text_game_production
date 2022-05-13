@@ -23,20 +23,23 @@ public class CharacterView {
     }
 
     public static void showClass(){
-        System.out.println(ANSI_BRONZE_BACKGROUND+"                  "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"    "+BRONZE_UNDERLINED+"CLASSES"+ANSI_RESET+"     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1- Warrior     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2- Mage        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3- Hunter      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4- Monk        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+"                  "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                     "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"     "+BRONZE_UNDERLINED+"CLASSES"+ANSI_RESET+"       "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                   "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1- Cleric         "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2- Mage           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3- Monk           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4- Paladin        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 5- Ranger         "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 6- Warrior        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+"                     "+ANSI_RESET);
         System.out.println("Choose a class");
     }
 
     public static void moneyMessage(String value, Player player, NPC enemy){
         switch (value) {
-            case "1" -> System.out.println("You gained "+enemy.getMoney()+" coins! Now you have "+player.getMoney()+" coins.");
+            case "1" -> System.out.println("You gained "+YELLOW_BRIGHT+enemy.getMoney()+((enemy.getMoney() == 1) ? " coin" : " coins")+ANSI_RESET+"! Now you have "+YELLOW_BRIGHT+player.getMoney()+((player.getMoney() == 1) ? " coin" : " coins")+ANSI_RESET+".");
+            case "2" -> System.out.println("Now you have "+YELLOW_BRIGHT+player.getMoney()+((player.getMoney() == 1) ? " coin" : " coins")+ANSI_RESET+".");
         }
     }
 }

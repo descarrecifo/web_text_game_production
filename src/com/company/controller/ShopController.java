@@ -8,13 +8,13 @@ import java.util.HashMap;
 
 import static com.company.service.InventoryService.compareItems;
 import static com.company.service.InventoryService.createItem;
-import static com.company.view.ShopView.buying;
+import static com.company.view.ShopView.*;
 
 public class ShopController {
 
     public static void shoppingSystem(Player player, int value) {
         HashMap<Item, Integer> items = new HashMap<>();
-        Inventory shopInventory = new Inventory(items, 100);
+        Inventory shopInventory = new Inventory(items, 200);
         for(int i = 0; i<100; i++){
             Item newItem = createItem();
             if (compareItems(shopInventory.getItems(), newItem)) {
@@ -25,11 +25,10 @@ public class ShopController {
             shopInventory.setItems(items);
             shopInventory.setCapacity(shopInventory.getCapacity() - 1);
         }
-        int price;
         if (value == 1) {
-            buying(shopInventory);
+            buyingAndSelling(shopInventory, player, 1);
         } else {
-            System.out.println(shopInventory);
+            buyingAndSelling(shopInventory, player,2);
         }
     }
 }
