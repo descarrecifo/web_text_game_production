@@ -5,13 +5,17 @@ public class Character {
     private int level;
     private String charClass;
     private int experiencePoints;
-    private int lifePoints;
+    private int healthPoints;
     private int manaPoints;
     private int strength;
     private int defense;
     private int speed;
-    private int dextery;
+    private int dexterity;
     private int money;
+    private int totalStrength;
+    private int totalDefense;
+    private int totalSpeed;
+    private int totalHealthPoints;
 
     public Character(){}
 
@@ -30,16 +34,59 @@ public class Character {
         this.charClass = charClass;
     }
 
-    public Character(String name,int level, String charClass, int experiencePoints, int lifePoints, int manaPoints, int strength, int defense, int speed, int dextery, int money) {
+    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass){
+        this.name = name;
+        this.level = level;
+        this.healthPoints = healthPoints;
+        this.strength = strength;
+        this.defense = defense;
+        this.speed = speed;
+        this.dexterity = dexterity;
+        this.charClass = charClass;
+    }
+
+    public int getTotalStrength() {
+        return totalStrength;
+    }
+
+    public void setTotalStrength(int totalStrength) {
+        this.totalStrength = totalStrength;
+    }
+
+    public int getTotalDefense() {
+        return totalDefense;
+    }
+
+    public void setTotalDefense(int totalDefense) {
+        this.totalDefense = totalDefense;
+    }
+
+    public int getTotalSpeed() {
+        return totalSpeed;
+    }
+
+    public void setTotalSpeed(int totalSpeed) {
+        this.totalSpeed = totalSpeed;
+    }
+
+    public int getTotalHealthPoints() {
+        return totalHealthPoints;
+    }
+
+    public void setTotalHealthPoints(int totalHealthPoints) {
+        this.totalHealthPoints = totalHealthPoints;
+    }
+
+    public Character(String name, int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
         this.level = level;
         this.charClass = charClass;
         this.experiencePoints = experiencePoints;
-        this.lifePoints = lifePoints;
+        this.healthPoints = healthPoints;
         this.manaPoints = manaPoints;
         this.strength = strength;
         this.defense = defense;
         this.speed = speed;
-        this.dextery = dextery;
+        this.dexterity = dexterity;
         this.money = money;
     }
 
@@ -59,8 +106,8 @@ public class Character {
         return experiencePoints;
     }
 
-    public int getLifePoints() {
-        return lifePoints;
+    public int getHealthPoints() {
+        return healthPoints;
     }
 
     public int getManaPoints() {
@@ -79,8 +126,8 @@ public class Character {
         return speed;
     }
 
-    public int getDextery() {
-        return dextery;
+    public int getDexterity() {
+        return dexterity;
     }
 
     public int getMoney() {
@@ -103,8 +150,8 @@ public class Character {
         this.experiencePoints = experiencePoints;
     }
 
-    public void setLifePoints(int lifePoints) {
-        this.lifePoints = lifePoints;
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
     }
 
     public void setManaPoints(int manaPoints) {
@@ -123,8 +170,8 @@ public class Character {
         this.speed = speed;
     }
 
-    public void setDextery(int dextery) {
-        this.dextery = dextery;
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
     }
 
     public void setMoney(int money) {
@@ -138,12 +185,12 @@ public class Character {
                 "level=" + level +
                 ", charClass='" + charClass + '\'' +
                 ", experiencePoints=" + experiencePoints +
-                ", lifePoints=" + lifePoints +
+                ", healthPoints=" + healthPoints +
                 ", manaPoints=" + manaPoints +
                 ", strength=" + strength +
                 ", defense=" + defense +
                 ", speed=" + speed +
-                ", dextery=" + dextery +
+                ", dexterity=" + dexterity +
                 ", money=" + money +
                 '}';
     }

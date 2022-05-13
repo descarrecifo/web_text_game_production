@@ -2,18 +2,22 @@ package com.company.frontcontroller;
 
 import com.company.model.Player;
 
-
-import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.FightController.fighting;
-import static com.company.controller.InventoryController.showInventory;
+import static com.company.view.CharacterView.showCharacter;
+import static com.company.view.IOView.*;
+import static com.company.view.InventoryView.inventoryUseItem;
 
 public class FrontController {
-    public static void mainLoopController(String value, Player player) {
-//       Player player;
-//       isCreated() ? player = fighting(player)  : player = createPlayer();
+    public static void mainLoopController(String value) {
         switch (value) {
-            case "1" -> player = fighting(player);
-            case "2" -> showInventory(player);
+            case "1" -> createCharacter();
+        }
+    }
+    public  static void gameLoopController(String value, Player player){
+        switch (value) {
+            case "1" -> fighting(player);
+            case "2" -> inventoryUseItem(player);
+            case "3" -> showCharacter(player);
         }
     }
 
