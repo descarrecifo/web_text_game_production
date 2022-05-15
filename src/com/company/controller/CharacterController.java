@@ -98,6 +98,7 @@ CharacterController {
         int value = new Random().nextInt((9-1)+1);
 
         HashMap<String, Integer> itemHabilities = new HashMap<>();
+
         itemHabilities.put("attack", 0);
         itemHabilities.put("defense", 0);
         itemHabilities.put("speed", 0);
@@ -114,7 +115,6 @@ CharacterController {
             case 8 -> enemy = new NPC("Wendigo", 5, fur, 25, 25, 5, 25, 5, null, 0);
             default -> enemy = new NPC("Soldier", 5, createItem(), 50, 25, 15, 5, 10, null, 15);
         }
-
         return enemy;
     }
 
