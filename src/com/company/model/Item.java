@@ -1,30 +1,44 @@
 package com.company.model;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Item {
-    private String name;
-    private String inventoryName;
-    private String type;
-    private String description;
-    private int price;
-    ArrayList<String> characteristic;
+    private String name,
+            inventoryName,
+            type,
+            description;
+    private int price, index;
+    private HashMap<String, Integer> itemHabilities;
 
-    public Item(String name, String inventoryName, String type, String description, int price){
+    public Item(){
+    }
+
+
+    public Item(String name , String inventoryName , String type , String description , int price , HashMap<String, Integer> itemHabilities){
         this.name = name;
         this.inventoryName = inventoryName;
         this.type = type;
         this.description = description;
         this.price = price;
+        this.itemHabilities = itemHabilities;
     }
 
-    public Item(String name, String type, String description, int price, ArrayList<String> characteristic) {
-        this.name = name;
-        this.type = type;
-        this.description = description;
-        this.price = price;
-        this.characteristic = characteristic;
+    public HashMap<String, Integer> getItemHabilities() {
+        return itemHabilities;
     }
+
+    public void setItemHabilities(HashMap<String, Integer> itemHabilities) {
+        this.itemHabilities = itemHabilities;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
+
 
     public String getName() {
         return name;
@@ -103,7 +117,8 @@ public class Item {
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", description='" + description + '\'' +
-                ", price=" + price +
+                ", price=" + price + '\'' +
+                ", index=" + index +
                 '}';
     }
 }
