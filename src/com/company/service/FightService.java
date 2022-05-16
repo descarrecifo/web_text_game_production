@@ -68,6 +68,7 @@ public class FightService {
             gameLoopView(player);
         } else {
 //            fightingMessages("11", enemy, player);
+            player.setHealthPoints(player.getHealthPoints());
             switch (nextTurn){
                 case "enemy" -> enemyTurn(enemy, player);
                 case "player" -> playerTurn(enemy, player);
@@ -92,7 +93,7 @@ public class FightService {
 
     public static void levelUp(Player player){
         player.setLevel(player.getLevel() + 1);
-        player.setHealthPoints(player.getHealthPoints() + 50);
+        player.setMaxHealthPoints(player.getMaxHealthPoints() + 50);
         player.setStrength(player.getStrength() + 5);
         player.setDefense(player.getDefense() + 5);
         player.setSpeed(player.getSpeed() + 5);

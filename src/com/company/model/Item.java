@@ -8,27 +8,27 @@ public class Item {
             type,
             description;
     private int price, index;
-    private HashMap<String, Integer> itemHabilities;
+    private HashMap<String, Integer> itemProperties;
 
     public Item(){
     }
 
 
-    public Item(String name , String inventoryName , String type , String description , int price , HashMap<String, Integer> itemHabilities){
+    public Item(String name , String inventoryName , String type , String description , int price , HashMap<String, Integer> itemProperties){
         this.name = name;
         this.inventoryName = inventoryName;
         this.type = type;
         this.description = description;
         this.price = price;
-        this.itemHabilities = itemHabilities;
+        this.itemProperties = itemProperties;
     }
 
-    public HashMap<String, Integer> getItemHabilities() {
-        return itemHabilities;
+    public HashMap<String, Integer> getItemProperties() {
+        return itemProperties;
     }
 
-    public void setItemHabilities(HashMap<String, Integer> itemHabilities) {
-        this.itemHabilities = itemHabilities;
+    public void setItemProperties(HashMap<String, Integer> itemProperties) {
+        this.itemProperties = itemProperties;
     }
 
     public int getIndex() {

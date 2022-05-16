@@ -6,15 +6,20 @@ public class Character {
     private int level,
             experiencePoints,
             healthPoints,
+            maxHealthPoints,
             manaPoints,
+            maxManaPoints,
             strength,
             defense,
             speed,
             dexterity,
+            charisma,
             money,
             totalStrength,
             totalDefense,
             totalSpeed,
+            totalDexterity,
+            totalCharisma,
             totalHealthPoints;
 
     public Character() {
@@ -35,9 +40,10 @@ public class Character {
         this.charClass = charClass;
     }
 
-    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money) {
+    public Character(String name, int level, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money) {
         this.name = name;
         this.level = level;
+        this.maxHealthPoints = maxHealthPoints;
         this.healthPoints = healthPoints;
         this.strength = strength;
         this.defense = defense;
@@ -47,50 +53,19 @@ public class Character {
         this.money = money;
     }
 
-    public int getTotalStrength() {
-        return totalStrength;
-    }
-
-    public void setTotalStrength(int totalStrength) {
-        this.totalStrength = totalStrength;
-    }
-
-    public int getTotalDefense() {
-        return totalDefense;
-    }
-
-    public void setTotalDefense(int totalDefense) {
-        this.totalDefense = totalDefense;
-    }
-
-    public int getTotalSpeed() {
-        return totalSpeed;
-    }
-
-    public void setTotalSpeed(int totalSpeed) {
-        this.totalSpeed = totalSpeed;
-    }
-
-    public int getTotalHealthPoints() {
-        return totalHealthPoints;
-    }
-
-    public void setTotalHealthPoints(int totalHealthPoints) {
-        this.totalHealthPoints = totalHealthPoints;
-    }
-
-    public Character(String name, int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
-        this.level = level;
-        this.charClass = charClass;
-        this.experiencePoints = experiencePoints;
-        this.healthPoints = healthPoints;
-        this.manaPoints = manaPoints;
-        this.strength = strength;
-        this.defense = defense;
-        this.speed = speed;
-        this.dexterity = dexterity;
-        this.money = money;
-    }
+//    public Character(String name, int level, String charClass, int experiencePoints, int maxHealthPoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
+//        this.level = level;
+//        this.charClass = charClass;
+//        this.experiencePoints = experiencePoints;
+//        this.maxHealthPoints = maxHealthPoints;
+//        this.healthPoints = healthPoints;
+//        this.manaPoints = manaPoints;
+//        this.strength = strength;
+//        this.defense = defense;
+//        this.speed = speed;
+//        this.dexterity = dexterity;
+//        this.money = money;
+//    }
 
     public String getName() {
         return name;
@@ -179,6 +154,58 @@ public class Character {
     public void setMoney(int money) {
         this.money = money;
     }
+
+    public int getTotalStrength() {
+        return totalStrength;
+    }
+
+    public void setTotalStrength(int totalStrength) {
+        this.totalStrength = totalStrength;
+    }
+
+    public int getTotalDefense() {
+        return totalDefense;
+    }
+
+    public void setTotalDefense(int totalDefense) {
+        this.totalDefense = totalDefense;
+    }
+
+    public int getTotalSpeed() {
+        return totalSpeed;
+    }
+
+    public void setTotalSpeed(int totalSpeed) {
+        this.totalSpeed = totalSpeed;
+    }
+
+    public int getTotalHealthPoints() {
+        return totalHealthPoints;
+    }
+
+    public void setTotalHealthPoints(int totalHealthPoints) {
+        this.totalHealthPoints = totalHealthPoints;
+    }
+
+    public int getMaxHealthPoints() {return maxHealthPoints;}
+
+    public void setMaxHealthPoints(int maxHealthPoints) {this.maxHealthPoints = maxHealthPoints;}
+
+    public int getMaxManaPoints() {return maxManaPoints;}
+
+    public void setMaxManaPoints(int maxManaPoints) {this.maxManaPoints = maxManaPoints;}
+
+    public int getCharisma() {return charisma;}
+
+    public void setCharisma(int charisma) {this.charisma = charisma;}
+
+    public int getTotalDexterity() {return totalDexterity;}
+
+    public void setTotalDexterity(int totalDexterity) {this.totalDexterity = totalDexterity;}
+
+    public int getTotalCharisma() {return totalCharisma;}
+
+    public void setTotalCharisma(int totalCharisma) {this.totalCharisma = totalCharisma;}
 
     @Override
     public String toString() {

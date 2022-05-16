@@ -10,21 +10,21 @@ import static com.company.view.InventoryView.addItemToInventoryMessage;
 
 public class InventoryController {
 
-    public static Inventory addItemToInventory(HashMap<Item, Integer> items, Inventory playerInventory, Item newItem) {
-        if (playerInventory.getCapacity() > 0) {
-            if (compareItems(playerInventory.getItems(), newItem)) {
+    public static Inventory addItemToInventory(HashMap<Item, Integer> items, Inventory inventory, Item newItem) {
+        if (inventory.getCapacity() > 0) {
+            if (compareItems(inventory.getItems(), newItem)) {
                 items.replace(newItem, items.get(newItem) + 1);
-                if(playerInventory.getCapacity() == 10) addItemToInventoryMessage("1", newItem);
+                if(inventory.getCapacity() == 10) addItemToInventoryMessage("1", newItem);
             } else {
                 items.put(newItem, 1);
-                if(playerInventory.getCapacity() == 10) addItemToInventoryMessage("2", newItem);
+                if(inventory.getCapacity() == 10) addItemToInventoryMessage("2", newItem);
             }
-            playerInventory.setItems(items);
-            playerInventory.setCapacity(playerInventory.getCapacity() - 1);
+            inventory.setItems(items);
+            inventory.setCapacity(inventory.getCapacity() - 1);
         } else {
             addItemToInventoryMessage("3", newItem);
         }
-        return playerInventory;
+        return inventory;
     }
 
     public static Inventory removeItemFromInventory(Inventory inventory, Item itemToRemove){
