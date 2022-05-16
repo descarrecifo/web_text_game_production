@@ -14,10 +14,10 @@ public class InventoryController {
         if (playerInventory.getCapacity() > 0) {
             if (compareItems(playerInventory.getItems(), newItem)) {
                 items.replace(newItem, items.get(newItem) + 1);
-                addItemToInventoryMessage("1", newItem);
+                if(playerInventory.getCapacity() == 10) addItemToInventoryMessage("1", newItem);
             } else {
                 items.put(newItem, 1);
-                addItemToInventoryMessage("2", newItem);
+                if(playerInventory.getCapacity() == 10) addItemToInventoryMessage("2", newItem);
             }
             playerInventory.setItems(items);
             playerInventory.setCapacity(playerInventory.getCapacity() - 1);

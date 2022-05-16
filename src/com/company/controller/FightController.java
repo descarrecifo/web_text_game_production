@@ -5,13 +5,14 @@ import com.company.model.Player;
 
 import static com.company.controller.CharacterController.createEnemyPlaceholder;
 import static com.company.service.FightService.initialTurn;
+import static com.company.view.FightView.enemyPresentationMessage;
 
 
 public class FightController {
 
     public static Player fighting(Player player) {
         NPC enemy = createEnemyPlaceholder();
-        System.out.println("Your enemy is a "+enemy.getName());
+        enemyPresentationMessage(enemy);
         initialTurn(enemy, player, true);
         return player;
     }

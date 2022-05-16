@@ -22,13 +22,4 @@ public class FrontController {
             case "4" -> shopping(player);
         }
     }
-
-//    public static boolean isCreated(){
-//        Player player = null;
-//        if(player == null){
-//            return false;
-//        }else{
-//            return true;
-//        }
-//    }
 }

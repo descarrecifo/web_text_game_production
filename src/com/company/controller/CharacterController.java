@@ -10,6 +10,7 @@ import java.util.Random;
 
 import static com.company.service.InventoryService.createItem;
 
+import static com.company.view.CharacterView.presentationText;
 import static com.company.view.IOView.gameLoopView;
 
 public class
@@ -31,7 +32,7 @@ CharacterController {
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                gameLoopView(player);
+                presentationText(player);
             }
 
             case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15, "Mage", 5);
@@ -42,7 +43,7 @@ CharacterController {
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                gameLoopView(player);
+                presentationText(player);
             }
 
             case "Monk" ->  {Player player = new Player(name, 1, playerInventory, 90, 15, 10, 25, 25, "Monk", 5);
@@ -53,7 +54,7 @@ CharacterController {
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                gameLoopView(player);
+                presentationText(player);
             }
 
             case "Paladin" ->  {Player player = new Player(name, 1, playerInventory, 120, 15, 15, 15, 10, "Paladin", 5);
@@ -64,7 +65,7 @@ CharacterController {
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                gameLoopView(player);
+                presentationText(player);
             }
 
             case "Ranger" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25, "Hunter", 5);
@@ -75,7 +76,7 @@ CharacterController {
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                gameLoopView(player);
+                presentationText(player);
             }
 
             case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15, "Warrior", 5);
@@ -86,7 +87,7 @@ CharacterController {
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                gameLoopView(player);
+                presentationText(player);
             }
         }
     }
@@ -97,6 +98,7 @@ CharacterController {
         int value = new Random().nextInt((9-1)+1);
 
         HashMap<String, Integer> itemHabilities = new HashMap<>();
+
         itemHabilities.put("attack", 0);
         itemHabilities.put("defense", 0);
         itemHabilities.put("speed", 0);
@@ -113,7 +115,6 @@ CharacterController {
             case 8 -> enemy = new NPC("Wendigo", 5, fur, 25, 25, 5, 25, 5, null, 0);
             default -> enemy = new NPC("Soldier", 5, createItem(), 50, 25, 15, 5, 10, null, 15);
         }
-
         return enemy;
     }
 

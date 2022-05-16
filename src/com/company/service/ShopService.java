@@ -37,8 +37,7 @@ public class ShopService {
                         moneyMessage("2", player, null);
                         removeItemFromInventory(shopInventory, item);
                         break;
-                    } else
-                    shopMessage(2, item.getName(), price);
+                    } else shopMessage(2, item.getName(), price);
                 }
             }
         } else {
