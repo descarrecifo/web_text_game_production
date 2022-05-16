@@ -7,9 +7,9 @@ import com.company.model.Player;
 
 import static com.company.controller.CharacterController.createPlayer;
 import static com.company.controller.InventoryController.addItemToInventory;
-import static com.company.service.FightService.enemyLevel;
+//import static com.company.service.FightService.enemyLevel;
 import static com.company.view.IOView.createCharacter;
-import static com.company.view.IOView.optionsMainMenu;
+//import static com.company.view.IOView.optionsMainMenu;
 
 import static com.company.controller.CharacterController.createEnemyPlaceholder;
 //import static com.company.service.FightService.fightDevelopment;
