@@ -33,7 +33,7 @@ public class InventoryView {
         });
 //                "key: %s, value: %d%n", k, v));
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(" ");
+        System.out.println();
         System.out.println("Choose an item number to equip. Press 0 to return to Game Menu");
     }
 

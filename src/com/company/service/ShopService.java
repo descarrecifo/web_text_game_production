@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import static com.company.controller.InventoryController.addItemToInventory;
 import static com.company.controller.InventoryController.removeItemFromInventory;
 import static com.company.view.CharacterView.moneyMessage;
+import static com.company.view.ShopView.buyingAndSelling;
 import static com.company.view.ShopView.shopMessage;
 
 public class ShopService {
@@ -24,32 +25,45 @@ public class ShopService {
         return totalPrice;
     }
 
-    public static void shoppingAction(int value, Inventory shopInventory, int itemIndex, Player player) {
+    public static void shoppingAction(int value, Inventory shopInventory, int itemIndex, Player player, int quantity) {
         if (value == 1) {
             System.out.println();
             for (Item item : new ArrayList<>(shopInventory.getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
-                    int price = itemPriceCalculation(1, item);
+                    int price = itemPriceCalculation(1, item) * quantity;
                     if (player.getMoney() >= price) {
-                        shopMessage(1, item.getName(), price);
-                        addItemToInventory(player.getInventory().getItems(), player.getInventory(), item);
+                        shopMessage(1, item.getName(), price, quantity);
+                        for(int i = 0; i<quantity; i++){
+                            addItemToInventory(player.getInventory().getItems(), player.getInventory(), item);
+                        }
                         player.setMoney(player.getMoney() - price);
                         moneyMessage("2", player, null);
                         removeItemFromInventory(shopInventory, item);
-                        break;
-                    } else shopMessage(2, item.getName(), price);
+                        buyingAndSelling(shopInventory, player, value);
+                    } else {
+                        shopMessage(2, item.getName(), price, quantity);
+                        buyingAndSelling(shopInventory, player, value);
+                    }
                 }
             }
         } else {
             System.out.println();
             for (Item item : new ArrayList<>(player.getInventory().getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
-                    int price = itemPriceCalculation(2, item);
-                    shopMessage(1, item.getName(), price);
-                    addItemToInventory(shopInventory.getItems(), shopInventory, item);
-                    player.setMoney(player.getMoney() + price);
-                    moneyMessage("2", player, null);
-                    removeItemFromInventory(player.getInventory(), item);
+                    if(player.getInventory().getItems().get(item) < quantity) {
+                        shopMessage(2, item.getName(), 0, quantity);
+                        buyingAndSelling(shopInventory, player, value);
+                    } else {
+                        int price = itemPriceCalculation(2, item) * quantity;
+                        shopMessage(1, item.getName(), price, quantity);
+                        for(int i = 0; i<quantity; i++){
+                            addItemToInventory(shopInventory.getItems(), shopInventory, item);
+                            removeItemFromInventory(player.getInventory(), item);
+                        }
+                        player.setMoney(player.getMoney() + price);
+                        moneyMessage("2", player, null);
+                        buyingAndSelling(shopInventory, player, value);
+                    }
                     break;
                 }
             }
