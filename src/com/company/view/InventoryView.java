@@ -50,9 +50,14 @@ public class InventoryView {
         while (true) {
             showInventory(player);
             String option = reader.nextLine();
-            if (Integer.parseInt(option) == 0) break;
-            else equippingObject(player, Integer.parseInt(option));
+            try {
+                if (Integer.parseInt(option) == 0) break;
+                else equippingObject(player, Integer.parseInt(option));
+            } catch (Exception e) {
+                System.out.println("Invalid option");
+            }
         }
     }
+
 }
 
