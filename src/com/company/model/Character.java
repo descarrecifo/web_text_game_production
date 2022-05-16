@@ -12,6 +12,10 @@ public class Character {
     private int speed;
     private int dexterity;
     private int money;
+    private int totalStrength;
+    private int totalDefense;
+    private int totalSpeed;
+    private int totalHealthPoints;
 
     public Character(){}
 
@@ -30,7 +34,7 @@ public class Character {
         this.charClass = charClass;
     }
 
-    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity){
+    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass){
         this.name = name;
         this.level = level;
         this.healthPoints = healthPoints;
@@ -38,9 +42,42 @@ public class Character {
         this.defense = defense;
         this.speed = speed;
         this.dexterity = dexterity;
+        this.charClass = charClass;
     }
 
-    public Character(String name,int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
+    public int getTotalStrength() {
+        return totalStrength;
+    }
+
+    public void setTotalStrength(int totalStrength) {
+        this.totalStrength = totalStrength;
+    }
+
+    public int getTotalDefense() {
+        return totalDefense;
+    }
+
+    public void setTotalDefense(int totalDefense) {
+        this.totalDefense = totalDefense;
+    }
+
+    public int getTotalSpeed() {
+        return totalSpeed;
+    }
+
+    public void setTotalSpeed(int totalSpeed) {
+        this.totalSpeed = totalSpeed;
+    }
+
+    public int getTotalHealthPoints() {
+        return totalHealthPoints;
+    }
+
+    public void setTotalHealthPoints(int totalHealthPoints) {
+        this.totalHealthPoints = totalHealthPoints;
+    }
+
+    public Character(String name, int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
         this.level = level;
         this.charClass = charClass;
         this.experiencePoints = experiencePoints;
