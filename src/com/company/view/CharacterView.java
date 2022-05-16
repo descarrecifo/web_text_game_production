@@ -17,6 +17,7 @@ public class CharacterView {
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Defense: "+YELLOW_BRIGHT+player.getDefense()+ANSI_RESET+"               "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Speed: "+YELLOW_BRIGHT+player.getSpeed()+ANSI_RESET+"                 "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Dexterity: "+YELLOW_BRIGHT+player.getDexterity()+ANSI_RESET+"             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Equip: "+YELLOW_BRIGHT+player.getDexterity()+ANSI_RESET+"             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+"                             "+ANSI_RESET);
         System.out.println(" ");
     }
