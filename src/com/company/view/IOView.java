@@ -46,7 +46,8 @@ public class IOView {
                 case "2" -> gameLoopController("2", player);
                 case "3" -> gameLoopController("3", player);
                 case "4" -> gameLoopController("4", player);
-                case "5" -> mainLoopView();
+                case "5" -> gameLoopController("5", player);
+                case "6" -> mainLoopView();
                 default -> System.out.println("Unknown command. Try again");
             }
         }
