@@ -26,12 +26,13 @@ public class ShopService {
     }
 
     public static void shoppingAction(int value, Inventory shopInventory, int itemIndex, Player player, int quantity) {
+        boolean found = false;
         if (value == 1) {
             System.out.println();
             for (Item item : new ArrayList<>(shopInventory.getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
                     int price = itemPriceCalculation(1, item) * quantity;
-                    if (player.getMoney() >= price) {
+                    if (player.getMoney() >= price && player.getInventory().getCapacity()>=quantity) {
                         shopMessage(1, item.getName(), price, quantity);
                         for(int i = 0; i<quantity; i++){
                             addItemToInventory(player.getInventory().getItems(), player.getInventory(), item);
@@ -39,11 +40,13 @@ public class ShopService {
                         player.setMoney(player.getMoney() - price);
                         moneyMessage("2", player, null);
                         removeItemFromInventory(shopInventory, item);
-                        buyingAndSelling(shopInventory, player, value);
                     } else {
                         shopMessage(2, item.getName(), price, quantity);
-                        buyingAndSelling(shopInventory, player, value);
                     }
+                    found = true;
+                }
+                if(found){
+                    break;
                 }
             }
         } else {
@@ -52,7 +55,6 @@ public class ShopService {
                 if (item.getIndex() == itemIndex) {
                     if(player.getInventory().getItems().get(item) < quantity) {
                         shopMessage(2, item.getName(), 0, quantity);
-                        buyingAndSelling(shopInventory, player, value);
                     } else {
                         int price = itemPriceCalculation(2, item) * quantity;
                         shopMessage(1, item.getName(), price, quantity);
@@ -62,8 +64,10 @@ public class ShopService {
                         }
                         player.setMoney(player.getMoney() + price);
                         moneyMessage("2", player, null);
-                        buyingAndSelling(shopInventory, player, value);
                     }
+                    found = true;
+                }
+                if(found){
                     break;
                 }
             }

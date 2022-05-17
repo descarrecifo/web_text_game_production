@@ -29,7 +29,7 @@ public class ShopView {
     public static void showShopInventory(Inventory shopInventory, int value) {
         AtomicInteger i = new AtomicInteger(1);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                    " + BRONZE_UNDERLINED + ANSI_BOLD + "SHOP INVENTORY" + ANSI_RESET + "                   " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                     " + BRONZE_UNDERLINED + ANSI_BOLD + "SHOP INVENTORY" + ANSI_RESET + "                   " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         shopInventory.getItems().forEach((k, v) -> {
             k.setIndex(i.intValue());
@@ -37,21 +37,20 @@ public class ShopView {
                     + k.getInventoryName() + ANSI_RESET + " | Quantity: x" + YELLOW_BRIGHT + v + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
                     + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Description: " + YELLOW_BRIGHT + k.getDescription() + ANSI_RESET + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
                     + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Price: " + YELLOW_BRIGHT + ((value == 1) ? itemPriceCalculation(1, k) : itemPriceCalculation(2, k)) + ANSI_RESET + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
-            if (k.getItemProperties().get("attack") != 0) {
-                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + k.getItemProperties().get("attack") + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+            if (k.getStrength() != 0) {
+                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + k.getStrength() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
             }
-            if (k.getItemProperties().get("defense") != 0) {
-                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Defense: " + YELLOW_BRIGHT + k.getItemProperties().get("defense") + "                                        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+            if (k.getDefense() != 0) {
+                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Defense: " + YELLOW_BRIGHT + k.getDefense() + "                                        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
             }
-            if (k.getItemProperties().get("speed") != 0) {
-                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Speed: " + YELLOW_BRIGHT + k.getItemProperties().get("speed") + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+            if (k.getSpeed() != 0) {
+                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Speed: " + YELLOW_BRIGHT + k.getSpeed() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
             }
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         });
 //                "key: %s, value: %d%n", k, v));
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
         System.out.println(" ");
-        System.out.println("Choose an item number to " + ((value != 1) ? "sell" : "buy") + ". Press 0 to return to Shop Menu");
     }
 
     public static void buyingAndSelling(Inventory shopInventory, Player player, int value) {
@@ -59,14 +58,13 @@ public class ShopView {
         while (true) {
             if (value == 1) showShopInventory(shopInventory, value);
             else showShopInventory(player.getInventory(), value);
-            String option = reader.nextLine();
+            String option = ask(reader, "Choose an item number to " + ((value != 1) ? "sell" : "buy") + ". Press 0 to return to Shop Menu");
             try {
                 if (Integer.parseInt(option) == 0) break;
                 else {
                     int quantity = Integer.parseInt(ask(reader, "How many items do you want to " + ((value != 1) ? "sell" : "buy") + "?"));
                     if (quantity < 1) {
                         System.out.println("The quantity needs to be at least 1");
-                        buyingAndSelling(shopInventory, player, value);
                     }
                     else {
                         if (value == 1) {
@@ -74,17 +72,12 @@ public class ShopView {
                         } else {
                             shoppingAction(2, shopInventory, Integer.parseInt(option), player, quantity);
                         }
-                        if (value == 1) showShopInventory(shopInventory, value);
-                        else showShopInventory(player.getInventory(), value);
-
                     }
                 }
-
             } catch (Exception e) {
                 System.out.println("Invalid option");
             }
         }
-
     }
 
     public static void shopping(Player player) {

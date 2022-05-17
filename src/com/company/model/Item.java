@@ -7,28 +7,49 @@ public class Item {
             inventoryName,
             type,
             description;
-    private int price, index;
-    private HashMap<String, Integer> itemProperties;
+    private int price,
+            index,
+            strength,
+            defense,
+            speed;
 
     public Item(){
     }
 
 
-    public Item(String name , String inventoryName , String type , String description , int price , HashMap<String, Integer> itemProperties){
+    public Item(String name , String inventoryName , String type , String description , int price , int strength, int defense, int speed){
         this.name = name;
         this.inventoryName = inventoryName;
         this.type = type;
         this.description = description;
         this.price = price;
-        this.itemProperties = itemProperties;
+        this.strength = strength;
+        this.defense = defense;
+        this.speed = speed;
     }
 
-    public HashMap<String, Integer> getItemProperties() {
-        return itemProperties;
+    public int getStrength() {
+        return strength;
     }
 
-    public void setItemProperties(HashMap<String, Integer> itemProperties) {
-        this.itemProperties = itemProperties;
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 
     public int getIndex() {
@@ -75,6 +96,8 @@ public class Item {
     public void setPrice(int price) {
         this.price = price;
     }
+
+
 
     @Override
     public boolean equals(Object o)

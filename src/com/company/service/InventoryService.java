@@ -22,60 +22,29 @@ public class InventoryService {
 
         switch (value) {
             case 1 -> {
-                itemProperties.put("attack", 0);
-                itemProperties.put("defense", 1);
-                itemProperties.put("speed", 0);
-                reward = new Item("Tunic", "Tunic         ", "cloth", "A simple tunic                       ", 2, itemProperties);
+                reward = new Item("Tunic", "Tunic         ", "cloth", "A simple tunic                       ", 2, 0, 1, 0);
             }
             case 2 -> {
-                itemProperties.put("attack", 1);
-                itemProperties.put("defense", 0);
-                itemProperties.put("speed", 0);
-                reward = new Item("Wooden stick", "Wooden stick  ", "weapon", "A simple stick made of wood          ", 1, itemProperties);
+                reward = new Item("Wooden stick", "Wooden stick  ", "weapon", "A simple stick made of wood          ", 1, 1, 0, 0);
             }
             case 3 -> {
-                itemProperties.put("attack", 4);
-                itemProperties.put("defense", 0);
-                itemProperties.put("speed", 0);
-                reward = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7, itemProperties);
+                reward = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7, 4, 0, 0);
             }
             case 4 -> {
-                itemProperties.put("attack", 2);
-                itemProperties.put("defense", 0);
-                itemProperties.put("speed", 0);
-                reward = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4, itemProperties);
+                reward = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4, 2, 0, 0);
             }
             case 5 -> {
-                itemProperties.put("attack", 0);
-                itemProperties.put("defense", 7);
-                itemProperties.put("speed", -2);
-                reward = new Item("Great armour", "Great armour  ", "armour", "A heavy armour with a good defense   ", 15, itemProperties);
+                reward = new Item("Great armour", "Great armour  ", "armour", "A heavy armour with a good defense   ", 15, 0, 7, -2);
             }
             case 6 -> {
-                itemProperties.put("attack", 0);
-                itemProperties.put("defense", 2);
-                itemProperties.put("speed", 0);
-                reward = new Item("Helmet", "Helmet        ", "armour", "A basic iron helmet                  ", 5, itemProperties);
+                reward = new Item("Helmet", "Helmet        ", "armour", "A basic iron helmet                  ", 5, 0, 2, 0);
             }
             case 7 -> {
-                itemProperties.put("attack" , 2);
-                itemProperties.put("defense" , 0);
-                itemProperties.put("speed" , 0);
-                reward = new Item("Dagger", "Dagger        ", "weapon", "A simple dagger                      ", 3 , itemProperties);
+                reward = new Item("Dagger", "Dagger        ", "weapon", "A simple dagger                      ", 3 , 2, 0, 0);
             }
-            default -> reward = new Item("Healing herb", "Healing herb  ", "herb", "This herb has medicinal capabilities ", 1, basicItemPropertiesHashmap());
+            default -> reward = new Item("Healing herb", "Healing herb  ", "herb", "This herb has medicinal capabilities ", 1, 0, 0, 0);
         }
         return reward;
-    }
-
-    public static HashMap<String, Integer> basicItemPropertiesHashmap(){
-        HashMap<String, Integer> itemProperties = new HashMap<>();
-
-        itemProperties.put("attack", 0);
-        itemProperties.put("defense", 0);
-        itemProperties.put("speed", 0);
-
-        return itemProperties;
     }
 
     public static boolean compareItems(HashMap<Item, Integer> items, Item newItemToAdd) {

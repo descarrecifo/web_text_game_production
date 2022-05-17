@@ -24,7 +24,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 5, "Health potion", "Health potion ", "A potion with medicinal capabilities ", 5, ingredientItem, ingredientName);
+                itemCrafted(player, quantity, 5, "Health potion", "Health potion ", "A potion with medicinal capabilities ", 5, ingredientItem, ingredientName, "Potion");
             }
             case 2 -> {
                 ingredientName = "Clay";
@@ -34,7 +34,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 10, "Golem arm", "Golem arm    ", "The arm of a Golem                   ", 20, ingredientItem, ingredientName);
+                itemCrafted(player, quantity, 10, "Golem arm", "Golem arm    ", "The arm of a Golem                   ", 20, ingredientItem, ingredientName, "Constructor");
             }
             case 3 -> {
                 ingredientName = "Clay";
@@ -44,7 +44,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 10, "Golem leg", "Golem leg    ", "The leg of a Golem                   ", 20, ingredientItem, ingredientName);
+                itemCrafted(player, quantity, 10, "Golem leg", "Golem leg    ", "The leg of a Golem                   ", 20, ingredientItem, ingredientName, "Constructor");
             }
             case 4 -> {
                 ingredientName = "Clay";
@@ -54,7 +54,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 10, "Golem head", "Golem head   ", "The head of a Golem                  ", 20, ingredientItem, ingredientName);
+                itemCrafted(player, quantity, 10, "Golem head", "Golem head   ", "The head of a Golem                  ", 20, ingredientItem, ingredientName, "Constructor");
             }
             case 5 -> {
                 ingredientName = "Clay";
@@ -64,7 +64,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 20, "Golem body", "Golem body   ", "The body of a Golem                  ", 40, ingredientItem, ingredientName);
+                itemCrafted(player, quantity, 20, "Golem body", "Golem body   ", "The body of a Golem                  ", 40, ingredientItem, ingredientName, "Constructor");
             }
         }
     }

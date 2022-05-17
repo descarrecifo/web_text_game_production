@@ -8,7 +8,6 @@ import com.company.model.Player;
 import java.util.HashMap;
 import java.util.Random;
 
-import static com.company.service.InventoryService.basicItemPropertiesHashmap;
 import static com.company.service.InventoryService.createItem;
 
 import static com.company.view.CharacterView.presentationText;
@@ -25,10 +24,7 @@ CharacterController {
 
         switch (charClass){
             case "Cleric" ->  {Player player = new Player(name, 1, playerInventory, 100, 100, 10, 15, 20, 20, "Cleric", 5);
-                itemProperties.put("attack" , 0);
-                itemProperties.put("defense" , 1);
-                itemProperties.put("speed" , 0);
-                Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2 , itemProperties);
+                Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2 , 0, 1, 0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -36,10 +32,7 @@ CharacterController {
             }
 
             case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 100, 10, 15, 25, 15, "Mage", 5);
-                itemProperties.put("attack" , 0);
-                itemProperties.put("defense" , 1);
-                itemProperties.put("speed" , 0);
-                Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2 , itemProperties);
+                Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2 , 0, 1, 0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -47,10 +40,7 @@ CharacterController {
             }
 
             case "Monk" ->  {Player player = new Player(name, 1, playerInventory, 90, 90, 15, 10, 25, 25, "Monk", 5);
-                itemProperties.put("attack", 1);
-                itemProperties.put("defense", 0);
-                itemProperties.put("speed", 0);
-                Item newItem = new Item("Wooden stick", "Wooden stick  ", "weapon", "A simple stick made of wood          ", 1, itemProperties);
+                Item newItem = new Item("Wooden stick", "Wooden stick  ", "weapon", "A simple stick made of wood          ", 1, 1, 0, 0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -58,10 +48,7 @@ CharacterController {
             }
 
             case "Paladin" ->  {Player player = new Player(name, 1, playerInventory, 120, 120, 15, 15, 15, 10, "Paladin", 5);
-                itemProperties.put("attack" , 4);
-                itemProperties.put("defense" , 0);
-                itemProperties.put("speed" , 0);
-                Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7 , itemProperties);
+                Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7 , 4, 0, 0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -69,10 +56,7 @@ CharacterController {
             }
 
             case "Ranger" ->  {Player player = new Player(name, 1, playerInventory, 100, 100, 10, 10, 20, 25, "Hunter", 5);
-                itemProperties.put("attack" , 2);
-                itemProperties.put("defense" ,0);
-                itemProperties.put("speed" , 0);
-                Item newItem = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4 , itemProperties);
+                Item newItem = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4 , 2, 0, 0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -80,10 +64,7 @@ CharacterController {
             }
 
             case "Rogue" -> {Player player = new Player(name, 1, playerInventory, 90, 90, 15, 15, 20, 25, "Rogue", 5);
-                itemProperties.put("attack" , 2);
-                itemProperties.put("defense" , 0);
-                itemProperties.put("speed" , 0);
-                Item newItem = new Item("Dagger", "Dagger        ", "weapon", "A simple dagger                      ", 3 , itemProperties);
+                Item newItem = new Item("Dagger", "Dagger        ", "weapon", "A simple dagger                      ", 3 , 2, 0, 0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -91,10 +72,7 @@ CharacterController {
             }
 
             case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 100, 25, 15, 10, 15, "Warrior", 5);
-                itemProperties.put("attack" , 4);
-                itemProperties.put("defense" , 0);
-                itemProperties.put("speed" , 0);
-                Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7 , itemProperties);
+                Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7 , 4, 0, 0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 playerInventory.setCapacity(playerInventory.getCapacity() - 1);
@@ -108,8 +86,8 @@ CharacterController {
 
         int value = new Random().nextInt((10-1)+1);
 
-        Item fur = new Item("Fur", "Fur           ", "material", "The fur of an wild animal            ", 1, basicItemPropertiesHashmap());
-        Item clay = new Item("Clay", "Clay          ", "material", "A handful of clay                    ", 1, basicItemPropertiesHashmap());
+        Item fur = new Item("Fur", "Fur           ", "material", "The fur of an wild animal            ", 1, 0, 0, 0);
+        Item clay = new Item("Clay", "Clay          ", "material", "A handful of clay                    ", 1, 0, 0, 0);
 
         switch (value){
             case 1 -> enemy = new NPC("Goblin", 5, createItem(), 20, 20, 20, 5, 25, 25, null, 5);
