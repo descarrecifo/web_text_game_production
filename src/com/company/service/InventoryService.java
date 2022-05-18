@@ -10,6 +10,7 @@ import java.util.Random;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.YELLOW_BRIGHT;
 import static com.company.view.InventoryView.inventoryUseItem;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class InventoryService {
 
@@ -64,11 +65,20 @@ public class InventoryService {
             if (item.getIndex() == option){
                 System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
                 player.getInventory().getItems().replace(item, player.getInventory().getItems().get(item) - 1);
+                equippingPlayer(player , item);
                 if (player.getInventory().getItems().get(item) < 1) {
                     player.getInventory().getItems().remove(item);
                 }
             }
         }
+    }
+
+    public static void equippingPlayer(Player player , Item item) {
+
+        AtomicInteger ainteger= new AtomicInteger();
+        String valorParseado = ainteger.toString();
+        player.getEquipment().put(valorParseado, item);
+        ainteger.getAndIncrement();
     }
 }
 
