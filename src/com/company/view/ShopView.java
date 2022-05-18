@@ -65,8 +65,7 @@ public class ShopView {
                     int quantity = Integer.parseInt(ask(reader, "How many items do you want to " + ((value != 1) ? "sell" : "buy") + "?"));
                     if (quantity < 1) {
                         System.out.println("The quantity needs to be at least 1");
-                    }
-                    else {
+                    }else {
                         if (value == 1) {
                             shoppingAction(1, shopInventory, Integer.parseInt(option), player, quantity);
                         } else {
@@ -98,7 +97,7 @@ public class ShopView {
         switch (value) {
             case 1 -> System.out.println("The chosen object is " + YELLOW_BRIGHT + itemName + ANSI_RESET + ", its quantity is " + YELLOW_BRIGHT + quantity + ANSI_RESET + " and its price is " + YELLOW_BRIGHT + price + ANSI_RESET);
             case 2 -> System.out.println("You don't have enough money for buy " + YELLOW_BRIGHT + quantity + ANSI_RESET + ((quantity == 1) ? " unit " : " units ") + YELLOW_BRIGHT + itemName + ANSI_RESET);
-            case 3 -> System.out.println("You don't have "+quantity+" of "+itemName+" to sell.");
+            case 3 -> System.out.println("You don't have "+YELLOW_BRIGHT + quantity + ANSI_RESET+" of "+ YELLOW_BRIGHT +itemName+ ANSI_RESET +" to sell.");
         }
     }
 }

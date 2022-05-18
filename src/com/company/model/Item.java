@@ -1,7 +1,5 @@
 package com.company.model;
 
-import java.util.HashMap;
-
 public class Item {
     private String name,
             inventoryName,
@@ -12,12 +10,14 @@ public class Item {
             strength,
             defense,
             speed;
+    boolean equippable,
+            usable;
 
     public Item(){
     }
 
 
-    public Item(String name , String inventoryName , String type , String description , int price , int strength, int defense, int speed){
+    public Item(String name , String inventoryName , String type , String description , int price , int strength, int defense, int speed, boolean equippable, boolean usable){
         this.name = name;
         this.inventoryName = inventoryName;
         this.type = type;
@@ -97,7 +97,13 @@ public class Item {
         this.price = price;
     }
 
+    public boolean isEquippable() {return equippable;}
 
+    public void setEquippable(boolean equippable) {this.equippable = equippable;}
+
+    public boolean isUsable() {return usable;}
+
+    public void setUsable(boolean usable) {this.usable = usable;}
 
     @Override
     public boolean equals(Object o)

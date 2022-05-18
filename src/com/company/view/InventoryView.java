@@ -6,7 +6,7 @@ import com.company.model.Player;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.company.service.InventoryService.equippingObject;
+import static com.company.service.InventoryService.equippingOrUsingObject;
 import static com.company.utils.Utilities.*;
 
 public class InventoryView {
@@ -52,7 +52,7 @@ public class InventoryView {
             String option = reader.nextLine();
             try {
                 if (Integer.parseInt(option) == 0) break;
-                else equippingObject(player, Integer.parseInt(option));
+                else equippingOrUsingObject(player, Integer.parseInt(option));
             } catch (Exception e) {
                 System.out.println("Invalid option");
             }

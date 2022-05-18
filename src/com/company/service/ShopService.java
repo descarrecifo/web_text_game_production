@@ -54,7 +54,7 @@ public class ShopService {
             for (Item item : new ArrayList<>(player.getInventory().getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
                     if(player.getInventory().getItems().get(item) < quantity) {
-                        shopMessage(2, item.getName(), 0, quantity);
+                        shopMessage(3, item.getName(), 0, quantity);
                     } else {
                         int price = itemPriceCalculation(2, item) * quantity;
                         shopMessage(1, item.getName(), price, quantity);

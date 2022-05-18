@@ -19,28 +19,37 @@ public class CraftView {
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3- Golem leg                       "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4- Golem head                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 5- Golem body                      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 6- Leather                         "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 7- Leather helmet                  "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 8- Leather gloves                  "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 9- Leather boots                   "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 10- Leather armour                 "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                      "+ANSI_RESET);
         System.out.println();
-        System.out.println("Choose what item you want to craft. Press 0 to return to Game Menu");
     }
 
     public static void craftingOption(Player player){
         Scanner reader = new Scanner(System.in);
         while (true){
             craftMenuView();
-            String option = reader.nextLine();
+            String option = ask(reader, "Choose what item you want to craft. Press 0 to return to Game Menu");
             try {
                 if (Integer.parseInt(option) == 0) break;
-                else crafting(player, Integer.parseInt(option));
+                else {
+                    int quantity = Integer.parseInt(ask(reader, "How many items do you want to craft?"));
+                    if (quantity < 1) {
+                        System.out.println("The quantity needs to be at least 1");
+                    }else crafting(player, Integer.parseInt(option), quantity);
+                }
             } catch (Exception e) {
                 System.out.println("Invalid option");
             }
         }
     }
 
-    public static void craftingMessages(int value, String craftedItemName, int inventoryQuantity, int necessaryQuantity, String ingredientName){
+    public static void craftingMessages(int value, String craftedItemName, int inventoryQuantity, int necessaryQuantity, String ingredientName, int craftQuantity){
         switch (value){
-            case 1 -> System.out.println("You don't have enough ingredients, you need "+YELLOW_BRIGHT +(necessaryQuantity-inventoryQuantity)+ ANSI_RESET+" more of "+YELLOW_BRIGHT +ingredientName+ ANSI_RESET+" to craft a "+YELLOW_BRIGHT +craftedItemName+ ANSI_RESET);
+            case 1 -> System.out.println("You don't have enough ingredients, you need "+YELLOW_BRIGHT +(necessaryQuantity-inventoryQuantity)+ ANSI_RESET+" more of "+YELLOW_BRIGHT +ingredientName+ ANSI_RESET+" to craft "+craftQuantity+" "+YELLOW_BRIGHT +craftedItemName+ ANSI_RESET);
         }
     }
 }
