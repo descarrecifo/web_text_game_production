@@ -2,7 +2,6 @@ package com.company.service;
 
 import com.company.model.Item;
 import com.company.model.Player;
-import com.company.view.InventoryView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,8 +18,6 @@ public class InventoryService {
         int value = new Random().nextInt((8 - 1) + 1);
 
         var reward = new Item();
-
-        HashMap<String, Integer> itemProperties = new HashMap<>();
 
         switch (value) {
             case 1 -> reward = new Item("Tunic", "Tunic         ", "cloth", "A simple tunic                       ", 2, 0, 1, 0, true, false);
