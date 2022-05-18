@@ -1,4 +1,4 @@
-/*
+
 package com.company.view;
 
 import com.company.model.Player;
@@ -8,8 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static com.company.utils.Utilities.*;
 
 public class EquippmentView {
-    public static void showEquipmentView(Player player) {
 
+    public static void showEquippmentView(Player player) {
+        System.out.println(player.getEquipment());
         if(!player.getEquipment().isEmpty()){
             AtomicInteger i = new AtomicInteger(1);
             System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
@@ -37,7 +38,6 @@ public class EquippmentView {
         } else {
             System.out.println("Equippment is empty");
         }
-
     }
 }
-*/
+

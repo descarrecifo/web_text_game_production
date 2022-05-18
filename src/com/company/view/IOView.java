@@ -10,6 +10,7 @@ import static com.company.controller.CharacterController.createPlayer;
 import static com.company.frontcontroller.FrontController.gameLoopController;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.BRONZE_UNDERLINED;
+import static com.company.view.CharacterView.showCharacter;
 import static com.company.view.CharacterView.showClass;
 import static com.company.view.InventoryView.showInventory;
 import static com.company.view.Menu.*;
@@ -82,5 +83,39 @@ public class IOView {
         //Exit program
         System.out.println("We hope to see you soon, adventurer!");
         System.exit(0);
+    }
+
+    public static void menuCharacterChoose(Player player) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("MENU CHARACTER");
+            System.out.println("1- Details Character");
+            System.out.println("2- Equipment");
+            System.out.println("0- Return back menu");
+            String valueChoose = scanner.nextLine();
+            switch (valueChoose) {
+                case "1" -> {
+                    showCharacter(player);
+                    System.out.print("Press any key to return to Menu Character Choose");
+                    valueChoose = scanner.nextLine();
+                    menuCharacterChoose(player);
+                    break;
+
+                }
+                case "2" -> {
+                    EquippmentView.showEquippmentView(player);
+                    System.out.println("Menu equipment");
+                    System.out.print("Press any key to return to  Menu Character Choose");
+                    valueChoose = scanner.nextLine();
+                    menuCharacterChoose(player);
+                    break;
+                }
+                case "0" -> {
+                    gameLoopView(player);
+                    break;
+                }
+                default -> System.out.println("Unknown command. Try again");
+            }
+        }
     }
 }
