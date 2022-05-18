@@ -26,6 +26,8 @@ public class Item {
         this.strength = strength;
         this.defense = defense;
         this.speed = speed;
+        this.equippable = equippable;
+        this.usable = usable;
     }
 
     public int getStrength() {
@@ -147,7 +149,9 @@ public class Item {
                 ", type='" + type + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price + '\'' +
-                ", index=" + index +
+                ", index=" + index + '\'' +
+                ", equippable=" + equippable + '\'' +
+                ", usable=" + usable + '\'' +
                 '}';
     }
 }

@@ -58,5 +58,12 @@ public class InventoryView {
             }
         }
     }
+
+    public static void inventoryMessage(int value, Item item){
+        switch (value){
+            case 1 -> System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
+            case 2 -> System.out.println("You cannot use or equip this item.");
+        }
+    }
 }
 
