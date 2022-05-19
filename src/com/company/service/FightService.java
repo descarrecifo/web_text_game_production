@@ -73,16 +73,6 @@ public class FightService {
         }
     }
 
-//    public static boolean attackSuccess(Character attacker, Character defender) {
-//        Random r = new Random();
-//        int probability = r.nextInt(15 - 1) + 1;
-//        int result;
-//        if(attacker.getDexterity() == defender.getDexterity()){
-//            result = 5;
-//        }else result = attacker.getDexterity() - defender.getDexterity();
-//        return (result >= probability);
-//    }
-
     public static boolean attackSuccess(Character attacker, Character defender) {
         Random r = new Random();
         int dexterityDif = attacker.getDexterity() - defender.getDexterity();

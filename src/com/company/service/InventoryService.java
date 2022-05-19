@@ -2,6 +2,7 @@ package com.company.service;
 
 import com.company.model.Item;
 import com.company.model.Player;
+import com.company.view.EquipmentView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,47 +10,27 @@ import java.util.Random;
 
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.YELLOW_BRIGHT;
-import static com.company.view.InventoryView.inventoryUseItem;
 
 public class InventoryService {
 
     public static Item createItem() {
         int value = new Random().nextInt((5 - 1) + 1);
-
         var reward = new Item();
-
-        HashMap<String, Integer> itemHabilities = new HashMap<>();
-
         switch (value) {
             case 1 -> {
-                itemHabilities.put("attack", 0);
-                itemHabilities.put("defense", 1);
-                itemHabilities.put("speed", 0);
-                reward = new Item("Tunic", "Tunic         ", "cloth", "A simple tunic                       ", 2, itemHabilities);
+                reward = new Item("Tunic", "Tunic         ", "cloth", "A simple tunic                       ", 2, 0,1,0);
             }
             case 2 -> {
-                itemHabilities.put("attack", 1);
-                itemHabilities.put("defense", 0);
-                itemHabilities.put("speed", 0);
-                reward = new Item("Wooden stick", "Wooden stick  ", "weapon", "A simple stick made of wood          ", 1, itemHabilities);
+                reward = new Item("Wooden stick", "Wooden stick  ", "weapon", "A simple stick made of wood          ", 1, 1,0,0);
             }
             case 3 -> {
-                itemHabilities.put("attack", 4);
-                itemHabilities.put("defense", 0);
-                itemHabilities.put("speed", 0);
-                reward = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7, itemHabilities);
+                reward = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7, 4,0,0);
             }
             case 4 -> {
-                itemHabilities.put("attack", 2);
-                itemHabilities.put("defense", 0);
-                itemHabilities.put("speed", 0);
-                reward = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4, itemHabilities);
+                reward = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4, 2,0,0);
             }
             default -> {
-                itemHabilities.put("attack", 0);
-                itemHabilities.put("defense", 0);
-                itemHabilities.put("speed", 0);
-                reward = new Item("Healing herb", "Healing herb  ", "herb", "This herb has medicinal capabilities ", 1, itemHabilities);
+                reward = new Item("Healing herb", "Healing herb  ", "herb", "This herb has medicinal capabilities ", 1,0,0,0);
             }
         }
         return reward;
@@ -64,12 +45,14 @@ public class InventoryService {
             if (item.getIndex() == option){
                 System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
                 player.getInventory().getItems().replace(item, player.getInventory().getItems().get(item) - 1);
+                EquipmentService.equippingPlayer(player , item);
                 if (player.getInventory().getItems().get(item) < 1) {
                     player.getInventory().getItems().remove(item);
                 }
             }
         }
     }
+
 }
 
 

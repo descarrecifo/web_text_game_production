@@ -10,8 +10,8 @@ import static com.company.controller.CharacterController.createPlayer;
 import static com.company.frontcontroller.FrontController.gameLoopController;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.BRONZE_UNDERLINED;
+import static com.company.view.CharacterView.showCharacter;
 import static com.company.view.CharacterView.showClass;
-import static com.company.view.InventoryView.showInventory;
 import static com.company.view.Menu.*;
 
 
@@ -28,7 +28,7 @@ public class IOView {
             String keyMenuMain = reader.nextLine();
             switch (keyMenuMain) {
                 case "1" -> mainLoopController("1");
-                case "2" -> finishGameView();
+                case "0" -> finishGameView();
                 default -> System.out.println("Unknown command. Try again");
             }
         }
@@ -47,7 +47,7 @@ public class IOView {
                 case "1" -> gameLoopController("1", player);
                 case "2" -> gameLoopController("2", player);
                 case "3" -> gameLoopController("3", player);
-                case "4" -> mainLoopView();
+                case "0" -> mainLoopView();
                 default -> System.out.println("Unknown command. Try again");
             }
         }
@@ -83,4 +83,6 @@ public class IOView {
         System.out.println("We hope to see you soon, adventurer!");
         System.exit(0);
     }
+
+
 }

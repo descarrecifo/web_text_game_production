@@ -1,35 +1,52 @@
 package com.company.model;
 
-import java.util.HashMap;
-
 public class Item {
     private String name;
     private String inventoryName;
     private String type;
     private String description;
     private int price;
-    private HashMap<String, Integer> itemHabilities;
     private int index;
+    private int strength; // additional attack
+    private int speed ;   // additional speed
+    private int defense;  // additional defense
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }
 
     public Item(){
     }
 
-
-    public Item(String name , String inventoryName , String type , String description , int price , HashMap<String, Integer> itemHabilities){
+    public Item(String name , String inventoryName , String type , String description , int price, int strength,int defense,int speed){
         this.name = name;
         this.inventoryName = inventoryName;
         this.type = type;
         this.description = description;
         this.price = price;
-        this.itemHabilities = itemHabilities;
-    }
-
-    public HashMap<String, Integer> getItemHabilities() {
-        return itemHabilities;
-    }
-
-    public void setItemHabilities(HashMap<String, Integer> itemHabilities) {
-        this.itemHabilities = itemHabilities;
+        this.strength = strength;
+        this.defense = defense;
+        this.speed = speed;
     }
 
     public int getIndex() {
@@ -39,7 +56,6 @@ public class Item {
     public void setIndex(int index) {
         this.index = index;
     }
-
 
     public String getName() {
         return name;

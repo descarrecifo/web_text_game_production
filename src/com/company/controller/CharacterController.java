@@ -19,37 +19,29 @@ CharacterController {
     public static void createPlayer(String name , String charClass) {
         HashMap<Item, Integer> items = new HashMap<>();
         Inventory playerInventory = new Inventory(items, 10);
+        HashMap<String,Item> equipment = new HashMap<>();
 
-        HashMap<String,Integer> itemHabilities = new HashMap<>();
+        //HashMap<String,Integer> itemHabilities = new HashMap<>();//tenemos el
 
 
 
         switch (charClass){
-            case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15, "Warrior");
-                itemHabilities.put("attack" , 4);
-                itemHabilities.put("defense" , 0);
-                itemHabilities.put("speed" , 0);
-                Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7 , itemHabilities);
+            case "Warrior" -> {Player player = new Player(name, 1, playerInventory, 100, 25, 15, 10, 15, "Warrior", equipment);
+                Item newItem = new Item("Sword", "Sword         ", "weapon", "A simple sword                       ", 7 , 4,0,0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 gameLoopView(player);
             }
 
-            case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15, "Mage");
-                itemHabilities.put("attack" , 0);
-                itemHabilities.put("defense" , 1);
-                itemHabilities.put("speed" , 0);
-                Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2 , itemHabilities);
+            case "Mage" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 15, 25, 15, "Mage", equipment);
+                Item newItem = new Item("Tunic","Tunic         ", "cloth", "A simple tunic                       ", 2 , 0,1,0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 gameLoopView(player);
             }
 
-            case "Hunter" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25, "Hunter");
-                itemHabilities.put("attack" , 2);
-                itemHabilities.put("defense" ,0);
-                itemHabilities.put("speed" , 0);
-                Item newItem = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4 , itemHabilities);
+            case "Hunter" ->  {Player player = new Player(name, 1, playerInventory, 100, 10, 10, 20, 25, "Hunter", equipment);
+                Item newItem = new Item("Bow", "Bow           ", "weapon", "A simple bow                         ", 4 , 2,0,0);
                 items.put(newItem, 1);
                 player.getInventory().setItems(items);
                 gameLoopView(player);
@@ -73,6 +65,5 @@ CharacterController {
     }
 
 }
-
 
 
