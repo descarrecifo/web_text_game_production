@@ -24,7 +24,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 5, "Health potion", "Health potion ", "A potion with medicinal capabilities ", 5, ingredientItem, ingredientName, "Potion", 0, 0, 0, craftQuantity, false, true);
+                itemCrafted(player, quantity, 5, "Health potion", "A potion with medicinal capabilities", 5, ingredientItem, ingredientName, "Potion", 0, 0, 0, craftQuantity, false, true);
             }
             case 2 -> {
                 ingredientName = "Clay";
@@ -34,7 +34,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 10, "Golem arm", "Golem arm    ", "The arm of a Golem                   ", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                itemCrafted(player, quantity, 10, "Golem arm", "The arm of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
             }
             case 3 -> {
                 ingredientName = "Clay";
@@ -44,7 +44,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 10, "Golem leg", "Golem leg    ", "The leg of a Golem                   ", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                itemCrafted(player, quantity, 10, "Golem leg", "The leg of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
             }
             case 4 -> {
                 ingredientName = "Clay";
@@ -54,7 +54,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem) * craftQuantity;
                     }
                 }
-                itemCrafted(player, quantity, 10, "Golem head", "Golem head   ", "The head of a Golem                  ", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                itemCrafted(player, quantity, 10, "Golem head", "The head of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
             }
             case 5 -> {
                 ingredientName = "Clay";
@@ -64,7 +64,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 20, "Golem body", "Golem body   ", "The body of a Golem                  ", 40, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                itemCrafted(player, quantity, 20, "Golem body", "The body of a Golem", 40, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
             }
             case 6 -> {
                 ingredientName = "Fur";
@@ -74,7 +74,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 1, "Leather", "Leather      ", "A piece of leather                   ", 2, ingredientItem, ingredientName, "Material",0, 0, 0, craftQuantity, false, false);
+                itemCrafted(player, quantity, 1, "Leather", "A piece of leather", 2, ingredientItem, ingredientName, "Material",0, 0, 0, craftQuantity, false, false);
             }
             case 7 -> {
                 ingredientName = "Leather";
@@ -84,7 +84,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 3, "Leather helmet", "Leather helmet", "A basic helmet made of leather       ", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                itemCrafted(player, quantity, 3, "Leather helmet", "A basic helmet made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
             }
             case 8 -> {
                 ingredientName = "Leather";
@@ -94,7 +94,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 4, "Leather gloves", "Leather gloves", "A basic pair of gloves made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                itemCrafted(player, quantity, 4, "Leather gloves", "A basic pair of gloves made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
             }
             case 9 -> {
                 ingredientName = "Leather";
@@ -104,7 +104,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 4, "Leather boots", "Leather boots", "A basic pair of boots made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                itemCrafted(player, quantity, 4, "Leather boots", "A basic pair of boots made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
             }
             case 10 -> {
                 ingredientName = "Leather";
@@ -114,7 +114,7 @@ public class CraftController {
                         quantity = inventory.get(ingredientItem);
                     }
                 }
-                itemCrafted(player, quantity, 7, "Leather armour", "Leather armour", "A basic armour made of leather       ", 6, ingredientItem, ingredientName, "armour", 0, 4, 0, craftQuantity, true, false);
+                itemCrafted(player, quantity, 7, "Leather armour", "A basic armour made of leather", 6, ingredientItem, ingredientName, "armour", 0, 4, 0, craftQuantity, true, false);
             }
         }
     }
