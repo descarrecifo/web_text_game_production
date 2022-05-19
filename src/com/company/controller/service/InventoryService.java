@@ -1,7 +1,8 @@
-package com.company.service;
+package com.company.controller.service;
 
 import com.company.model.Item;
 import com.company.model.Player;
+import com.company.service.EquipmentService;
 import com.company.view.EquipmentView;
 
 import java.util.ArrayList;

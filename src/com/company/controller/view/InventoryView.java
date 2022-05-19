@@ -1,4 +1,4 @@
-package com.company.view;
+package com.company.controller.view;
 
 import com.company.model.Item;
 import com.company.model.Player;

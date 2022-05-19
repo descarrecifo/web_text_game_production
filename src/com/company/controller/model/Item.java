@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.controller.model;
 
 public class Item {
     private String name;

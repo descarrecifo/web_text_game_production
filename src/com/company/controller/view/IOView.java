@@ -1,5 +1,5 @@
 
-package com.company.view;
+package com.company.controller.view;
 
 import com.company.model.Player;
 import com.company.utils.Utilities;

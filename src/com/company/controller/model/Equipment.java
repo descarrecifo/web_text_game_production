@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.controller.model;
 
 public class Equipment {
     private int sumStrenghtEquipment;

@@ -1,4 +1,4 @@
-package com.company.frontcontroller;
+package com.company.controller.frontcontroller;
 
 import com.company.model.Player;
 import com.company.view.CharacterView;
