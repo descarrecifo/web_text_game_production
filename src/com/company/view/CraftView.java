@@ -48,7 +48,7 @@ public class CraftView {
 
     public static void craftingMessages(int value, String craftedItemName, int inventoryQuantity, int necessaryQuantity, String ingredientName, int craftQuantity){
         switch (value){
-            case 1 -> System.out.println("You don't have enough ingredients, you need "+YELLOW_BRIGHT +(necessaryQuantity-inventoryQuantity)+ ANSI_RESET+" more of "+YELLOW_BRIGHT +ingredientName+ ANSI_RESET+" to craft "+YELLOW_BRIGHT+craftQuantity+" " +craftedItemName+ ANSI_RESET);
+            case 1 -> System.out.println("You don't have enough ingredients, you need "+YELLOW_BRIGHT +(necessaryQuantity*craftQuantity-inventoryQuantity)+ ANSI_RESET+" more of "+YELLOW_BRIGHT +ingredientName+ ANSI_RESET+" to craft "+YELLOW_BRIGHT+craftQuantity+" " +craftedItemName+ ANSI_RESET);
         }
     }
 }
