@@ -33,25 +33,25 @@ public class FightService {
     }
 
     public static void enemyTurn(NPC enemy, Player player) {
-        if (attackSuccess(enemy, player)) {
+        if (!attackSuccess(enemy, player)) {
+            fightingMessages("5", enemy, player);
+            fightResult(enemy, player, "player");
+        } else {
             fightingMessages("1", enemy, player);
             player.setHealthPoints(player.getHealthPoints() - fightDamage(enemy, player));
             fightingMessages("3", enemy, player);
-            fightResult(enemy, player, "player");
-        } else {
-            fightingMessages("5", enemy, player);
             fightResult(enemy, player, "player");
         }
     }
 
     public static void playerTurn(NPC enemy, Player player) {
-        if (attackSuccess(player, enemy)) {
+        if (!attackSuccess(player, enemy)) {
+            fightingMessages("6", enemy, player);
+            fightResult(enemy, player, "enemy");
+        } else {
             fightingMessages("2", enemy, player);
             enemy.setHealthPoints(enemy.getHealthPoints() - fightDamage(player, enemy));
             fightingMessages("4", enemy, player);
-            fightResult(enemy, player, "enemy");
-        } else {
-            fightingMessages("6", enemy, player);
             fightResult(enemy, player, "enemy");
         }
     }

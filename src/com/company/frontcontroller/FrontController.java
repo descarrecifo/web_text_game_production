@@ -3,9 +3,9 @@ package com.company.frontcontroller;
 import com.company.model.Player;
 
 import static com.company.controller.FightController.fighting;
+import static com.company.view.CharacterView.createCharacter;
 import static com.company.view.CharacterView.showCharacter;
 import static com.company.view.CraftView.crafting;
-import static com.company.view.IOView.*;
 import static com.company.view.InventoryView.inventoryUseItem;
 import static com.company.view.ShopView.shopping;
 

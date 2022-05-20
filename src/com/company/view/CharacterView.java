@@ -2,7 +2,11 @@ package com.company.view;
 
 import com.company.model.NPC;
 import com.company.model.Player;
+import com.company.utils.Utilities;
 
+import java.util.Scanner;
+
+import static com.company.controller.CharacterController.createPlayer;
 import static com.company.utils.Utilities.*;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
@@ -69,5 +73,32 @@ public class CharacterView {
 //                },
 //                2000
 //        );
+    }
+
+    public static void createCharacter() {
+        Scanner reader = new Scanner(System.in);
+        System.out.println("          " + BRONZE_UNDERLINED +ANSI_BOLD + "CHARACTER CREATION" + ANSI_RESET);
+        String name = Utilities.ask(reader, "What's your name?");
+        charClassElection(name);
+    }
+
+    public static void charClassElection(String name) {
+        Scanner reader = new Scanner(System.in);
+        while (true) {
+            showClass();
+            String charClassOption = Utilities.ask(reader, "What's your class?");
+
+            switch (charClassOption.toLowerCase()) {
+                case "1", "cleric" -> createPlayer(name, "Cleric");
+                case "2", "mage" -> createPlayer(name, "Mage");
+                case "3", "monk" -> createPlayer(name, "Monk");
+                case "4", "paladin" -> createPlayer(name, "Paladin");
+                case "5", "ranger" -> createPlayer(name, "Ranger");
+                case "6", "rogue" -> createPlayer(name, "Rogue");
+                case "7", "warrior" -> createPlayer(name, "Warrior");
+                default -> System.out.println("Invalid option");
+            }
+
+        }
     }
 }
