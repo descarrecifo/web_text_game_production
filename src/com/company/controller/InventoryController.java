@@ -2,7 +2,6 @@ package com.company.controller;
 
 import com.company.model.Inventory;
 import com.company.model.Item;
-import com.company.model.Player;
 
 import java.util.HashMap;
 
