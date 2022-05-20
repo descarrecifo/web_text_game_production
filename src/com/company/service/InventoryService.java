@@ -46,7 +46,8 @@ public class InventoryService {
     public static void equippingOrUsingObject(Player player, int option) {
         for (Item item : new ArrayList<>(player.getInventory().getItems().keySet())) {
             if (item.getIndex() == option) {
-                if (item.isEquippable() || item.isUsable()) {
+                if (!(item.isEquippable() || item.isUsable())) inventoryMessage(2, item);
+                else {
                     inventoryMessage(1, item);
                     removeItemFromInventory(player.getInventory(), item);
                     if (item.isEquippable()) {
@@ -54,8 +55,6 @@ public class InventoryService {
                     } else if (item.isUsable()) {
                         System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
                     }
-                } else {
-                    inventoryMessage(2, item);
                 }
             }
         }

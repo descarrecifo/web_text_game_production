@@ -48,7 +48,6 @@ public class ShopView {
             }
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         });
-//                "key: %s, value: %d%n", k, v));
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
         System.out.println(" ");
     }
@@ -96,8 +95,8 @@ public class ShopView {
     public static void shopMessage(int value, String itemName, int price, int quantity) {
         switch (value) {
             case 1 -> System.out.println("The chosen object is " + YELLOW_BRIGHT + itemName + ANSI_RESET + ", its quantity is " + YELLOW_BRIGHT + quantity + ANSI_RESET + " and its price is " + YELLOW_BRIGHT + price + ANSI_RESET);
-            case 2 -> System.out.println("You don't have enough money for buy " + YELLOW_BRIGHT + quantity + ANSI_RESET + ((quantity == 1) ? " unit " : " units ") + YELLOW_BRIGHT + itemName + ANSI_RESET);
-            case 3 -> System.out.println("You don't have "+YELLOW_BRIGHT + quantity + ANSI_RESET+" of "+ YELLOW_BRIGHT +itemName+ ANSI_RESET +" to sell.");
+            case 2 -> System.out.println("You don't have enough money for buy " + YELLOW_BRIGHT + quantity + ANSI_RESET + ((quantity == 1) ? " unit " : " units ") + " of "+ YELLOW_BRIGHT + itemName + ANSI_RESET);
+            case 3 -> System.out.println("You don't have "+YELLOW_BRIGHT + quantity + ANSI_RESET+ ((quantity == 1) ? " unit " : " units ") +" of "+ YELLOW_BRIGHT +itemName+ ANSI_RESET +" to sell.");
         }
     }
 }

@@ -11,7 +11,8 @@ import static com.company.view.InventoryView.addItemToInventoryMessage;
 public class InventoryController {
 
     public static Inventory addItemToInventory(HashMap<Item, Integer> items, Inventory inventory, Item newItem) {
-        if (inventory.getCapacity() > 0) {
+        if (inventory.getCapacity() == 0) addItemToInventoryMessage("3", newItem);
+        else  {
             if (compareItems(inventory.getItems(), newItem)) {
                 items.replace(newItem, items.get(newItem) + 1);
                 if(inventory.getCapacity() == 10) addItemToInventoryMessage("1", newItem);
@@ -21,8 +22,6 @@ public class InventoryController {
             }
             inventory.setItems(items);
             inventory.setCapacity(inventory.getCapacity() - 1);
-        } else {
-            addItemToInventoryMessage("3", newItem);
         }
         return inventory;
     }
@@ -30,9 +29,7 @@ public class InventoryController {
     public static Inventory removeItemFromInventory(Inventory inventory, Item itemToRemove){
         inventory.getItems().replace(itemToRemove, inventory.getItems().get(itemToRemove) - 1);
         inventory.setCapacity(inventory.getCapacity() + 1);
-        if (inventory.getItems().get(itemToRemove) < 1) {
-            inventory.getItems().remove(itemToRemove);
-        }
+        if (inventory.getItems().get(itemToRemove) < 1) inventory.getItems().remove(itemToRemove);
         return inventory;
     }
 }
