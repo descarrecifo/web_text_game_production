@@ -103,5 +103,4 @@ public class FightService {
         Random r = new Random();
         return r.nextInt(3-1)+1;
     }
-
 }
