@@ -100,7 +100,7 @@ CharacterController {
             case 8 -> enemy = new NPC("Wendigo", 5, fur, 25, 25, 25, 5, 25, 5, "beast", 0);
             case 9 -> enemy = new NPC("Golem", 5, clay, 45, 45, 35, 25, 10, 10, null, 0);
             case 10 -> enemy = new NPC("Cave lion", 5, fur, 15, 15, 15, 15, 25, 5, "beast",0);
-            default -> enemy = new NPC("Soldier", 5, createItem(), 50, 50, 25, 15, 5, 10, null, 15);
+            default -> enemy = new NPC("Soldier", 5, createItem(), 50, 50, 25, 15, 5, 20, null, 15);
         }
         return enemy;
     }

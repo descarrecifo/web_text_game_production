@@ -1,11 +1,10 @@
 package com.company.view;
 
-import com.company.model.Item;
+import com.company.controller.CraftController;
 import com.company.model.Player;
 
 import java.util.Scanner;
 
-import static com.company.controller.CraftController.crafting;
 import static com.company.utils.Utilities.*;
 
 public class CraftView {
@@ -28,7 +27,7 @@ public class CraftView {
         System.out.println();
     }
 
-    public static void craftingOption(Player player){
+    public static void crafting(Player player){
         Scanner reader = new Scanner(System.in);
         while (true){
             craftMenuView();
@@ -39,7 +38,7 @@ public class CraftView {
                     int quantity = Integer.parseInt(ask(reader, "How many items do you want to craft?"));
                     if (quantity < 1) {
                         System.out.println("The quantity needs to be at least 1");
-                    }else crafting(player, Integer.parseInt(option), quantity);
+                    }else CraftController.crafting(player, Integer.parseInt(option), quantity);
                 }
             } catch (Exception e) {
                 System.out.println("Invalid option");

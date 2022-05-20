@@ -68,7 +68,6 @@ public class FightService {
             gameLoopView(player);
         } else {
 //            fightingMessages("11", enemy, player);
-            player.setHealthPoints(player.getHealthPoints());
             switch (nextTurn){
                 case "enemy" -> enemyTurn(enemy, player);
                 case "player" -> playerTurn(enemy, player);
@@ -93,16 +92,16 @@ public class FightService {
 
     public static void levelUp(Player player){
         player.setLevel(player.getLevel() + 1);
-        player.setMaxHealthPoints(player.getMaxHealthPoints() + 50);
-        player.setStrength(player.getStrength() + 5);
-        player.setDefense(player.getDefense() + 5);
-        player.setSpeed(player.getSpeed() + 5);
-        player.setSpeed(player.getDexterity() + 5);
+        player.setMaxHealthPoints(player.getMaxHealthPoints() + valueGained()*5);
+        player.setStrength(player.getStrength() + valueGained());
+        player.setDefense(player.getDefense() + valueGained());
+        player.setSpeed(player.getSpeed() + valueGained());
+        player.setDexterity(player.getDexterity() + valueGained());
     }
 
     public static int valueGained(){
         Random r = new Random();
-        return r.nextInt(5-1)+1;
+        return r.nextInt(3-1)+1;
     }
 
 }

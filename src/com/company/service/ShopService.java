@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import static com.company.controller.InventoryController.addItemToInventory;
 import static com.company.controller.InventoryController.removeItemFromInventory;
 import static com.company.view.CharacterView.moneyMessage;
-import static com.company.view.ShopView.buyingAndSelling;
 import static com.company.view.ShopView.shopMessage;
 
 public class ShopService {
@@ -25,7 +24,7 @@ public class ShopService {
         return totalPrice;
     }
 
-    public static void shoppingAction(int value, Inventory shopInventory, int itemIndex, Player player, int quantity) {
+    public static void shopping(int value, Inventory shopInventory, int itemIndex, Player player, int quantity) {
         boolean found = false;
         if (value == 1) {
             System.out.println();

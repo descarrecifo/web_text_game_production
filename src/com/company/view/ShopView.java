@@ -1,14 +1,14 @@
 package com.company.view;
 
+import com.company.controller.ShopController;
 import com.company.model.Inventory;
 import com.company.model.Player;
+import com.company.service.ShopService;
 
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.company.controller.ShopController.shoppingSystem;
 import static com.company.service.ShopService.itemPriceCalculation;
-import static com.company.service.ShopService.shoppingAction;
 import static com.company.utils.Utilities.*;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
@@ -67,9 +67,9 @@ public class ShopView {
                         System.out.println("The quantity needs to be at least 1");
                     }else {
                         if (value == 1) {
-                            shoppingAction(1, shopInventory, Integer.parseInt(option), player, quantity);
+                            ShopService.shopping(1, shopInventory, Integer.parseInt(option), player, quantity);
                         } else {
-                            shoppingAction(2, shopInventory, Integer.parseInt(option), player, quantity);
+                            ShopService.shopping(2, shopInventory, Integer.parseInt(option), player, quantity);
                         }
                     }
                 }
@@ -85,8 +85,8 @@ public class ShopView {
             menuShopView();
             String option = reader.nextLine();
             switch (option) {
-                case "1" -> shoppingSystem(player, 1);
-                case "2" -> shoppingSystem(player, 2);
+                case "1" -> ShopController.shopping(player, 1);
+                case "2" -> ShopController.shopping(player, 2);
                 case "3" -> gameLoopView(player);
                 default -> System.out.println("Invalid option");
             }
