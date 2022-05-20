@@ -4,24 +4,21 @@ import java.util.HashMap;
 
 public class Player extends Character {
     private Inventory inventory;
-    private Equipment equipmentHabilities;
-    HashMap<String,Item> equipment;
+    private Equipment equipment;
 
-    public Player(String name, int level, Inventory inventory, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass,HashMap <String,Item> equipment){
-        super(name, level, healthPoints, strength, defense, speed, dexterity, charClass);
+
+    public Player(String name, int level, Inventory inventory, Equipment equipment, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money, HashMap <String,Item> equipmentList){
+        super(name, level, maxHealthPoints, healthPoints, strength, defense, speed, dexterity, charClass, money);
         this.inventory = inventory;
-        this.equipment = new HashMap<>();
-        this. equipmentHabilities = new Equipment();
-
-
+        this.equipment = equipment;
     }
 
-    public Equipment getEquipmentHabilities() {
-        return equipmentHabilities;
+    public Equipment getEquipment() {
+        return equipment;
     }
 
-    public void setEquipmentHabilities(Equipment equipmentHabilities) {
-        this.equipmentHabilities = equipmentHabilities;
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 
     public Inventory getInventory() {
@@ -30,13 +27,5 @@ public class Player extends Character {
 
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
-    }
-
-    public HashMap<String, Item> getEquipment() {
-        return equipment;
-    }
-
-    public void setEquipment(HashMap<String, Item> equipment) {
-        this.equipment = equipment;
     }
 }

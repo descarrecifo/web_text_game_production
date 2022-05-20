@@ -6,22 +6,22 @@ import com.company.model.Player;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static com.company.service.InventoryService.equippingObject;
+import static com.company.service.InventoryService.equippingOrUsingObject;
 import static com.company.utils.Utilities.*;
 
 public class InventoryView {
     public static void showInventory(Player player) {
         AtomicInteger i = new AtomicInteger(1);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED + "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED +ANSI_BOLD+ "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         player.getInventory().getItems().forEach((k, v) -> {
             k.setIndex(i.intValue());
             System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " " + i.getAndIncrement() + ". Name: " + YELLOW_BRIGHT
-                    + k.getInventoryName() + ANSI_RESET + " | Quantity: x" + YELLOW_BRIGHT + v + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
+                    + k.getName() + ANSI_RESET + " | Quantity: x" + YELLOW_BRIGHT + v + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
                     + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Description: " + YELLOW_BRIGHT + k.getDescription() + ANSI_RESET + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
             if (k.getStrength() != 0) {
-                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + k.getStrength()+ "                                         "  + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + k.getStrength() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
             }
             if (k.getDefense() != 0) {
                 System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Defense: " + YELLOW_BRIGHT + k.getDefense() + "                                        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
@@ -33,7 +33,7 @@ public class InventoryView {
         });
 //                "key: %s, value: %d%n", k, v));
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(" ");
+        System.out.println();
         System.out.println("Choose an item number to equip. Press 0 to return to Game Menu");
     }
 
@@ -49,16 +49,20 @@ public class InventoryView {
         Scanner reader = new Scanner(System.in);
         while (true) {
             showInventory(player);
-            try{
-                String option = reader.nextLine();
+            String option = reader.nextLine();
+            try {
                 if (Integer.parseInt(option) == 0) break;
-                else equippingObject(player, Integer.parseInt(option));
+                else equippingOrUsingObject(player, Integer.parseInt(option));
+            } catch (Exception e) {
+                System.out.println("Invalid option");
             }
-            catch(NumberFormatException e) {
-                System.out.println("NullPointerException thrown!");
-            }
+        }
+    }
 
-
+    public static void inventoryMessage(int value, Item item){
+        switch (value){
+            case 1 -> System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
+            case 2 -> System.out.println("You cannot use or equip this item.");
         }
     }
 }

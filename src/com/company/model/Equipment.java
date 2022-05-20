@@ -1,47 +1,40 @@
 package com.company.model;
 
+import java.util.HashMap;
+
 public class Equipment {
-    private int sumStrenghtEquipment;
-    private int sumDefenseEquipment;
-    private int sumSpeedEquipment;
-    private int numItemsEquipment;
+    private int totalStrenght;
+    private int totalDefense;
+    private int totalSpeed;
+    private int quantityEquippedItems;
+    private HashMap<String,Item> equipments;
 
-    public Equipment() {
-        this.sumStrenghtEquipment = 0;
-        this.sumDefenseEquipment=0;
-        this.sumSpeedEquipment=0;
-        this.numItemsEquipment=0;
+    public Equipment(int totalStrenght, int totalDefense, int totalSpeed, int quantityEquippedItems, HashMap<String,Item> equipments) {
+        this.totalStrenght = totalStrenght;
+        this.totalDefense = totalDefense;
+        this.totalSpeed = totalSpeed;
+        this.quantityEquippedItems = quantityEquippedItems;
+        this.equipments = new HashMap<>();
 
     }
 
-    public int getNumItemsEquipment() {        return numItemsEquipment;
-    }
+    public int getTotalStrenght() {return totalStrenght;}
 
-    public void setNumItemsEquipment(int numItemsEquipment) {
-        this.numItemsEquipment = numItemsEquipment;
-    }
+    public void setTotalStrenght(int totalStrenght) {this.totalStrenght = totalStrenght;}
 
-    public int getSumStrenghtEquipment() {
-        return sumStrenghtEquipment;
-    }
+    public int getTotalDefense() {return totalDefense;}
 
-    public void setSumStrenghtEquipment(int sumStrenghtEquipment) {
-        this.sumStrenghtEquipment = sumStrenghtEquipment;
-    }
+    public void setTotalDefense(int totalDefense) {this.totalDefense = totalDefense;}
 
-    public int getSumDefenseEquipment() {
-        return sumDefenseEquipment;
-    }
+    public int getTotalSpeed() {return totalSpeed;}
 
-    public void setSumDefenseEquipment(int sumDefenseEquipment) {
-        this.sumDefenseEquipment = sumDefenseEquipment;
-    }
+    public void setTotalSpeed(int totalSpeed) {this.totalSpeed = totalSpeed;}
 
-    public int getSumSpeedEquipment() {
-        return sumSpeedEquipment;
-    }
+    public int getQuantityEquippedItems() {return quantityEquippedItems;}
 
-    public void setSumSpeedEquipment(int sumSpeedEquipment) {
-        this.sumSpeedEquipment = sumSpeedEquipment;
-    }
+    public void setQuantityEquippedItems(int quantityEquippedItems) {this.quantityEquippedItems = quantityEquippedItems;}
+
+    public HashMap<String, Item> getEquipments() {return equipments;}
+
+    public void setEquipments(HashMap<String, Item> equipments) {this.equipments = equipments;}
 }

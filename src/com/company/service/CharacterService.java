@@ -1,17 +1,14 @@
 package com.company.service;
 
+import com.company.model.NPC;
 import com.company.model.Player;
 
+import static com.company.view.CharacterView.moneyMessage;
+
 public class CharacterService {
-    public static void habilitiesPlayerWithItems(Player player) {
 
-        // sum total items with strenght Player
-        player.setTotalStrength(player.getEquipmentHabilities().getSumStrenghtEquipment() + player.getStrength());
-
-        // sum total items with defense Player
-        player.setTotalDefense(player.getEquipmentHabilities().getSumDefenseEquipment() + player.getDefense());
-
-        // sum total items with speed Player
-        player.setTotalSpeed(player.getEquipmentHabilities().getSumSpeedEquipment() + player.getSpeed());
+    public static void addingMoney(Player player, NPC enemy){
+        player.setMoney(player.getMoney() + enemy.getMoney());
+        if(enemy.getMoney()>0) moneyMessage("1", player, enemy);
     }
 }
