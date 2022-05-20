@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Random;
 
 import static com.company.controller.InventoryController.removeItemFromInventory;
+import static com.company.service.EquipmentService.equippingPlayer;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.YELLOW_BRIGHT;
 import static com.company.view.InventoryView.inventoryMessage;
@@ -51,7 +52,7 @@ public class InventoryService {
                     inventoryMessage(1, item);
                     removeItemFromInventory(player.getInventory(), item);
                     if (item.isEquippable()) {
-                        System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " equipped.");
+                        equippingPlayer(player, item);
                     } else if (item.isUsable()) {
                         System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
                     }
