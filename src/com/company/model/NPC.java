@@ -1,5 +1,4 @@
 package com.company.model;
-import com.company.model.Item;
 
 public class NPC extends Character {
  private Item treasure;

@@ -43,6 +43,9 @@ public class Character {
         this.speed = speed;
         this.dexterity = dexterity;
         this.charClass = charClass;
+        this.totalDefense = defense;
+        this.totalSpeed = speed;
+        this.totalStrength = strength;
     }
 
     public int getTotalStrength() {

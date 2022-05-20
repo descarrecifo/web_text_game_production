@@ -4,8 +4,6 @@ package com.company.view;
 import com.company.model.Player;
 import com.company.service.EquipmentService;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 import static com.company.utils.Utilities.*;
 
 public class EquipmentView {

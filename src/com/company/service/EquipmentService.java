@@ -28,6 +28,7 @@ public class EquipmentService {
 
 // Sum total strenght, defense and speed
     public static void sumHabilitiesEquipment(Player player, int indexItemEquipment) {
+
         // add attack to total strenght
         player.getEquipmentHabilities().setSumStrenghtEquipment(player.getEquipment().get(String.valueOf(indexItemEquipment)).getStrength() + player.getEquipmentHabilities().getSumStrenghtEquipment());
 
@@ -36,5 +37,8 @@ public class EquipmentService {
 
         // add speed to total speed
         player.getEquipmentHabilities().setSumSpeedEquipment(player.getEquipment().get(String.valueOf(indexItemEquipment)).getSpeed() + player.getEquipmentHabilities().getSumSpeedEquipment());
+
+        // Habilites items add
+        CharacterService.habilitiesPlayerWithItems(player);
     }
 }

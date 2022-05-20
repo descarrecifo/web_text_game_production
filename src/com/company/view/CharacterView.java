@@ -1,7 +1,6 @@
 package com.company.view;
 
 import com.company.model.Player;
-import com.company.view.IOView.*;
 
 import java.util.Scanner;
 
@@ -16,9 +15,16 @@ public class CharacterView {
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Name: "+YELLOW_BRIGHT+player.getName()+ANSI_RESET+"               "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Level: "+YELLOW_BRIGHT+player.getLevel()+ANSI_RESET+" | Class: "+YELLOW_BRIGHT+player.getCharClass()+ANSI_RESET+"  "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Life Points: "+YELLOW_BRIGHT+ player.getHealthPoints()+ANSI_RESET+"          "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Strength: "+YELLOW_BRIGHT+player.getStrength()+"(" + player.getEquipmentHabilities().getSumStrenghtEquipment() +")"+ANSI_RESET+"              "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Defense: "+YELLOW_BRIGHT+player.getDefense()+"(" + player.getEquipmentHabilities().getSumDefenseEquipment() +")"+ANSI_RESET+"               "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Speed: "+YELLOW_BRIGHT+player.getSpeed()+"(" + player.getEquipmentHabilities().getSumSpeedEquipment() +")"+ANSI_RESET+"                 "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Strength: "+YELLOW_BRIGHT+player.getStrength()+((player.getEquipmentHabilities().getSumStrenghtEquipment() != 0) ? " (" +((player.getEquipmentHabilities().getSumStrenghtEquipment() > 0) ? "+" : "")+ player.getEquipmentHabilities().getSumStrenghtEquipment() +")" : "")+ANSI_RESET+" "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Defense: "+YELLOW_BRIGHT+player.getDefense()+((player.getEquipmentHabilities().getSumDefenseEquipment() != 0) ? " (" +((player.getEquipmentHabilities().getSumDefenseEquipment() > 0) ? "+" : "")+ player.getEquipmentHabilities().getSumDefenseEquipment() +")" : "")+ANSI_RESET+" "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Speed: "+YELLOW_BRIGHT+player.getSpeed()+((player.getEquipmentHabilities().getSumSpeedEquipment() != 0) ? " (" +((player.getEquipmentHabilities().getSumSpeedEquipment() > 0) ? "+" : "")+ player.getEquipmentHabilities().getSumSpeedEquipment() +")" : "")+ANSI_RESET+" "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+
+
+
+
+        //   System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Strength: "+YELLOW_BRIGHT+player.getStrength()+"(" + player.getEquipmentHabilities().getSumStrenghtEquipment() +")"+ANSI_RESET+"              "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+     //   System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Defense: "+YELLOW_BRIGHT+player.getDefense()+"(" + player.getEquipmentHabilities().getSumDefenseEquipment() +")"+ANSI_RESET+"               "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+     //   System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Speed: "+YELLOW_BRIGHT+player.getSpeed()+"(" + player.getEquipmentHabilities().getSumSpeedEquipment() +")"+ANSI_RESET+"                 "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Dexterity: "+YELLOW_BRIGHT+player.getDexterity()+ANSI_RESET+"             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println("");
         EquipmentView.showItemsEquipmentPlayer(player);

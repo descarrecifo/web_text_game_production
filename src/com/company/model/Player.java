@@ -12,6 +12,8 @@ public class Player extends Character {
         this.inventory = inventory;
         this.equipment = new HashMap<>();
         this. equipmentHabilities = new Equipment();
+
+
     }
 
     public Equipment getEquipmentHabilities() {

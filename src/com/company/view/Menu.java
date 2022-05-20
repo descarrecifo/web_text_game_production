@@ -1,8 +1,4 @@
 package com.company.view;
-import com.company.model.Player;
-import com.company.utils.Utilities;
-
-import java.util.Scanner;
 
 import static com.company.utils.Utilities.*;
 
