@@ -12,7 +12,7 @@ import static com.company.view.ShopView.*;
 
 public class ShopController {
 
-    public static void shoppingSystem(Player player, int value) {
+    public static void shopping(Player player, int value) {
         HashMap<Item, Integer> items = new HashMap<>();
         Inventory shopInventory = new Inventory(items, 200);
         for(int i = 0; i<100; i++){

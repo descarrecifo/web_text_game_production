@@ -38,7 +38,7 @@ public class FightView {
             case "Vampire" -> System.out.println("\nSometimes the dead cannot rest. So they come out of their graves and look for prey to feed on; if you don't kill this "+YELLOW_BRIGHT+enemy.getName()+ANSI_RESET+" you will be that prey.");
             case "Wendigo" -> System.out.println("\nHunger can drive a man to do crazy things, but certain lines must not be crossed, even if one is desperate. When a man decides to feed on a fellow, he becomes a grotesque and unreal creature; a "+YELLOW_BRIGHT+enemy.getName()+ANSI_RESET+", like the one before you.");
             case "Soldier" -> System.out.println("\nNot everyone trusts you and your mission; this "+YELLOW_BRIGHT+enemy.getName()+ANSI_RESET+" before you is going to give his life to prevent you from carrying it out. Are you going to kill him or will you prefer to escape and spare his life?");
-            case "Golem" -> System.out.println("\nThe once inanimate now walks; This "+YELLOW_BRIGHT+enemy.getName()+ANSI_RESET+" is a demonstration of the infinite possibilities of magic, but if you marvel too much, you may end up falling victim to its inhuman strength.");
+            case "Golem" -> System.out.println("\nThe once inanimate now walks; this "+YELLOW_BRIGHT+enemy.getName()+ANSI_RESET+" is a demonstration of the infinite possibilities of magic, but if you marvel too much, you may end up falling victim to its inhuman strength.");
             case "Cave lion" -> System.out.println("\nFrom the frozen southern mountains has came this "+YELLOW_BRIGHT+enemy.getName()+ANSI_RESET+". Aforetime it was a magnificent animal, but nowadays is only a rabid bloodthirsty beast.");
         }
     }

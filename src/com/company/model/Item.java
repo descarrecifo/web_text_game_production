@@ -2,7 +2,6 @@ package com.company.model;
 
 public class Item {
     private String name,
-            inventoryName,
             type,
             description;
     private int price,
@@ -17,9 +16,8 @@ public class Item {
     }
 
 
-    public Item(String name , String inventoryName , String type , String description , int price , int strength, int defense, int speed, boolean equippable, boolean usable){
+    public Item(String name ,  String type , String description , int price , int strength, int defense, int speed, boolean equippable, boolean usable){
         this.name = name;
-        this.inventoryName = inventoryName;
         this.type = type;
         this.description = description;
         this.price = price;
@@ -67,8 +65,6 @@ public class Item {
         return name;
     }
 
-    public String getInventoryName() { return inventoryName; }
-
     public String getType() {
         return type;
     }
@@ -84,8 +80,6 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
-
-    public void setInventoryName(String inventoryName) { this.inventoryName = inventoryName; }
 
     public void setType(String type) {
         this.type = type;

@@ -33,25 +33,25 @@ public class FightService {
     }
 
     public static void enemyTurn(NPC enemy, Player player) {
-        if (attackSuccess(enemy, player)) {
+        if (!attackSuccess(enemy, player)) {
+            fightingMessages("5", enemy, player);
+            fightResult(enemy, player, "player");
+        } else {
             fightingMessages("1", enemy, player);
             player.setHealthPoints(player.getHealthPoints() - fightDamage(enemy, player));
             fightingMessages("3", enemy, player);
-            fightResult(enemy, player, "player");
-        } else {
-            fightingMessages("5", enemy, player);
             fightResult(enemy, player, "player");
         }
     }
 
     public static void playerTurn(NPC enemy, Player player) {
-        if (attackSuccess(player, enemy)) {
+        if (!attackSuccess(player, enemy)) {
+            fightingMessages("6", enemy, player);
+            fightResult(enemy, player, "enemy");
+        } else {
             fightingMessages("2", enemy, player);
             enemy.setHealthPoints(enemy.getHealthPoints() - fightDamage(player, enemy));
             fightingMessages("4", enemy, player);
-            fightResult(enemy, player, "enemy");
-        } else {
-            fightingMessages("6", enemy, player);
             fightResult(enemy, player, "enemy");
         }
     }
@@ -68,7 +68,6 @@ public class FightService {
             gameLoopView(player);
         } else {
 //            fightingMessages("11", enemy, player);
-            player.setHealthPoints(player.getHealthPoints());
             switch (nextTurn){
                 case "enemy" -> enemyTurn(enemy, player);
                 case "player" -> playerTurn(enemy, player);
@@ -93,16 +92,15 @@ public class FightService {
 
     public static void levelUp(Player player){
         player.setLevel(player.getLevel() + 1);
-        player.setMaxHealthPoints(player.getMaxHealthPoints() + 50);
-        player.setStrength(player.getStrength() + 5);
-        player.setDefense(player.getDefense() + 5);
-        player.setSpeed(player.getSpeed() + 5);
-        player.setSpeed(player.getDexterity() + 5);
+        player.setMaxHealthPoints(player.getMaxHealthPoints() + valueGained()*5);
+        player.setStrength(player.getStrength() + valueGained());
+        player.setDefense(player.getDefense() + valueGained());
+        player.setSpeed(player.getSpeed() + valueGained());
+        player.setDexterity(player.getDexterity() + valueGained());
     }
 
     public static int valueGained(){
         Random r = new Random();
-        return r.nextInt(5-1)+1;
+        return r.nextInt(3-1)+1;
     }
-
 }
