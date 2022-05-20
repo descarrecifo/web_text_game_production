@@ -2,6 +2,7 @@ package com.company.service;
 
 import com.company.model.Item;
 import com.company.model.Player;
+import com.company.view.EquipmentView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
