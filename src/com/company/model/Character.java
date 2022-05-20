@@ -22,23 +22,7 @@ public class Character {
             totalCharisma,
             totalHealthPoints;
 
-    public Character() {
-    }
-
-    public Character(String name) {
-        this.name = name;
-    }
-
-    public Character(String name, int level) {
-        this.name = name;
-        this.level = level;
-    }
-
-    public Character(String name, int level, String charClass) {
-        this.name = name;
-        this.level = level;
-        this.charClass = charClass;
-    }
+    public Character() {}
 
     public Character(String name, int level, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money) {
         this.name = name;
@@ -51,21 +35,10 @@ public class Character {
         this.dexterity = dexterity;
         this.charClass = charClass;
         this.money = money;
+        this.totalStrength = strength;
+        this.totalDefense = defense;
+        this.totalSpeed = speed;
     }
-
-//    public Character(String name, int level, String charClass, int experiencePoints, int maxHealthPoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
-//        this.level = level;
-//        this.charClass = charClass;
-//        this.experiencePoints = experiencePoints;
-//        this.maxHealthPoints = maxHealthPoints;
-//        this.healthPoints = healthPoints;
-//        this.manaPoints = manaPoints;
-//        this.strength = strength;
-//        this.defense = defense;
-//        this.speed = speed;
-//        this.dexterity = dexterity;
-//        this.money = money;
-//    }
 
     public String getName() {
         return name;

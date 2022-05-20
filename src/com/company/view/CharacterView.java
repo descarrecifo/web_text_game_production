@@ -14,14 +14,14 @@ import static com.company.view.IOView.gameLoopView;
 public class CharacterView {
     public static void showCharacter(Player player) {
         System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "         " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER" + ANSI_RESET + "         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "         " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTERISTICS" + ANSI_RESET + "         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Name: " + YELLOW_BRIGHT + player.getName() + ANSI_RESET + " | Money: " + YELLOW_BRIGHT + player.getMoney() + ANSI_RESET + "     " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Level: " + YELLOW_BRIGHT + player.getLevel() + ANSI_RESET + " | Class: " + YELLOW_BRIGHT + player.getCharClass() + ANSI_RESET + "  " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Health Points: " + YELLOW_BRIGHT + player.getMaxHealthPoints() + ANSI_RESET + "/" + YELLOW_BRIGHT + player.getHealthPoints() + ANSI_RESET + "     " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Strength: " + YELLOW_BRIGHT + player.getStrength() + ANSI_RESET + "              " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Defense: " + YELLOW_BRIGHT + player.getDefense() + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Speed: " + YELLOW_BRIGHT + player.getSpeed() + ANSI_RESET + "                 " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Strength: "+YELLOW_BRIGHT+player.getStrength()+((player.getEquipment().getTotalStrenght() != 0) ? " (" +((player.getEquipment().getTotalStrenght() > 0) ? "+" : "")+ player.getEquipment().getTotalStrenght() +")" : "")+ANSI_RESET+"                 "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Defense: "+YELLOW_BRIGHT+player.getDefense()+((player.getEquipment().getTotalDefense() != 0) ? " (" +((player.getEquipment().getTotalDefense() > 0) ? "+" : "")+ player.getEquipment().getTotalDefense() +")" : "")+ANSI_RESET+"                 "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" Speed: "+YELLOW_BRIGHT+player.getSpeed()+((player.getEquipment().getTotalSpeed() != 0) ? " (" +((player.getEquipment().getTotalSpeed() > 0) ? "+" : "")+ player.getEquipment().getTotalSpeed() +")" : "")+ANSI_RESET+"                 "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Dexterity: " + YELLOW_BRIGHT + player.getDexterity() + ANSI_RESET + "             " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
         System.out.println(" ");
@@ -45,6 +45,12 @@ public class CharacterView {
         switch (value) {
             case "1" -> System.out.println("You gained " + YELLOW_BRIGHT + enemy.getMoney() + ((enemy.getMoney() == 1) ? " coin" : " coins") + ANSI_RESET + "! Now you have " + YELLOW_BRIGHT + player.getMoney() + ((player.getMoney() == 1) ? " coin" : " coins") + ANSI_RESET + ".");
             case "2" -> System.out.println("Now you have " + YELLOW_BRIGHT + player.getMoney() + ((player.getMoney() == 1) ? " coin" : " coins") + ANSI_RESET + ".");
+        }
+    }
+
+    public static void chatMessage(String value) {
+        switch (value) {
+            case "1" -> System.out.println("Press any key to return to Character Menu");
         }
     }
 
@@ -99,6 +105,41 @@ public class CharacterView {
                 default -> System.out.println("Invalid option");
             }
 
+        }
+    }
+
+    public static void character(Player player) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
+            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "         " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER" + ANSI_RESET + "         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Details Character      "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Equipment              "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+            System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
+            String valueChoose = scanner.nextLine();
+            switch (valueChoose) {
+                case "1" -> {
+                    showCharacter(player);
+                    chatMessage("1");
+                    scanner.nextLine();
+                    character(player);
+                    break;
+
+                }
+                case "2" -> {
+                    EquipmentView.showEquipmentView(player);
+                    chatMessage("1");
+                    scanner.nextLine();
+                    character(player);
+                    break;
+                }
+                case "0" -> {
+                    IOView.gameLoopView(player);
+                    break;
+                }
+                default -> System.out.println("Unknown command. Try again");
+            }
         }
     }
 }
