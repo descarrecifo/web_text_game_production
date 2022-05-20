@@ -2,8 +2,8 @@ package com.company.view;
 
 import com.company.model.NPC;
 import com.company.model.Player;
+import com.company.service.FightService;
 
-import static com.company.service.FightService.fightDamage;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.utils.Utilities.YELLOW_BRIGHT;
 
@@ -13,8 +13,8 @@ public class FightView {
         switch (value) {
             case "1" -> System.out.println("Your enemy successes their attack!");
             case "2" -> System.out.println("You successes your attack!");
-            case "3" -> System.out.println("The enemy makes you " +YELLOW_BRIGHT+ fightDamage(enemy, player)+ " points "+ANSI_RESET +"of damage!");
-            case "4" -> System.out.println("You makes " +YELLOW_BRIGHT+ fightDamage(player, enemy)+ " points "+ANSI_RESET +"of damage to your enemy!");
+            case "3" -> System.out.println("The enemy makes you " +YELLOW_BRIGHT+ FightService.fightDamage(enemy, player)+ " points "+ANSI_RESET +"of damage!");
+            case "4" -> System.out.println("You makes " +YELLOW_BRIGHT+ FightService.fightDamage(player, enemy)+ " points "+ANSI_RESET +"of damage to your enemy!");
             case "5" -> System.out.println("Your enemy has failed, now is your turn!");
             case "6" -> System.out.println("You have failed, now is your enemy's turn!");
             case "7" -> System.out.println("You have failed, try again!");
