@@ -3,10 +3,10 @@ package com.company.model;
 import java.util.HashMap;
 
 public class Equipment {
-    private int totalStrenght;
-    private int totalDefense;
-    private int totalSpeed;
-    private int quantityEquippedItems;
+    private int totalStrenght,
+            totalDefense,
+            totalSpeed,
+            quantityEquippedItems;
     private HashMap<String,Item> equipments;
 
     public Equipment(int totalStrenght, int totalDefense, int totalSpeed, int quantityEquippedItems, HashMap<String,Item> equipments) {
