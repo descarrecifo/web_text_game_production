@@ -3,11 +3,19 @@ package com.company.model;
 import java.util.HashMap;
 
 public class Inventory {
-    private HashMap<Item, Integer> items;
     private int capacity;
+    private HashMap<Item, Integer> items;
 
     public Inventory(HashMap<Item, Integer> items, int capacity) {
         this.items = new HashMap<>();
+        this.capacity = capacity;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
@@ -15,14 +23,8 @@ public class Inventory {
         return items;
     }
 
-    public int getCapacity() { return capacity; }
-
     public void setItems(HashMap<Item, Integer> items) {
         this.items = items;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
     }
 
     @Override

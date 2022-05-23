@@ -15,9 +15,8 @@ public class ShopService {
 
     public static int itemPriceCalculation(int value, Item item) {
         int totalPrice;
-        if (value == 1) {
-            totalPrice = item.getPrice() + 2;
-        } else {
+        if (value == 1) totalPrice = item.getPrice() + 2;
+        else {
             if (item.getPrice() >= 3) totalPrice = item.getPrice() - 2;
             else totalPrice = 1;
         }
@@ -31,7 +30,8 @@ public class ShopService {
             for (Item item : new ArrayList<>(shopInventory.getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
                     int price = itemPriceCalculation(1, item) * quantity;
-                    if (player.getMoney() >= price && player.getInventory().getCapacity()>=quantity) {
+                    if (player.getMoney() < price && player.getInventory().getCapacity()<quantity) shopMessage(2, item.getName(), price, quantity);
+                    else {
                         shopMessage(1, item.getName(), price, quantity);
                         for(int i = 0; i<quantity; i++){
                             addItemToInventory(player.getInventory().getItems(), player.getInventory(), item);
@@ -39,22 +39,18 @@ public class ShopService {
                         player.setMoney(player.getMoney() - price);
                         moneyMessage("2", player, null);
                         removeItemFromInventory(shopInventory, item);
-                    } else {
-                        shopMessage(2, item.getName(), price, quantity);
                     }
                     found = true;
                 }
-                if(found){
-                    break;
-                }
+                if(found) break;
+
             }
         } else {
             System.out.println();
             for (Item item : new ArrayList<>(player.getInventory().getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
-                    if(player.getInventory().getItems().get(item) < quantity) {
-                        shopMessage(3, item.getName(), 0, quantity);
-                    } else {
+                    if(player.getInventory().getItems().get(item) < quantity) shopMessage(3, item.getName(), 0, quantity);
+                    else {
                         int price = itemPriceCalculation(2, item) * quantity;
                         shopMessage(1, item.getName(), price, quantity);
                         for(int i = 0; i<quantity; i++){
@@ -66,9 +62,7 @@ public class ShopService {
                     }
                     found = true;
                 }
-                if(found){
-                    break;
-                }
+                if(found) break;
             }
         }
     }

@@ -51,11 +51,8 @@ public class InventoryService {
                 else {
                     inventoryMessage(1, item);
                     removeItemFromInventory(player.getInventory(), item);
-                    if (item.isEquippable()) {
-                        equippingPlayer(player, item);
-                    } else if (item.isUsable()) {
-                        System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
-                    }
+                    if (item.isEquippable()) equippingPlayer(player, item);
+                    else if (item.isUsable()) System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
                 }
             }
         }
