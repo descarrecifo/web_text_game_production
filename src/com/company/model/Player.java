@@ -1,16 +1,24 @@
 package com.company.model;
 
-public class Player extends Character {
-  private Inventory inventory;
+import java.util.HashMap;
 
-    public Player(String name, int level, Inventory inventory) {
-        super(name, level);
+public class Player extends Character {
+    private Inventory inventory;
+    private Equipment equipment;
+
+
+    public Player(String name, int level, Inventory inventory, Equipment equipment, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money, HashMap <String,Item> equipmentList){
+        super(name, level, maxHealthPoints, healthPoints, strength, defense, speed, dexterity, charClass, money);
         this.inventory = inventory;
+        this.equipment = equipment;
     }
 
-    public Player(String name, int level, Inventory inventory, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass){
-        super(name, level, healthPoints, strength, defense, speed, dexterity, charClass);
-        this.inventory = inventory;
+    public Equipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(Equipment equipment) {
+        this.equipment = equipment;
     }
 
     public Inventory getInventory() {

@@ -1,96 +1,46 @@
 package com.company.model;
 
 public class Character {
-    private String name;
-    private int level;
-    private String charClass;
-    private int experiencePoints;
-    private int healthPoints;
-    private int manaPoints;
-    private int strength;
-    private int defense;
-    private int speed;
-    private int dexterity;
-    private int money;
-    private int totalStrength;
-    private int totalDefense;
-    private int totalSpeed;
-    private int totalHealthPoints;
+    private String name,
+            charClass;
+    private int level,
+            experiencePoints,
+            healthPoints,
+            maxHealthPoints,
+            manaPoints,
+            maxManaPoints,
+            strength,
+            defense,
+            speed,
+            dexterity,
+            charisma,
+            money,
+            totalStrength,
+            totalDefense,
+            totalSpeed,
+            totalDexterity,
+            totalCharisma,
+            totalHealthPoints;
 
-    public Character(){}
+    public Character() {}
 
-    public Character(String name){
-        this.name = name;
-    }
-
-    public Character(String name, int level){
-        this.name = name;
-        this.level = level;
-    }
-
-    public Character(String name, int level,String charClass){
+    public Character(String name, int level, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money) {
         this.name = name;
         this.level = level;
-        this.charClass = charClass;
-    }
-
-    public Character(String name, int level, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass){
-        this.name = name;
-        this.level = level;
+        this.maxHealthPoints = maxHealthPoints;
         this.healthPoints = healthPoints;
         this.strength = strength;
         this.defense = defense;
         this.speed = speed;
         this.dexterity = dexterity;
         this.charClass = charClass;
-    }
-
-    public int getTotalStrength() {
-        return totalStrength;
-    }
-
-    public void setTotalStrength(int totalStrength) {
-        this.totalStrength = totalStrength;
-    }
-
-    public int getTotalDefense() {
-        return totalDefense;
-    }
-
-    public void setTotalDefense(int totalDefense) {
-        this.totalDefense = totalDefense;
-    }
-
-    public int getTotalSpeed() {
-        return totalSpeed;
-    }
-
-    public void setTotalSpeed(int totalSpeed) {
-        this.totalSpeed = totalSpeed;
-    }
-
-    public int getTotalHealthPoints() {
-        return totalHealthPoints;
-    }
-
-    public void setTotalHealthPoints(int totalHealthPoints) {
-        this.totalHealthPoints = totalHealthPoints;
-    }
-
-    public Character(String name, int level, String charClass, int experiencePoints, int healthPoints, int manaPoints, int strength, int defense, int speed, int dexterity, int money) {
-        this.level = level;
-        this.charClass = charClass;
-        this.experiencePoints = experiencePoints;
-        this.healthPoints = healthPoints;
-        this.manaPoints = manaPoints;
-        this.strength = strength;
-        this.defense = defense;
-        this.speed = speed;
-        this.dexterity = dexterity;
         this.money = money;
+        this.totalStrength = strength;
+        this.totalDefense = defense;
+        this.totalSpeed = speed;
     }
 
-    public  String getName() {
+    public String getName() {
         return name;
     }
 
@@ -177,6 +127,58 @@ public class Character {
     public void setMoney(int money) {
         this.money = money;
     }
+
+    public int getTotalStrength() {
+        return totalStrength;
+    }
+
+    public void setTotalStrength(int totalStrength) {
+        this.totalStrength = totalStrength;
+    }
+
+    public int getTotalDefense() {
+        return totalDefense;
+    }
+
+    public void setTotalDefense(int totalDefense) {
+        this.totalDefense = totalDefense;
+    }
+
+    public int getTotalSpeed() {
+        return totalSpeed;
+    }
+
+    public void setTotalSpeed(int totalSpeed) {
+        this.totalSpeed = totalSpeed;
+    }
+
+    public int getTotalHealthPoints() {
+        return totalHealthPoints;
+    }
+
+    public void setTotalHealthPoints(int totalHealthPoints) {
+        this.totalHealthPoints = totalHealthPoints;
+    }
+
+    public int getMaxHealthPoints() {return maxHealthPoints;}
+
+    public void setMaxHealthPoints(int maxHealthPoints) {this.maxHealthPoints = maxHealthPoints;}
+
+    public int getMaxManaPoints() {return maxManaPoints;}
+
+    public void setMaxManaPoints(int maxManaPoints) {this.maxManaPoints = maxManaPoints;}
+
+    public int getCharisma() {return charisma;}
+
+    public void setCharisma(int charisma) {this.charisma = charisma;}
+
+    public int getTotalDexterity() {return totalDexterity;}
+
+    public void setTotalDexterity(int totalDexterity) {this.totalDexterity = totalDexterity;}
+
+    public int getTotalCharisma() {return totalCharisma;}
+
+    public void setTotalCharisma(int totalCharisma) {this.totalCharisma = totalCharisma;}
 
     @Override
     public String toString() {

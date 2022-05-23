@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 import static com.company.controller.CharacterController.createPlayer;
 import static com.company.frontcontroller.FrontController.gameLoopController;
-import static com.company.utils.Utilities.ANSI_RESET;
-import static com.company.utils.Utilities.BRONZE_UNDERLINED;
+import static com.company.utils.Utilities.*;
 import static com.company.view.CharacterView.showClass;
 import static com.company.view.Menu.*;
 
@@ -46,33 +45,11 @@ public class IOView {
                 case "1" -> gameLoopController("1", player);
                 case "2" -> gameLoopController("2", player);
                 case "3" -> gameLoopController("3", player);
-                case "4" -> mainLoopView();
+                case "4" -> gameLoopController("4", player);
+                case "5" -> gameLoopController("5", player);
+                case "6" -> mainLoopView();
                 default -> System.out.println("Unknown command. Try again");
             }
-        }
-    }
-
-    public static void createCharacter() {
-        Scanner reader = new Scanner(System.in);
-        System.out.println("          "+BRONZE_UNDERLINED+"CHARACTER CREATION"+ANSI_RESET);
-        String name = Utilities.ask(reader, "What's your name?");
-        charClassElection(name);
-    }
-
-
-    public static void charClassElection(String name) {
-        Scanner reader = new Scanner(System.in);
-        while (true) {
-            showClass();
-            String charClassOption = reader.nextLine();
-
-            switch (charClassOption) {
-                case "1" -> createPlayer(name, "Warrior");
-                case "2" -> createPlayer(name, "Mage");
-                case "3" -> createPlayer(name, "Hunter");
-                default -> System.out.println("Invalid option");
-            }
-
         }
     }
 
