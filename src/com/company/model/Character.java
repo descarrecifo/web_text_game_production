@@ -3,9 +3,9 @@ package com.company.model;
 public class Character {
     private String charClass,
             name;
-    private int defense,
+    private int charisma,
+            defense,
             dexterity,
-            charisma,
             experiencePoints,
             healthPoints,
             level,
@@ -21,7 +21,6 @@ public class Character {
             totalHealthPoints,
             totalSpeed,
             totalStrength;
-
 
     public Character() {
     }
@@ -58,6 +57,14 @@ public class Character {
         this.name = name;
     }
 
+    public int getCharisma() {
+        return charisma;
+    }
+
+    public void setCharisma(int charisma) {
+        this.charisma = charisma;
+    }
+
     public int getDefense() {
         return defense;
     }
@@ -72,14 +79,6 @@ public class Character {
 
     public void setDexterity(int dexterity) {
         this.dexterity = dexterity;
-    }
-
-    public int getCharisma() {
-        return charisma;
-    }
-
-    public void setCharisma(int charisma) {
-        this.charisma = charisma;
     }
 
     public int getExperiencePoints() {

@@ -18,17 +18,11 @@ public class FightService {
     public static void initialTurn(NPC enemy, Player player, boolean turn) {
         while (true) {
             if (player.getTotalSpeed() <= enemy.getTotalSpeed()) {
-                if (turn) {
-                    enemyTurn(enemy, player);
-                } else {
-                    playerTurn(enemy, player);
-                }
+                if (turn) enemyTurn(enemy, player);
+                else playerTurn(enemy, player);
             } else {
-                if (turn) {
-                    playerTurn(enemy, player);
-                } else {
-                    enemyTurn(enemy, player);
-                }
+                if (turn) playerTurn(enemy, player);
+                else enemyTurn(enemy, player);
             }
         }
     }
@@ -61,7 +55,6 @@ public class FightService {
         }
     }
 
-
     public static void fightResult(NPC enemy, Player player, String nextTurn) {
         if (player.getHealthPoints() <= 0) mainLoopView();
         else if (enemy.getHealthPoints() <= 0) {
@@ -91,7 +84,6 @@ public class FightService {
         double result = 7.5 + (1.0 * dexterityDif) / 2;
         return (result >= probability);
     }
-
 
     public static void levelUp(Player player) {
         player.setLevel(player.getLevel() + 1);

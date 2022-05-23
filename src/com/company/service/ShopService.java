@@ -30,7 +30,7 @@ public class ShopService {
             for (Item item : new ArrayList<>(shopInventory.getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
                     int price = itemPriceCalculation(1, item) * quantity;
-                    if (player.getMoney() < price && player.getInventory().getCapacity()<quantity) shopMessage(2, item.getName(), price, quantity);
+                    if (player.getMoney() < price || player.getInventory().getCapacity()<quantity) shopMessage(2, item.getName(), price, quantity);
                     else {
                         shopMessage(1, item.getName(), price, quantity);
                         for(int i = 0; i<quantity; i++){
