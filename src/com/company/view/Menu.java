@@ -4,7 +4,6 @@ import static com.company.utils.Utilities.*;
 
 public class Menu{
 
-    //Main Menu
     public static void mainMenuView() {
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                      "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"             "+BRONZE_UNDERLINED+ANSI_BOLD+"MAIN MENU"+ANSI_RESET+"              "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
@@ -15,7 +14,6 @@ public class Menu{
         System.out.println("Choose an option");
     }
 
-    // Menu New Game
     public static void menuNewGameView() {
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                    "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"            "+BRONZE_UNDERLINED+ANSI_BOLD+"MAIN GAME"+ANSI_RESET+"             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);

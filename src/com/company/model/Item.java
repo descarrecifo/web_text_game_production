@@ -1,22 +1,22 @@
 package com.company.model;
 
 public class Item {
-    private String name,
-            type,
-            description;
-    private int price,
+    private String description,
+            name,
+            type;
+    private int defense,
             index,
-            strength,
-            defense,
-            speed;
+            price,
+            speed,
+            strength;
     boolean equippable,
             usable;
 
-    public Item(){
+    public Item() {
     }
 
 
-    public Item(String name ,  String type , String description , int price , int strength, int defense, int speed, boolean equippable, boolean usable){
+    public Item(String name, String type, String description, int price, int strength, int defense, int speed, boolean equippable, boolean usable) {
         this.name = name;
         this.type = type;
         this.description = description;
@@ -28,12 +28,28 @@ public class Item {
         this.usable = usable;
     }
 
-    public int getStrength() {
-        return strength;
+    public String getDescription() {
+        return description;
     }
 
-    public void setStrength(int strength) {
-        this.strength = strength;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public int getDefense() {
@@ -44,14 +60,6 @@ public class Item {
         this.defense = defense;
     }
 
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
     public int getIndex() {
         return index;
     }
@@ -60,50 +68,48 @@ public class Item {
         this.index = index;
     }
 
-
-    public String getName() {
-        return name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
     public int getPrice() {
         return price;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public void setPrice(int price) {
         this.price = price;
     }
 
-    public boolean isEquippable() {return equippable;}
+    public int getSpeed() {
+        return speed;
+    }
 
-    public void setEquippable(boolean equippable) {this.equippable = equippable;}
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
 
-    public boolean isUsable() {return usable;}
+    public int getStrength() {
+        return strength;
+    }
 
-    public void setUsable(boolean usable) {this.usable = usable;}
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public boolean isEquippable() {
+        return equippable;
+    }
+
+    public void setEquippable(boolean equippable) {
+        this.equippable = equippable;
+    }
+
+    public boolean isUsable() {
+        return usable;
+    }
+
+    public void setUsable(boolean usable) {
+        this.usable = usable;
+    }
 
     @Override
-    public boolean equals(Object o)
-    {
+    public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
@@ -129,8 +135,7 @@ public class Item {
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int result = name.hashCode();
         result = 42 * result + price;
         return result;

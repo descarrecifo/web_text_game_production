@@ -1,28 +1,30 @@
 package com.company.model;
 
 public class Character {
-    private String name,
-            charClass;
-    private int level,
-            experiencePoints,
-            healthPoints,
-            maxHealthPoints,
-            manaPoints,
-            maxManaPoints,
-            strength,
-            defense,
-            speed,
+    private String charClass,
+            name;
+    private int defense,
             dexterity,
             charisma,
+            experiencePoints,
+            healthPoints,
+            level,
+            manaPoints,
+            maxHealthPoints,
+            maxManaPoints,
             money,
-            totalStrength,
-            totalDefense,
-            totalSpeed,
-            totalDexterity,
+            speed,
+            strength,
             totalCharisma,
-            totalHealthPoints;
+            totalDefense,
+            totalDexterity,
+            totalHealthPoints,
+            totalSpeed,
+            totalStrength;
 
-    public Character() {}
+
+    public Character() {
+    }
 
     public Character(String name, int level, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money) {
         this.name = name;
@@ -40,100 +42,124 @@ public class Character {
         this.totalSpeed = speed;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
     public String getCharClass() {
         return charClass;
-    }
-
-    public int getExperiencePoints() {
-        return experiencePoints;
-    }
-
-    public int getHealthPoints() {
-        return healthPoints;
-    }
-
-    public int getManaPoints() {
-        return manaPoints;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getDexterity() {
-        return dexterity;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
     }
 
     public void setCharClass(String charClass) {
         this.charClass = charClass;
     }
 
-    public void setExperiencePoints(int experiencePoints) {
-        this.experiencePoints = experiencePoints;
+    public String getName() {
+        return name;
     }
 
-    public void setHealthPoints(int healthPoints) {
-        this.healthPoints = healthPoints;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setManaPoints(int manaPoints) {
-        this.manaPoints = manaPoints;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
+    public int getDefense() {
+        return defense;
     }
 
     public void setDefense(int defense) {
         this.defense = defense;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
+    public int getDexterity() {
+        return dexterity;
     }
 
     public void setDexterity(int dexterity) {
         this.dexterity = dexterity;
     }
 
+    public int getCharisma() {
+        return charisma;
+    }
+
+    public void setCharisma(int charisma) {
+        this.charisma = charisma;
+    }
+
+    public int getExperiencePoints() {
+        return experiencePoints;
+    }
+
+    public void setExperiencePoints(int experiencePoints) {
+        this.experiencePoints = experiencePoints;
+    }
+
+    public int getHealthPoints() {
+        return healthPoints;
+    }
+
+    public void setHealthPoints(int healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getManaPoints() {
+        return manaPoints;
+    }
+
+    public void setManaPoints(int manaPoints) {
+        this.manaPoints = manaPoints;
+    }
+
+    public int getMaxHealthPoints() {
+        return maxHealthPoints;
+    }
+
+    public void setMaxHealthPoints(int maxHealthPoints) {
+        this.maxHealthPoints = maxHealthPoints;
+    }
+
+    public int getMaxManaPoints() {
+        return maxManaPoints;
+    }
+
+    public void setMaxManaPoints(int maxManaPoints) {
+        this.maxManaPoints = maxManaPoints;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
     public void setMoney(int money) {
         this.money = money;
     }
 
-    public int getTotalStrength() {
-        return totalStrength;
+    public int getSpeed() {
+        return speed;
     }
 
-    public void setTotalStrength(int totalStrength) {
-        this.totalStrength = totalStrength;
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public int getTotalCharisma() {
+        return totalCharisma;
+    }
+
+    public void setTotalCharisma(int totalCharisma) {
+        this.totalCharisma = totalCharisma;
     }
 
     public int getTotalDefense() {
@@ -144,12 +170,12 @@ public class Character {
         this.totalDefense = totalDefense;
     }
 
-    public int getTotalSpeed() {
-        return totalSpeed;
+    public int getTotalDexterity() {
+        return totalDexterity;
     }
 
-    public void setTotalSpeed(int totalSpeed) {
-        this.totalSpeed = totalSpeed;
+    public void setTotalDexterity(int totalDexterity) {
+        this.totalDexterity = totalDexterity;
     }
 
     public int getTotalHealthPoints() {
@@ -160,25 +186,21 @@ public class Character {
         this.totalHealthPoints = totalHealthPoints;
     }
 
-    public int getMaxHealthPoints() {return maxHealthPoints;}
+    public int getTotalSpeed() {
+        return totalSpeed;
+    }
 
-    public void setMaxHealthPoints(int maxHealthPoints) {this.maxHealthPoints = maxHealthPoints;}
+    public void setTotalSpeed(int totalSpeed) {
+        this.totalSpeed = totalSpeed;
+    }
 
-    public int getMaxManaPoints() {return maxManaPoints;}
+    public int getTotalStrength() {
+        return totalStrength;
+    }
 
-    public void setMaxManaPoints(int maxManaPoints) {this.maxManaPoints = maxManaPoints;}
-
-    public int getCharisma() {return charisma;}
-
-    public void setCharisma(int charisma) {this.charisma = charisma;}
-
-    public int getTotalDexterity() {return totalDexterity;}
-
-    public void setTotalDexterity(int totalDexterity) {this.totalDexterity = totalDexterity;}
-
-    public int getTotalCharisma() {return totalCharisma;}
-
-    public void setTotalCharisma(int totalCharisma) {this.totalCharisma = totalCharisma;}
+    public void setTotalStrength(int totalStrength) {
+        this.totalStrength = totalStrength;
+    }
 
     @Override
     public String toString() {
