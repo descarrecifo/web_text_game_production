@@ -26,7 +26,7 @@ public class IOView {
             String keyMenuMain = reader.nextLine();
             switch (keyMenuMain) {
                 case "1" -> mainLoopController("1");
-                case "2" -> finishGameView();
+                case "0" -> finishGameView();
                 default -> System.out.println("Unknown command. Try again");
             }
         }
