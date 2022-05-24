@@ -39,9 +39,9 @@ public class InventoryView {
 
     public static void addItemToInventoryMessage(String value, Item newItem) {
         switch (value) {
-            case "1" -> System.out.println("Same item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
-            case "2" -> System.out.println("New item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
-            case "3" -> System.out.println("Your inventory is full, you can't get more items");
+            case "1": System.out.println("Same item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+            case "2": System.out.println("New item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+            case "3": System.out.println("Your inventory is full, you can't get more items");
         }
     }
 
@@ -61,8 +61,8 @@ public class InventoryView {
 
     public static void inventoryMessage(int value, Item item){
         switch (value){
-            case 1 -> System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
-            case 2 -> System.out.println("You cannot use or equip this item.");
+            case 1: System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
+            case 2: System.out.println("You cannot use or equip this item.");
         }
     }
 }
