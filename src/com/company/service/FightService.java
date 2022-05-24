@@ -68,8 +68,12 @@ public class FightService {
         } else {
 //            fightingMessages("11", enemy, player);
             switch (nextTurn) {
-                case "enemy": enemyTurn(enemy, player);
-                case "player": playerTurn(enemy, player);
+                case "enemy": {
+                    enemyTurn(enemy, player);
+                    break;}
+                case "player": {
+                    playerTurn(enemy, player);
+                    break;   }
             }
         }
     }

@@ -13,7 +13,7 @@ public class InventoryView {
     public static void showInventory(Player player) {
         AtomicInteger i = new AtomicInteger(1);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED +ANSI_BOLD+ "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED + ANSI_BOLD + "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         player.getInventory().getItems().forEach((k, v) -> {
             k.setIndex(i.intValue());
@@ -39,9 +39,18 @@ public class InventoryView {
 
     public static void addItemToInventoryMessage(String value, Item newItem) {
         switch (value) {
-            case "1": System.out.println("Same item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
-            case "2": System.out.println("New item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
-            case "3": System.out.println("Your inventory is full, you can't get more items");
+            case "1": {
+                System.out.println("Same item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+                break;
+            }
+            case "2": {
+                System.out.println("New item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+                break;
+            }
+            case "3": {
+                System.out.println("Your inventory is full, you can't get more items");
+                break;
+            }
         }
     }
 
@@ -59,10 +68,16 @@ public class InventoryView {
         }
     }
 
-    public static void inventoryMessage(int value, Item item){
-        switch (value){
-            case 1: System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
-            case 2: System.out.println("You cannot use or equip this item.");
+    public static void inventoryMessage(int value, Item item) {
+        switch (value) {
+            case 1: {
+                System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
+                break;
+            }
+            case 2: {
+                System.out.println("You cannot use or equip this item.");
+                break;
+            }
         }
     }
 }

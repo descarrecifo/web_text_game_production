@@ -21,21 +21,45 @@ public class InventoryService {
         var reward = new Item();
 
         switch (value) {
-            case 1: reward = new Item("Tunic", "cloth", "A simple tunic", 2, 0, 1, 0, true, false);
+            case 1: {
+                reward = new Item("Tunic", "cloth", "A simple tunic", 2, 0, 1, 0, true, false);
+                break;
+            }
 
-            case 2: reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 1, 1, 0, 0, true, false);
+            case 2: {
+                reward = new Item("Wooden stick", "weapon", "A simple stick made of wood", 1, 1, 0, 0, true, false);
+                break;
+            }
 
-            case 3: reward = new Item("Sword", "weapon", "A simple sword", 7, 4, 0, 0, true, false);
+            case 3: {
+                reward = new Item("Sword", "weapon", "A simple sword", 7, 4, 0, 0, true, false);
+                break;
+            }
 
-            case 4: reward = new Item("Bow", "weapon", "A simple bow", 4, 2, 0, 0, true, false);
+            case 4: {
+                reward = new Item("Bow", "weapon", "A simple bow", 4, 2, 0, 0, true, false);
+                break;
+            }
 
-            case 5: reward = new Item("Great armour", "armour", "A heavy armour with a good defense", 15, 0, 10, -3, true, false);
+            case 5: {
+                reward = new Item("Great armour", "armour", "A heavy armour with a good defense", 15, 0, 10, -3, true, false);
+                break;
+            }
 
-            case 6: reward = new Item("Helmet", "armour", "A basic iron helmet", 5, 0, 2, 0, true, false);
+            case 6: {
+                reward = new Item("Helmet", "armour", "A basic iron helmet", 5, 0, 2, 0, true, false);
+                break;
+            }
 
-            case 7: reward = new Item("Dagger", "weapon", "A simple dagger", 3, 2, 0, 0, true, false);
+            case 7: {
+                reward = new Item("Dagger", "weapon", "A simple dagger", 3, 2, 0, 0, true, false);
+                break;
+            }
 
-            default: reward = new Item("Healing herb", "herb", "This herb has medicinal capabilities", 1, 0, 0, 0, false, true);
+            default: {
+                reward = new Item("Healing herb", "herb", "This herb has medicinal capabilities", 1, 0, 0, 0, false, true);
+                break;
+            }
         }
         return reward;
     }
@@ -52,7 +76,8 @@ public class InventoryService {
                     inventoryMessage(1, item);
                     removeItemFromInventory(player.getInventory(), item);
                     if (item.isEquippable()) equippingPlayer(player, item);
-                    else if (item.isUsable()) System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
+                    else if (item.isUsable())
+                        System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
                 }
             }
         }
