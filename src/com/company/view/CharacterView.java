@@ -149,7 +149,7 @@ public class CharacterView {
                 }
 
                 default:
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
             }
 
@@ -187,7 +187,7 @@ public class CharacterView {
                     break;
                 }
                 default:
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
             }
         }

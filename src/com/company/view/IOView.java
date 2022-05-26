@@ -35,7 +35,7 @@ public class IOView {
                 }
 
                 default: {
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }
@@ -77,7 +77,7 @@ public class IOView {
                     break;
                 }
                 default: {
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }

@@ -15,14 +15,14 @@ public class ShopController {
     public static void shopping(Player player, int value) {
         HashMap<Item, Integer> items = new HashMap<>();
         Inventory shopInventory = new Inventory(items, 200);
-        for(int i = 0; i<100; i++){
+        for (int i = 0; i < 100; i++) {
             Item newItem = createItem();
             if (compareItems(shopInventory.getItems(), newItem)) items.replace(newItem, items.get(newItem) + 1);
             else items.put(newItem, 1);
             shopInventory.setItems(items);
             shopInventory.setCapacity(shopInventory.getCapacity() - 1);
         }
-        if (value == 1) buyingAndSelling(shopInventory, player, 1);
-        else buyingAndSelling(shopInventory, player,2);
+        if (value != 1) buyingAndSelling(shopInventory, player, 2);
+        else buyingAndSelling(shopInventory, player, 2);
     }
 }
