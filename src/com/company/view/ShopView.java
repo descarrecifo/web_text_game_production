@@ -21,7 +21,7 @@ public class ShopView {
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                  " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Buy                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Sell                     " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 3- Return to Main Menu           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 0- Return to back Menu           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                    " + ANSI_RESET);
         System.out.println("Choose an option");
     }
@@ -73,7 +73,7 @@ public class ShopView {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("Invalid option");
+                System.out.println("Unknown option. Try again");
             }
         }
     }
@@ -92,12 +92,12 @@ public class ShopView {
                     ShopController.shopping(player, 2);
                     break;
                 }
-                case "3": {
+                case "0": {
                     gameLoopView(player);
                     break;
                 }
                 default: {
-                    System.out.println("Invalid option");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }
