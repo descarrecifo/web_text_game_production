@@ -95,15 +95,6 @@ public class CharacterView {
         }
         System.out.println();
         gameLoopView(player);
-//        new java.util.Timer().schedule(
-//                new java.util.TimerTask() {
-//                    @Override
-//                    public void run() {
-//                        gameLoopView(player);
-//                    }
-//                },
-//                2000
-//        );
     }
 
     public static void createCharacter() {
@@ -158,7 +149,7 @@ public class CharacterView {
                 }
 
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println("Unknown command. Try again");
                     break;
             }
 
@@ -173,6 +164,7 @@ public class CharacterView {
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Details Character      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Equipment              " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 0- Return to back Menu       " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
             System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
             String valueChoose = scanner.nextLine();
             switch (valueChoose) {

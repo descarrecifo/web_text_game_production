@@ -66,7 +66,6 @@ public class FightService {
             addingMoney(player, enemy);
             gameLoopView(player);
         } else {
-//            fightingMessages("11", enemy, player);
             switch (nextTurn) {
                 case "enemy": {
                     enemyTurn(enemy, player);

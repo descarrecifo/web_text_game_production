@@ -72,7 +72,7 @@ public class IOView {
                     gameLoopController("5", player);
                     break;
                 }
-                case "6": {
+                case "0": {
                     mainLoopView();
                     break;
                 }
