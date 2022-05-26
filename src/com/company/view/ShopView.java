@@ -73,7 +73,7 @@ public class ShopView {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("Unknown option. Try again");
+                System.out.println("Unknown command. Try again");
             }
         }
     }
@@ -97,7 +97,7 @@ public class ShopView {
                     break;
                 }
                 default: {
-                    System.out.println("Unknown option. Try again");
+                    System.out.println("Unknown command. Try again");
                     break;
                 }
             }

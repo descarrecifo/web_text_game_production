@@ -63,7 +63,7 @@ public class InventoryView {
                 if (Integer.parseInt(option) == 0) break;
                 else equippingOrUsingObject(player, Integer.parseInt(option));
             } catch (Exception e) {
-                System.out.println("Unknown option. Try again");
+                System.out.println("Invalid option");
             }
         }
     }

@@ -22,5 +22,33 @@ public class EquipmentView {
         }
         System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
     }
-}
+
+//        public static void showEquipmentPlayer (Player player){
+//            // indexItemEquipment is index number Items Equipment
+//            int indexItemEquipment = player.getEquipmentHabilities().getNumItemsEquipment();
+//
+//            System.out.println("*******************************************");
+//
+//            System.out.println("Add characteristics " + player.getEquipment().get(String.valueOf(indexItemEquipment)).getName());
+//            System.out.println("Add Strenght: " + player.getEquipment().get(String.valueOf(indexItemEquipment)).getStrength());
+//            System.out.println("Add Defense:  " + player.getEquipment().get(String.valueOf(indexItemEquipment)).getDefense());
+//            System.out.println("Add Speed:    " + player.getEquipment().get(String.valueOf(indexItemEquipment)).getSpeed());
+//
+//            // Sum value of items habilities equipment to total
+//            EquipmentService.sumHabilitiesEquipment(player, indexItemEquipment);
+//
+//            // Show Resum
+//            showItemsEquipmentPlayer(player);
+//        }
+
+        // Show Sum habilities Items of Equipment
+//        public static void showItemsEquipmentPlayer (Player player){
+//            System.out.println("********************************************  ");
+//            System.out.println("*** Resum: Increased skills due to items ***  ");
+//            System.out.format("    Additional strength total per item: " + YELLOW_BRIGHT + player.getEquipmentHabilities().getSumStrenghtEquipment() + ANSI_RESET + "\n");
+//            System.out.format("    Additional defense total per item:  " + YELLOW_BRIGHT + player.getEquipmentHabilities().getSumDefenseEquipment() + ANSI_RESET + "\n");
+//            System.out.format("    Additional speed total per item:    " + YELLOW_BRIGHT + player.getEquipmentHabilities().getSumSpeedEquipment() + ANSI_RESET + "\n");
+//            System.out.println("********************************************  ");
+//        }
+    }
 

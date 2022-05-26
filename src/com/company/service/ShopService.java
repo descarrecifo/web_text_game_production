@@ -25,39 +25,15 @@ public class ShopService {
 
     public static void shopping(int value, Inventory shopInventory, int itemIndex, Player player, int quantity) {
         boolean found = false;
-
-        if (value != 1) {
-            System.out.println();
-            for (Item item : new ArrayList<>(player.getInventory().getItems().keySet())) {
-                if (item.getIndex() == itemIndex) {
-                    if (player.getInventory().getItems().get(item) < quantity)
-                        shopMessage(3, item.getName(), 0, quantity);
-                    else {
-                        int price = itemPriceCalculation(2, item) * quantity;
-                        shopMessage(1, item.getName(), price, quantity);
-                        for (int i = 0; i < quantity; i++) {
-                            addItemToInventory(shopInventory.getItems(), shopInventory, item);
-                            removeItemFromInventory(player.getInventory(), item);
-                        }
-                        player.setMoney(player.getMoney() + price);
-                        moneyMessage("2", player, null);
-                    }
-                    found = true;
-                }
-                if (found) break;
-            }
-        } else {
-
-
+        if (value == 1) {
             System.out.println();
             for (Item item : new ArrayList<>(shopInventory.getItems().keySet())) {
                 if (item.getIndex() == itemIndex) {
                     int price = itemPriceCalculation(1, item) * quantity;
-                    if (player.getMoney() < price || player.getInventory().getCapacity() < quantity)
-                        shopMessage(2, item.getName(), price, quantity);
+                    if (player.getMoney() < price || player.getInventory().getCapacity()<quantity) shopMessage(2, item.getName(), price, quantity);
                     else {
                         shopMessage(1, item.getName(), price, quantity);
-                        for (int i = 0; i < quantity; i++) {
+                        for(int i = 0; i<quantity; i++){
                             addItemToInventory(player.getInventory().getItems(), player.getInventory(), item);
                         }
                         player.setMoney(player.getMoney() - price);
@@ -66,9 +42,29 @@ public class ShopService {
                     }
                     found = true;
                 }
-                if (found) break;
+                if(found) break;
 
+            }
+        } else {
+            System.out.println();
+            for (Item item : new ArrayList<>(player.getInventory().getItems().keySet())) {
+                if (item.getIndex() == itemIndex) {
+                    if(player.getInventory().getItems().get(item) < quantity) shopMessage(3, item.getName(), 0, quantity);
+                    else {
+                        int price = itemPriceCalculation(2, item) * quantity;
+                        shopMessage(1, item.getName(), price, quantity);
+                        for(int i = 0; i<quantity; i++){
+                            addItemToInventory(shopInventory.getItems(), shopInventory, item);
+                            removeItemFromInventory(player.getInventory(), item);
+                        }
+                        player.setMoney(player.getMoney() + price);
+                        moneyMessage("2", player, null);
+                    }
+                    found = true;
+                }
+                if(found) break;
             }
         }
     }
 }
+
