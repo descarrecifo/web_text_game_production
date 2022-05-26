@@ -25,9 +25,19 @@ public class IOView {
             mainMenuView();
             String keyMenuMain = reader.nextLine();
             switch (keyMenuMain) {
-                case "1" -> mainLoopController("1");
-                case "0" -> finishGameView();
-                default -> System.out.println("Unknown command. Try again");
+                case "1": {
+                    mainLoopController("1");
+                    break;
+                }
+                case "0": {
+                    finishGameView();
+                    break;
+                }
+
+                default: {
+                    System.out.println("Unknown command. Try again");
+                    break;
+                }
             }
         }
     }
@@ -42,18 +52,38 @@ public class IOView {
 
             switch (keyMenuNewGame) {
 
-                case "1" -> gameLoopController("1", player);
-                case "2" -> gameLoopController("2", player);
-                case "3" -> gameLoopController("3", player);
-                case "4" -> gameLoopController("4", player);
-                case "5" -> gameLoopController("5", player);
-                case "6" -> mainLoopView();
-                default -> System.out.println("Unknown command. Try again");
+                case "1": {
+                    gameLoopController("1", player);
+                    break;
+                }
+                case "2": {
+                    gameLoopController("2", player);
+                    break;
+                }
+                case "3": {
+                    gameLoopController("3", player);
+                    break;
+                }
+                case "4": {
+                    gameLoopController("4", player);
+                    break;
+                }
+                case "5": {
+                    gameLoopController("5", player);
+                    break;
+                }
+                case "6": {
+                    mainLoopView();
+                    break;
+                }
+                default: {
+                    System.out.println("Unknown command. Try again");
+                    break;
+                }
             }
         }
     }
 
-    //  Game Over or Menu Exit
     public static void finishGameView() {
         //Exit program
         System.out.println("We hope to see you soon, adventurer!");

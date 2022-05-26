@@ -64,7 +64,7 @@ public class ShopView {
                     int quantity = Integer.parseInt(ask(reader, "How many items do you want to " + ((value != 1) ? "sell" : "buy") + "?"));
                     if (quantity < 1) {
                         System.out.println("The quantity needs to be at least 1");
-                    }else {
+                    } else {
                         if (value == 1) {
                             ShopService.shopping(1, shopInventory, Integer.parseInt(option), player, quantity);
                         } else {
@@ -84,19 +84,40 @@ public class ShopView {
             menuShopView();
             String option = reader.nextLine();
             switch (option) {
-                case "1" -> ShopController.shopping(player, 1);
-                case "2" -> ShopController.shopping(player, 2);
-                case "3" -> gameLoopView(player);
-                default -> System.out.println("Invalid option");
+                case "1": {
+                    ShopController.shopping(player, 1);
+                    break;
+                }
+                case "2": {
+                    ShopController.shopping(player, 2);
+                    break;
+                }
+                case "3": {
+                    gameLoopView(player);
+                    break;
+                }
+                default: {
+                    System.out.println("Invalid option");
+                    break;
+                }
             }
         }
     }
 
     public static void shopMessage(int value, String itemName, int price, int quantity) {
         switch (value) {
-            case 1 -> System.out.println("The chosen object is " + YELLOW_BRIGHT + itemName + ANSI_RESET + ", its quantity is " + YELLOW_BRIGHT + quantity + ANSI_RESET + " and its price is " + YELLOW_BRIGHT + price + ANSI_RESET);
-            case 2 -> System.out.println("You don't have enough money for buy " + YELLOW_BRIGHT + quantity + ANSI_RESET + ((quantity == 1) ? " unit " : " units ") + "of "+ YELLOW_BRIGHT + itemName + ANSI_RESET);
-            case 3 -> System.out.println("You don't have "+YELLOW_BRIGHT + quantity + ANSI_RESET+ ((quantity == 1) ? " unit " : " units ") +"of "+ YELLOW_BRIGHT +itemName+ ANSI_RESET +" to sell.");
+            case 1: {
+                System.out.println("The chosen object is " + YELLOW_BRIGHT + itemName + ANSI_RESET + ", its quantity is " + YELLOW_BRIGHT + quantity + ANSI_RESET + " and its price is " + YELLOW_BRIGHT + price + ANSI_RESET);
+                break;
+            }
+            case 2: {
+                System.out.println("You don't have enough money for buy " + YELLOW_BRIGHT + quantity + ANSI_RESET + ((quantity == 1) ? " unit " : " units ") + "of " + YELLOW_BRIGHT + itemName + ANSI_RESET);
+                break;
+            }
+            case 3: {
+                System.out.println("You don't have " + YELLOW_BRIGHT + quantity + ANSI_RESET + ((quantity == 1) ? " unit " : " units ") + "of " + YELLOW_BRIGHT + itemName + ANSI_RESET + " to sell.");
+                break;
+            }
         }
     }
 }
