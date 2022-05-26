@@ -69,10 +69,12 @@ public class FightService {
             switch (nextTurn) {
                 case "enemy": {
                     enemyTurn(enemy, player);
-                    break;}
+                    break;
+                }
                 case "player": {
                     playerTurn(enemy, player);
-                    break;   }
+                    break;
+                }
             }
         }
     }
@@ -90,7 +92,7 @@ public class FightService {
 
     public static void levelUp(Player player) {
         player.setLevel(player.getLevel() + 1);
-        player.setMaxHealthPoints(player.getMaxHealthPoints() + valueGained()*5);
+        player.setMaxHealthPoints(player.getMaxHealthPoints() + valueGained() * 5);
         player.setStrength(player.getStrength() + valueGained());
         player.setDefense(player.getDefense() + valueGained());
         player.setSpeed(player.getSpeed() + valueGained());
@@ -100,6 +102,6 @@ public class FightService {
 
     public static int valueGained() {
         Random r = new Random();
-        return r.nextInt(3-1)+1;
+        return r.nextInt(3 - 1) + 1;
     }
 }

@@ -12,9 +12,9 @@ import static com.company.view.CharacterView.presentationText;
 
 public class CharacterService {
 
-    public static void addingMoney(Player player, NPC enemy){
+    public static void addingMoney(Player player, NPC enemy) {
         player.setMoney(player.getMoney() + enemy.getMoney());
-        if(enemy.getMoney()>0) moneyMessage("1", player, enemy);
+        if (enemy.getMoney() > 0) moneyMessage("1", player, enemy);
     }
 
     // sum characteristics player + items equipments
@@ -24,11 +24,10 @@ public class CharacterService {
         player.setTotalSpeed(player.getEquipment().getTotalSpeed() + player.getSpeed());
     }
 
-    public static void CreatePlayer(HashMap<Item, Integer> items, Item newItem, Player player, Inventory playerInventory) {
+    public static void createPlayer(HashMap<Item, Integer> items, Item newItem, Player player, Inventory playerInventory) {
         items.put(newItem, 1);
         player.getInventory().setItems(items);
         playerInventory.setCapacity(playerInventory.getCapacity() - 1);
         presentationText(player);
-
     }
 }

@@ -11,7 +11,7 @@ public class EquipmentService {
     public static void equippingPlayer(Player player, Item item) {
         player.getEquipment().setQuantityEquippedItems(player.getEquipment().getQuantityEquippedItems() + 1);
         player.getEquipment().getEquipments().put(String.valueOf(player.getEquipment().getQuantityEquippedItems()), item);
-        setEquipmentTotalCharacteristics(player,player.getEquipment().getQuantityEquippedItems());
+        setEquipmentTotalCharacteristics(player, player.getEquipment().getQuantityEquippedItems());
     }
 
     public static void setEquipmentTotalCharacteristics(Player player, int indexItemEquipment) {
