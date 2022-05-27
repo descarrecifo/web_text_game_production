@@ -31,7 +31,7 @@ public class CraftView {
         Scanner reader = new Scanner(System.in);
         while (true) {
             craftMenuView();
-            String option = ask(reader, "Choose what item you want to craft. Press 0 to return to Game Menu");
+            String option = ask(reader, "Choose what item you want to craft. Press 0 to return to back Menu");
             try {
                 if (Integer.parseInt(option) == 0) break;
                 else {
@@ -41,7 +41,7 @@ public class CraftView {
                     } else CraftController.crafting(player, Integer.parseInt(option), quantity);
                 }
             } catch (Exception e) {
-                System.out.println("Invalid option");
+                System.out.println("Unknown option. Try again");
             }
         }
     }

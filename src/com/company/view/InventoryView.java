@@ -15,6 +15,14 @@ public class InventoryView {
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED + ANSI_BOLD + "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        showInventoryLoop(player);
+        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
+        System.out.println();
+        System.out.println("Choose an item number to equip or use. Press 0 to return to Game Menu");
+    }
+
+    public static void showInventoryLoop(Player player){
+        AtomicInteger i = new AtomicInteger(1);
         player.getInventory().getItems().forEach((k, v) -> {
             k.setIndex(i.intValue());
             System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " " + i.getAndIncrement() + ". Name: " + YELLOW_BRIGHT
@@ -31,10 +39,6 @@ public class InventoryView {
             }
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         });
-//                "key: %s, value: %d%n", k, v));
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println();
-        System.out.println("Choose an item number to equip. Press 0 to return to Game Menu");
     }
 
     public static void addItemToInventoryMessage(String value, Item newItem) {
@@ -63,7 +67,7 @@ public class InventoryView {
                 if (Integer.parseInt(option) == 0) break;
                 else equippingOrUsingObject(player, Integer.parseInt(option));
             } catch (Exception e) {
-                System.out.println("Invalid option");
+                System.out.println("Unknown option. Try again");
             }
         }
     }

@@ -1,13 +1,12 @@
 package com.company.controller;
 
 import com.company.model.*;
+import com.company.service.CharacterService;
 
 import java.util.HashMap;
 import java.util.Random;
 
 import static com.company.service.InventoryService.createItem;
-
-import static com.company.view.CharacterView.presentationText;
 
 public class
 
@@ -23,70 +22,49 @@ CharacterController {
             case "Cleric": {
                 Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 10, 15, 20, 20, "Cleric", 5);
                 Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2, 0, 1, 0, true, false);
-                items.put(newItem, 1);
-                player.getInventory().setItems(items);
-                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                presentationText(player);
+                CharacterService.createPlayer(items, newItem, player, playerInventory);
                 break;
             }
 
             case "Mage": {
                 Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 10, 15, 25, 15, "Mage", 5);
                 Item newItem = new Item("Tunic", "cloth", "A simple tunic", 2, 0, 1, 0, true, false);
-                items.put(newItem, 1);
-                player.getInventory().setItems(items);
-                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                presentationText(player);
+                CharacterService.createPlayer(items, newItem, player, playerInventory);
                 break;
             }
 
             case "Monk": {
                 Player player = new Player(name, 1, playerInventory, playerEquipment, 90, 90, 15, 10, 25, 25, "Monk", 5);
                 Item newItem = new Item("Wooden stick", "weapon", "A simple stick made of wood", 1, 1, 0, 0, true, false);
-                items.put(newItem, 1);
-                player.getInventory().setItems(items);
-                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                presentationText(player);
+                CharacterService.createPlayer(items, newItem, player, playerInventory);
                 break;
             }
 
             case "Paladin": {
                 Player player = new Player(name, 1, playerInventory, playerEquipment, 120, 120, 15, 15, 15, 10, "Paladin", 5);
                 Item newItem = new Item("Sword", "weapon", "A simple sword", 7, 4, 0, 0, true, false);
-                items.put(newItem, 1);
-                player.getInventory().setItems(items);
-                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                presentationText(player);
+                CharacterService.createPlayer(items, newItem, player, playerInventory);
                 break;
             }
 
             case "Ranger": {
                 Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 10, 10, 20, 25, "Hunter", 5);
                 Item newItem = new Item("Bow", "weapon", "A simple bow", 4, 2, 0, 0, true, false);
-                items.put(newItem, 1);
-                player.getInventory().setItems(items);
-                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                presentationText(player);
+                CharacterService.createPlayer(items, newItem, player, playerInventory);
                 break;
             }
 
             case "Rogue": {
                 Player player = new Player(name, 1, playerInventory, playerEquipment, 90, 90, 15, 15, 20, 25, "Rogue", 5);
                 Item newItem = new Item("Dagger", "weapon", "A simple dagger", 3, 2, 0, 0, true, false);
-                items.put(newItem, 1);
-                player.getInventory().setItems(items);
-                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                presentationText(player);
+                CharacterService.createPlayer(items, newItem, player, playerInventory);
                 break;
             }
 
             case "Warrior": {
                 Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 25, 15, 10, 15, "Warrior", 5);
                 Item newItem = new Item("Sword", "weapon", "A simple sword", 7, 4, 0, 0, true, false);
-                items.put(newItem, 1);
-                player.getInventory().setItems(items);
-                playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-                presentationText(player);
+                CharacterService.createPlayer(items, newItem, player, playerInventory);
                 break;
             }
         }
