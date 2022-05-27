@@ -11,7 +11,6 @@ public class Menu{
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1- New Game                        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 0- Exit                            "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                      "+ANSI_RESET);
-        System.out.println("Choose an option");
     }
 
     public static void menuNewGameView() {
@@ -23,9 +22,8 @@ public class Menu{
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3- Character                     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4- Shop                          "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 5- Craft                         "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 6- Return to Main Menu           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 0- Return to Main Menu           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND+"                                    "+ANSI_RESET);
-        System.out.println("Choose an option");
     }
 
 }

@@ -10,8 +10,10 @@ import static com.company.controller.CharacterController.createPlayer;
 import static com.company.utils.Utilities.*;
 import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
+import static com.company.view.IOView.menuOption;
 
 public class CharacterView {
+    static Scanner reader = new Scanner(System.in);
     public static void showCharacter(Player player) {
         System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "      " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTERISTICS" + ANSI_RESET + "      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
@@ -24,7 +26,6 @@ public class CharacterView {
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Speed: " + YELLOW_BRIGHT + player.getSpeed() + ((player.getEquipment().getTotalSpeed() != 0) ? " (" + ((player.getEquipment().getTotalSpeed() > 0) ? "+" : "") + player.getEquipment().getTotalSpeed() + ")" : "") + ANSI_RESET + "                 " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Dexterity: " + YELLOW_BRIGHT + player.getDexterity() + ANSI_RESET + "             " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
-        System.out.println(" ");
     }
 
     public static void showClass() {
@@ -95,26 +96,15 @@ public class CharacterView {
         }
         System.out.println();
         gameLoopView(player);
-//        new java.util.Timer().schedule(
-//                new java.util.TimerTask() {
-//                    @Override
-//                    public void run() {
-//                        gameLoopView(player);
-//                    }
-//                },
-//                2000
-//        );
     }
 
     public static void createCharacter() {
-        Scanner reader = new Scanner(System.in);
         System.out.println("          " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER CREATION" + ANSI_RESET);
         String name = Utilities.ask(reader, "What's your name?");
         charClassElection(name);
     }
 
     public static void charClassElection(String name) {
-        Scanner reader = new Scanner(System.in);
         while (true) {
             showClass();
             String charClassOption = Utilities.ask(reader, "What's your class?");
@@ -158,36 +148,38 @@ public class CharacterView {
                 }
 
                 default:
-                    System.out.println("Invalid option");
+                    System.out.println("Unknown option. Try again");
                     break;
             }
 
         }
     }
 
+    public static void characterMenu(){
+        System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "         " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER" + ANSI_RESET + "         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Details Character      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Equipment              " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 0- Return to Game Menu    " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
+    }
+
     public static void character(Player player) {
-        Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
-            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "         " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER" + ANSI_RESET + "         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Details Character      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Equipment              " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-            System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
-            String valueChoose = scanner.nextLine();
+            characterMenu();
+            String valueChoose = menuOption();
             switch (valueChoose) {
                 case "1": {
                     showCharacter(player);
                     charMessage("1");
-                    scanner.nextLine();
-                    character(player);
+                    reader.nextLine();
                     break;
                 }
                 case "2": {
                     EquipmentView.showEquipmentView(player);
                     charMessage("1");
-                    scanner.nextLine();
-                    character(player);
+                    reader.nextLine();
                     break;
                 }
                 case "0": {
@@ -195,7 +187,7 @@ public class CharacterView {
                     break;
                 }
                 default:
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
             }
         }

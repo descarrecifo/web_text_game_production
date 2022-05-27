@@ -11,13 +11,14 @@ import static com.company.utils.Utilities.*;
 
 public class InventoryView {
     public static void showInventory(Player player) {
+        AtomicInteger i = new AtomicInteger(1);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED + ANSI_BOLD + "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         showInventoryLoop(player);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
         System.out.println();
-        System.out.println("Choose an item number to equip. Press 0 to return to Game Menu");
+        System.out.println("Choose an item number to equip or use. Press 0 to return to Game Menu");
     }
 
     public static void showInventoryLoop(Player player){
@@ -66,7 +67,7 @@ public class InventoryView {
                 if (Integer.parseInt(option) == 0) break;
                 else equippingOrUsingObject(player, Integer.parseInt(option));
             } catch (Exception e) {
-                System.out.println("Invalid option");
+                System.out.println("Unknown option. Try again");
             }
         }
     }

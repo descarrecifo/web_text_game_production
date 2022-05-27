@@ -18,13 +18,11 @@ import static com.company.frontcontroller.FrontController.mainLoopController;
 public class IOView {
 
     public static void mainLoopView() {
-        Scanner reader = new Scanner(System.in);
 
         while (true) {
-
             mainMenuView();
-            String keyMenuMain = reader.nextLine();
-            switch (keyMenuMain) {
+            String option = menuOption();
+            switch (option) {
                 case "1": {
                     mainLoopController("1");
                     break;
@@ -33,9 +31,8 @@ public class IOView {
                     finishGameView();
                     break;
                 }
-
                 default: {
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }
@@ -44,13 +41,11 @@ public class IOView {
 
     public static void gameLoopView(Player player) {
 
-        Scanner reader = new Scanner(System.in);
-
         while (true) {
             menuNewGameView();
-            String keyMenuNewGame = reader.nextLine();
+            String option = menuOption();
 
-            switch (keyMenuNewGame) {
+            switch (option) {
 
                 case "1": {
                     gameLoopController("1", player);
@@ -72,16 +67,22 @@ public class IOView {
                     gameLoopController("5", player);
                     break;
                 }
-                case "6": {
+                case "0": {
                     mainLoopView();
                     break;
                 }
                 default: {
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }
         }
+    }
+
+    public static String menuOption(){
+        Scanner reader = new Scanner(System.in);
+        String option;
+        return option = ask(reader, "Choose an option");
     }
 
     public static void finishGameView() {

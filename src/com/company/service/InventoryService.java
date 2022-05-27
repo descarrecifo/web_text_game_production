@@ -19,7 +19,6 @@ public class InventoryService {
         int value = new Random().nextInt((8 - 1) + 1);
 
         var reward = new Item();
-
         switch (value) {
             case 1: {
                 reward = new Item("Tunic", "cloth", "A simple tunic", 2, 0, 1, 0, true, false);

@@ -14,16 +14,15 @@ import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
 
 public class ShopView {
-
+    static Scanner reader = new Scanner(System.in);
     public static void menuShopView() {
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                    " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "            " + BRONZE_UNDERLINED + ANSI_BOLD + "SHOP" + ANSI_RESET + "             " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                  " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Buy                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Sell                     " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 3- Return to Main Menu           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 0- Return to back Menu           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                    " + ANSI_RESET);
-        System.out.println("Choose an option");
     }
 
     public static void showShopInventory(Inventory shopInventory, int value) {
@@ -53,10 +52,10 @@ public class ShopView {
     }
 
     public static void buyingAndSelling(Inventory shopInventory, Player player, int value) {
-        Scanner reader = new Scanner(System.in);
         while (true) {
-            if (value == 1) showShopInventory(shopInventory, value);
-            else showShopInventory(player.getInventory(), value);
+            if (value != 1) showShopInventory(player.getInventory(), value);
+            else showShopInventory(shopInventory,value);
+
             String option = ask(reader, "Choose an item number to " + ((value != 1) ? "sell" : "buy") + ". Press 0 to return to Shop Menu");
             try {
                 if (Integer.parseInt(option) == 0) break;
@@ -73,16 +72,15 @@ public class ShopView {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("Invalid option");
+                System.out.println("Unknown option. Try again");
             }
         }
     }
 
     public static void shopping(Player player) {
-        Scanner reader = new Scanner(System.in);
         while (true) {
             menuShopView();
-            String option = reader.nextLine();
+            String option = ask(reader, "Choose an option");
             switch (option) {
                 case "1": {
                     ShopController.shopping(player, 1);
@@ -92,12 +90,12 @@ public class ShopView {
                     ShopController.shopping(player, 2);
                     break;
                 }
-                case "3": {
+                case "0": {
                     gameLoopView(player);
                     break;
                 }
                 default: {
-                    System.out.println("Invalid option");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }
