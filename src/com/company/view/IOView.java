@@ -21,7 +21,6 @@ public class IOView {
         Scanner reader = new Scanner(System.in);
 
         while (true) {
-
             mainMenuView();
             String keyMenuMain = reader.nextLine();
             switch (keyMenuMain) {
@@ -33,9 +32,8 @@ public class IOView {
                     finishGameView();
                     break;
                 }
-
                 default: {
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }
@@ -77,7 +75,7 @@ public class IOView {
                     break;
                 }
                 default: {
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }

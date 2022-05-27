@@ -14,7 +14,7 @@ import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
 
 public class ShopView {
-
+    static Scanner reader = new Scanner(System.in);
     public static void menuShopView() {
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                    " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "            " + BRONZE_UNDERLINED + ANSI_BOLD + "SHOP" + ANSI_RESET + "             " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
@@ -53,10 +53,10 @@ public class ShopView {
     }
 
     public static void buyingAndSelling(Inventory shopInventory, Player player, int value) {
-        Scanner reader = new Scanner(System.in);
         while (true) {
-            if (value == 1) showShopInventory(shopInventory, value);
-            else showShopInventory(player.getInventory(), value);
+            if (value != 1) showShopInventory(player.getInventory(), value);
+            else showShopInventory(shopInventory,value);
+
             String option = ask(reader, "Choose an item number to " + ((value != 1) ? "sell" : "buy") + ". Press 0 to return to Shop Menu");
             try {
                 if (Integer.parseInt(option) == 0) break;
@@ -73,13 +73,12 @@ public class ShopView {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("Unknown command. Try again");
+                System.out.println("Unknown option. Try again");
             }
         }
     }
 
     public static void shopping(Player player) {
-        Scanner reader = new Scanner(System.in);
         while (true) {
             menuShopView();
             String option = reader.nextLine();
@@ -97,7 +96,7 @@ public class ShopView {
                     break;
                 }
                 default: {
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
                 }
             }

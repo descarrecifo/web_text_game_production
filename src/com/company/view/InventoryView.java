@@ -31,10 +31,9 @@ public class InventoryView {
             }
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         });
-//                "key: %s, value: %d%n", k, v));
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
         System.out.println();
-        System.out.println("Choose an item number to equip. Press 0 to return to Game Menu");
+        System.out.println("Choose an item number to equip. Press 0 to return to back Menu ");
     }
 
     public static void addItemToInventoryMessage(String value, Item newItem) {
@@ -63,7 +62,7 @@ public class InventoryView {
                 if (Integer.parseInt(option) == 0) break;
                 else equippingOrUsingObject(player, Integer.parseInt(option));
             } catch (Exception e) {
-                System.out.println("Invalid option");
+                System.out.println("Unknown option. Try again");
             }
         }
     }

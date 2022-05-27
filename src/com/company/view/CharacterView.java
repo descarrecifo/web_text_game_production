@@ -53,7 +53,7 @@ public class CharacterView {
     public static void charMessage(String value) {
         switch (value) {
             case "1":
-                System.out.println("Press any key to return to Character Menu");
+                System.out.println("Press any key to return to back Menu ");
         }
     }
 
@@ -149,7 +149,7 @@ public class CharacterView {
                 }
 
                 default:
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
             }
 
@@ -158,6 +158,7 @@ public class CharacterView {
 
     public static void character(Player player) {
         Scanner scanner = new Scanner(System.in);
+
         while (true) {
             System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "         " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER" + ANSI_RESET + "         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
@@ -187,7 +188,7 @@ public class CharacterView {
                     break;
                 }
                 default:
-                    System.out.println("Unknown command. Try again");
+                    System.out.println("Unknown option. Try again");
                     break;
             }
         }
