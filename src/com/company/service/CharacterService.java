@@ -24,6 +24,7 @@ public class CharacterService {
         player.setTotalSpeed(player.getEquipment().getTotalSpeed() + player.getSpeed());
     }
 
+    // Polimorfismo
     public static void createPlayer(HashMap<Item, Integer> items, Item newItem, Player player, Inventory playerInventory) {
         items.put(newItem, 1);
         player.getInventory().setItems(items);
