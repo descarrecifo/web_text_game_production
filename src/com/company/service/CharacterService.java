@@ -8,7 +8,6 @@ import com.company.model.Player;
 import java.util.HashMap;
 
 import static com.company.view.CharacterView.moneyMessage;
-import static com.company.view.CharacterView.presentationText;
 
 public class CharacterService {
 
@@ -25,10 +24,10 @@ public class CharacterService {
     }
 
     // Polimorfismo
-    public static void createPlayer(HashMap<Item, Integer> items, Item newItem, Player player, Inventory playerInventory) {
+    public static Player createPlayer(HashMap<Item, Integer> items, Item newItem, Player player, Inventory playerInventory) {
         items.put(newItem, 1);
         player.getInventory().setItems(items);
         playerInventory.setCapacity(playerInventory.getCapacity() - 1);
-        presentationText(player);
+        return player;
     }
 }

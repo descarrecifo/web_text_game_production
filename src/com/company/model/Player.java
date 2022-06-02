@@ -12,6 +12,9 @@ public class Player extends Character {
         this.equipment = equipment;
     }
 
+    public Player() {
+    }
+
     public Equipment getEquipment() {
         return equipment;
     }

@@ -4,28 +4,20 @@ public class Item {
     private String description,
             name,
             type;
-    private int defense,
-            index,
+    private int index,
             price,
-            speed,
-            strength;
-    boolean equippable,
-            usable;
+            quantity;
 
     public Item() {
     }
 
 
-    public Item(String name, String type, String description, int price, int strength, int defense, int speed, boolean equippable, boolean usable) {
+    public Item(String name, String type, String description, int price, int quantity) {
         this.name = name;
         this.type = type;
         this.description = description;
         this.price = price;
-        this.strength = strength;
-        this.defense = defense;
-        this.speed = speed;
-        this.equippable = equippable;
-        this.usable = usable;
+        this.quantity = quantity;
     }
 
     public String getDescription() {
@@ -52,14 +44,6 @@ public class Item {
         this.type = type;
     }
 
-    public int getDefense() {
-        return defense;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
     public int getIndex() {
         return index;
     }
@@ -76,36 +60,12 @@ public class Item {
         this.price = price;
     }
 
-    public int getSpeed() {
-        return speed;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public boolean isEquippable() {
-        return equippable;
-    }
-
-    public void setEquippable(boolean equippable) {
-        this.equippable = equippable;
-    }
-
-    public boolean isUsable() {
-        return usable;
-    }
-
-    public void setUsable(boolean usable) {
-        this.usable = usable;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override
@@ -148,9 +108,7 @@ public class Item {
                 ", type='" + type + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price + '\'' +
-                ", index=" + index + '\'' +
-                ", equippable=" + equippable + '\'' +
-                ", usable=" + usable + '\'' +
+                ", index=" + index +
                 '}';
     }
 }

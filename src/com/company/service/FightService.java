@@ -84,7 +84,7 @@ public class FightService {
         int dexterityDif = attacker.getDexterity() - defender.getDexterity();
         double maxValue = 15 - (1.0 * dexterityDif) / 2;
         double probability;
-        if (maxValue <= 0) probability = r.nextDouble(1 - maxValue) + maxValue;
+        if (maxValue <= 1) probability = r.nextDouble(1);
         else probability = r.nextDouble(maxValue - 1) + 1;
         double result = 7.5 + (1.0 * dexterityDif) / 2;
         return (result >= probability);

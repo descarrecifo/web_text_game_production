@@ -1,13 +1,14 @@
 package com.company.model;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class Inventory {
     private int capacity;
-    private HashMap<Item, Integer> items;
+    private List<Item> items;
 
-    public Inventory(HashMap<Item, Integer> items, int capacity) {
-        this.items = new HashMap<>();
+    public Inventory(List<Item> items, int capacity) {
+        this.items = items;
         this.capacity = capacity;
     }
 
@@ -19,11 +20,11 @@ public class Inventory {
         this.capacity = capacity;
     }
 
-    public HashMap<Item, Integer> getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
-    public void setItems(HashMap<Item, Integer> items) {
+    public void setItems(List<Item> items) {
         this.items = items;
     }
 

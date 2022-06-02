@@ -24,12 +24,8 @@ public class ShopView {
         System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 0- Return to back Menu           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                    " + ANSI_RESET);
     }
-
-    public static void showShopInventory(Inventory shopInventory, int value) {
+    public static void showShopInventoryLoop(Inventory shopInventory, int value){
         AtomicInteger i = new AtomicInteger(1);
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                     " + BRONZE_UNDERLINED + ANSI_BOLD + "SHOP INVENTORY" + ANSI_RESET + "                   " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         shopInventory.getItems().forEach((k, v) -> {
             k.setIndex(i.intValue());
             System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " " + i.getAndIncrement() + ". Name: " + YELLOW_BRIGHT
@@ -47,6 +43,12 @@ public class ShopView {
             }
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         });
+    }
+    public static void showShopInventory(Inventory shopInventory, int value) {
+        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                     " + BRONZE_UNDERLINED + ANSI_BOLD + "SHOP INVENTORY" + ANSI_RESET + "                   " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        showShopInventoryLoop(shopInventory,value);
         System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
         System.out.println(" ");
     }
