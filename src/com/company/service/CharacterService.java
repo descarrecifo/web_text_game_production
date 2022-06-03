@@ -6,6 +6,7 @@ import com.company.model.NPC;
 import com.company.model.Player;
 
 import java.util.HashMap;
+import java.util.List;
 
 import static com.company.view.CharacterView.moneyMessage;
 
@@ -24,8 +25,8 @@ public class CharacterService {
     }
 
     // Polimorfismo
-    public static Player createPlayer(HashMap<Item, Integer> items, Item newItem, Player player, Inventory playerInventory) {
-        items.put(newItem, 1);
+    public static Player createPlayer(List<Item> items, Item newItem, Player player, Inventory playerInventory) {
+        items.add(newItem);
         player.getInventory().setItems(items);
         playerInventory.setCapacity(playerInventory.getCapacity() - 1);
         return player;

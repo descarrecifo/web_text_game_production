@@ -85,11 +85,16 @@ public class InventoryService {
     }
 
     public static Item searchItem(List<Item> items, int itemIndex) {
-        Item item = items.stream()
+        return items.stream()
                 .filter(i -> i.getIndex() == itemIndex)
                 .findAny()
                 .orElse(null);
-        return item;
+    }
+    public static Item searchItemByName (List<Item> items, String name){
+        return items.stream()
+                .filter(i -> i.getName().equals(name))
+                .findAny()
+                .orElse(null);
     }
 }
 

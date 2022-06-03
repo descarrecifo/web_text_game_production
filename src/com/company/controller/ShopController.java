@@ -21,7 +21,8 @@ public class ShopController {
             Item newItem = createItem();
             if (compareItems(shopInventory.getItems(), newItem)) shopInventory.getItems().
                 items.replace(newItem, items.get(newItem) + 1);
-            else items.put(newItem, 1);
+            else items.add(newItem);
+            newItem.setQuantity(1);
             shopInventory.setItems(items);
             shopInventory.setCapacity(shopInventory.getCapacity() - 1);
         }
