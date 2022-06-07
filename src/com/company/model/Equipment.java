@@ -1,20 +1,22 @@
 package com.company.model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Equipment {
     private int quantityEquippedItems,
             totalDefense,
             totalSpeed,
             totalStrenght;
-    private HashMap<String, Item> equipments;
+    private List<Item> equipments;
 
-    public Equipment(int totalStrenght, int totalDefense, int totalSpeed, int quantityEquippedItems, HashMap<String, Item> equipments) {
+    public Equipment(int totalStrenght, int totalDefense, int totalSpeed, int quantityEquippedItems, List<Item> equipments) {
         this.totalStrenght = totalStrenght;
         this.totalDefense = totalDefense;
         this.totalSpeed = totalSpeed;
         this.quantityEquippedItems = quantityEquippedItems;
-        this.equipments = new HashMap<>();
+        this.equipments = new ArrayList<>();
 
     }
 
@@ -50,11 +52,11 @@ public class Equipment {
         this.totalStrenght = totalStrenght;
     }
 
-    public HashMap<String, Item> getEquipments() {
+    public List<Item> getEquipments() {
         return equipments;
     }
 
-    public void setEquipments(HashMap<String, Item> equipments) {
+    public void setEquipments(List<Item> equipments) {
         this.equipments = equipments;
     }
 }

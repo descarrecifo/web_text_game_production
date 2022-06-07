@@ -1,6 +1,7 @@
 package com.company.view;
 
 import com.company.controller.ShopController;
+import com.company.model.EquippableItem;
 import com.company.model.Inventory;
 import com.company.model.Player;
 import com.company.service.ShopService;
@@ -26,20 +27,26 @@ public class ShopView {
     }
     public static void showShopInventoryLoop(Inventory shopInventory, int value){
         AtomicInteger i = new AtomicInteger(1);
-        shopInventory.getItems().forEach((k, v) -> {
-            k.setIndex(i.intValue());
+        shopInventory.getItems().forEach((item) -> {
+            item.setIndex(i.intValue());
             System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " " + i.getAndIncrement() + ". Name: " + YELLOW_BRIGHT
-                    + k.getName() + ANSI_RESET + " | Quantity: x" + YELLOW_BRIGHT + v + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
-                    + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Description: " + YELLOW_BRIGHT + k.getDescription() + ANSI_RESET + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
-                    + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Price: " + YELLOW_BRIGHT + ((value == 1) ? itemPriceCalculation(1, k) : itemPriceCalculation(2, k)) + ANSI_RESET + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
-            if (k.getStrength() != 0) {
-                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + k.getStrength() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                    + item.getName() + ANSI_RESET + " | Quantity: x" + YELLOW_BRIGHT + item.getQuantity() + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
+                    + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Description: " + YELLOW_BRIGHT + item.getDescription() + ANSI_RESET + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
+                    + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Price: " + YELLOW_BRIGHT + ((value == 1) ? itemPriceCalculation(1, item) : itemPriceCalculation(2, item)) + ANSI_RESET + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+            if (item.getClass() == EquippableItem.class){
+                if(((EquippableItem) item).getStrength() != 0) {
+                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + ((EquippableItem) item).getStrength()  + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                }
             }
-            if (k.getDefense() != 0) {
-                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Defense: " + YELLOW_BRIGHT + k.getDefense() + "                                        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+            if (item.getClass() == EquippableItem.class){
+                if (((EquippableItem) item).getDefense() != 0) {
+                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Defense: " + YELLOW_BRIGHT + ((EquippableItem) item).getDefense() + "                                        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                }
             }
-            if (k.getSpeed() != 0) {
-                System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Speed: " + YELLOW_BRIGHT + k.getSpeed() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+            if (item.getClass() == EquippableItem.class) {
+                if (((EquippableItem) item).getSpeed() != 0) {
+                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Speed: " + YELLOW_BRIGHT + ((EquippableItem) item).getSpeed() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                }
             }
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         });
