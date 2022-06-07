@@ -22,9 +22,12 @@ public class CraftController {
                 ingredientName = "Healing herb";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
+                if(CraftService.checkEnougthIngredients(quantity,5,craftQuantity)){
+                    UsableItem craftedItem = new UsableItem("Health potion", "Potion", "A potion with medicinal capabilities",);
+                    CraftService.crafting(player, quantity, 5, "Health potion", "A potion with medicinal capabilities", 5, ingredientItem, ingredientName, "Potion", 0, 0, 0, craftQuantity, false, true);
+                    break;
+                }
 
-                CraftService.crafting(player, quantity, 5, "Health potion", "A potion with medicinal capabilities", 5, ingredientItem, ingredientName, "Potion", 0, 0, 0, craftQuantity, false, true);
-                break;
             }
             case 2: {
                 ingredientName = "Clay";

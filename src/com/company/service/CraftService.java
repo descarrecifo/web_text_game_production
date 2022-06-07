@@ -22,4 +22,11 @@ public class CraftService {
             }
         }
     }
+
+    public static boolean checkEnougthIngredients(int inventoryQuantity, int necessaryQuantity, int craftQuantity) {
+        if (inventoryQuantity < necessaryQuantity * craftQuantity){
+            return false;
+        }
+        return true;
+    }
 }
