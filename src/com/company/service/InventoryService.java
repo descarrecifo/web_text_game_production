@@ -62,7 +62,10 @@ public class InventoryService {
     }
 
     public static boolean compareItems(List<Item> items, Item newItemToAdd) {
-        return items.equals(newItemToAdd);
+        String name = newItemToAdd.getName();
+        if(searchItemByName(items,name) == null) return false;
+        return true;
+
     }
 
     public static void equippingOrUsingObject(Player player, int option) {

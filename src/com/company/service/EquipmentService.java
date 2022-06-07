@@ -1,5 +1,6 @@
 package com.company.service;
 
+import com.company.model.EquippableItem;
 import com.company.model.Item;
 import com.company.model.Player;
 
@@ -14,9 +15,9 @@ public class EquipmentService {
     }
 
     public static void setEquipmentTotalCharacteristics(Player player, int indexItemEquipment) {
-        player.getEquipment().setTotalStrenght(player.getEquipment().getEquipments().get(indexItemEquipment).getStrength + player.getEquipment().getTotalStrenght());
-        player.getEquipment().setTotalDefense(player.getEquipment().getEquipments().get(indexItemEquipment).getDefense() + player.getEquipment().getTotalDefense());
-        player.getEquipment().setTotalSpeed(player.getEquipment().getEquipments().get(indexItemEquipment).getSpeed() + player.getEquipment().getTotalSpeed());
+        player.getEquipment().setTotalStrenght(((EquippableItem) player.getEquipment().getEquipments().get(indexItemEquipment)).getStrength() + player.getEquipment().getTotalStrenght());
+        player.getEquipment().setTotalDefense(((EquippableItem) player.getEquipment().getEquipments().get(indexItemEquipment)).getDefense() + player.getEquipment().getTotalDefense());
+        player.getEquipment().setTotalSpeed(((EquippableItem) player.getEquipment().getEquipments().get(indexItemEquipment)).getSpeed() + player.getEquipment().getTotalSpeed());
         setPlayerTotalCharacteristics(player);
     }
 }

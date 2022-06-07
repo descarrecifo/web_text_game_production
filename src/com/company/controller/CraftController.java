@@ -2,6 +2,7 @@ package com.company.controller;
 
 import com.company.model.Item;
 import com.company.model.Player;
+import com.company.model.UsableItem;
 import com.company.service.CraftService;
 import com.company.service.InventoryService;
 
@@ -14,11 +15,14 @@ public class CraftController {
         Item ingredientItem = null;
         int quantity = 0;
         String ingredientName;
+
+
         switch (value) {
             case 1: {
                 ingredientName = "Healing herb";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
+
                 CraftService.crafting(player, quantity, 5, "Health potion", "A potion with medicinal capabilities", 5, ingredientItem, ingredientName, "Potion", 0, 0, 0, craftQuantity, false, true);
                 break;
             }

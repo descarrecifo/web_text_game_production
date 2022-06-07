@@ -1,14 +1,19 @@
 
 
 import com.company.model.EquippableItem;
+import com.company.model.Inventory;
 import com.company.model.Item;
+import com.company.model.Player;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static com.company.service.InventoryService.compareItems;
+import static com.company.service.InventoryService.createItem;
 import static com.company.utils.Utilities.*;
+import static com.company.view.ShopView.buyingAndSelling;
 
 public class Test {
    @org.testng.annotations.Test
@@ -19,7 +24,8 @@ public class Test {
         List<Item> equipments = new ArrayList<>();
         com.company.model.Equipment equipment = new com.company.model.Equipment(1,1,1,1,equipments);
         com.company.model.Player player = new com.company.model.Player("p",1,inventory, equipment,1,1,1,1,1,1,"w",1);
-       showInventroy(player);
+        shopping(player,1);
+//       showInventroy(player);
     }
     public static void showInventroy(com.company.model.Player player){
         AtomicInteger i = new AtomicInteger(1);
@@ -44,5 +50,23 @@ public class Test {
             }
             System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
         });
+    }
+    public static void shopping(Player player, int value) {
+        List<Item> items = new ArrayList<>(200);
+        Inventory shopInventory = new Inventory(items, 200);
+        for (int i = 0; i < 100; i++) {
+            Item newItem = createItem();
+            if (compareItems(shopInventory.getItems(), newItem)){
+                String name = newItem.getName();
+                items.stream().filter(z -> z.getName().equals(name)).forEach( x -> x.setQuantity(x.getQuantity()+1));
+            }
+            //shopInventory.getItems().items.replace(newItem, items.get(newItem) + 1);
+            else items.add(newItem);
+            newItem.setQuantity(1);
+            shopInventory.setItems(items);
+            shopInventory.setCapacity(shopInventory.getCapacity() - 1);
+        }
+        if (value != 1) buyingAndSelling(shopInventory, player, 2);
+        else buyingAndSelling(shopInventory, player, 1);
     }
 }
