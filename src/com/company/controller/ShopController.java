@@ -5,7 +5,6 @@ import com.company.model.Item;
 import com.company.model.Player;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import static com.company.service.InventoryService.compareItems;

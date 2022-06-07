@@ -2,14 +2,11 @@
 package com.company.view;
 
 import com.company.model.Player;
-import com.company.utils.Utilities;
 
 import java.util.Scanner;
 
-import static com.company.controller.CharacterController.createPlayer;
 import static com.company.frontcontroller.FrontController.gameLoopController;
 import static com.company.utils.Utilities.*;
-import static com.company.view.CharacterView.showClass;
 import static com.company.view.Menu.*;
 
 
