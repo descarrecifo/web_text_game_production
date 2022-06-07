@@ -11,7 +11,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import static com.company.service.ShopService.itemPriceCalculation;
 import static com.company.utils.Utilities.*;
-import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
 
 public class ShopView {

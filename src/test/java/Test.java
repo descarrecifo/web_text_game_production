@@ -21,7 +21,7 @@ public class Test {
         List<com.company.model.Item> items = new ArrayList<>();
        items.add(new com.company.model.EquippableItem("p","weapon","d",1,1,1,1,1,1,1));
         com.company.model.Inventory inventory = new com.company.model.Inventory(items,10);
-        List<Item> equipments = new ArrayList<>();
+        List<EquippableItem> equipments = new ArrayList<>();
         com.company.model.Equipment equipment = new com.company.model.Equipment(1,1,1,1,equipments);
         com.company.model.Player player = new com.company.model.Player("p",1,inventory, equipment,1,1,1,1,1,1,"w",1);
         shopping(player,1);

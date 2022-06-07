@@ -4,7 +4,6 @@ import com.company.model.*;
 import com.company.service.CharacterService;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -17,7 +16,7 @@ CharacterController {
     public static Player createPlayer(String name, String charClass) {
         List<Item> items = new ArrayList<>();
         Inventory playerInventory = new Inventory(items, 10);
-        List<Item> equipments = new ArrayList<>();
+        List<EquippableItem> equipments = new ArrayList<>();
         Equipment playerEquipment = new Equipment(0, 0, 0, 0, equipments);
         Player newPlayer = new Player();
         switch (charClass) {

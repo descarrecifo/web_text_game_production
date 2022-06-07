@@ -6,18 +6,17 @@ import com.company.model.Player;
 import java.util.Scanner;
 
 import static com.company.frontcontroller.FrontController.gameLoopController;
-import static com.company.utils.Utilities.*;
-import static com.company.view.Menu.*;
-
-
 import static com.company.frontcontroller.FrontController.mainLoopController;
+import static com.company.utils.Utilities.ask;
+//import static com.company.view.Menu.mainMenuView;
+//import static com.company.view.Menu.menuNewGameView;
 
 public class IOView {
 
     public static void mainLoopView() {
 
         while (true) {
-            mainMenuView();
+            Menu.mainMenuView();
             String option = menuOption();
             switch (option) {
                 case "1": {
@@ -39,7 +38,7 @@ public class IOView {
     public static void gameLoopView(Player player) {
 
         while (true) {
-            menuNewGameView();
+            Menu.menuNewGameView();
             String option = menuOption();
 
             switch (option) {

@@ -38,8 +38,8 @@ public class ShopService {
                 shopMessage(1, item.getName(), price, quantity);
                 for (int i = 0; i < quantity; i++) {
                     addItemToInventory(shopInventory.getItems(), shopInventory, item);
-                    removeItemFromInventory(player.getInventory(), item);
                 }
+                    removeItemFromInventory(player.getInventory(), item, quantity);
                 player.setMoney(player.getMoney() + price);
                 moneyMessage("2", player, null);
             }
@@ -53,8 +53,8 @@ public class ShopService {
                 shopMessage(1, item.getName(), price, quantity);
                 for (int i = 0; i < quantity; i++) {
                     addItemToInventory(player.getInventory().getItems(), player.getInventory(), item);
-                    removeItemFromInventory(shopInventory, item);
                 }
+                removeItemFromInventory(shopInventory, item, quantity);
                 player.setMoney(player.getMoney() - price);
                 moneyMessage("2", player, null);
             }

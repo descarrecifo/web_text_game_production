@@ -1,7 +1,6 @@
 package com.company.model;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class Equipment {
@@ -9,9 +8,9 @@ public class Equipment {
             totalDefense,
             totalSpeed,
             totalStrenght;
-    private List<Item> equipments;
+    private List<EquippableItem> equipments;
 
-    public Equipment(int totalStrenght, int totalDefense, int totalSpeed, int quantityEquippedItems, List<Item> equipments) {
+    public Equipment(int totalStrenght, int totalDefense, int totalSpeed, int quantityEquippedItems, List<EquippableItem> equipments) {
         this.totalStrenght = totalStrenght;
         this.totalDefense = totalDefense;
         this.totalSpeed = totalSpeed;
@@ -52,11 +51,11 @@ public class Equipment {
         this.totalStrenght = totalStrenght;
     }
 
-    public List<Item> getEquipments() {
+    public List<EquippableItem> getEquipments() {
         return equipments;
     }
 
-    public void setEquipments(List<Item> equipments) {
+    public void setEquipments(List<EquippableItem> equipments) {
         this.equipments = equipments;
     }
 }

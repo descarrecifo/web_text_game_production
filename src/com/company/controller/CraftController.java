@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.model.EquippableItem;
 import com.company.model.Item;
 import com.company.model.Player;
 import com.company.model.UsableItem;
@@ -22,71 +23,110 @@ public class CraftController {
                 ingredientName = "Healing herb";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-
-                CraftService.crafting(player, quantity, 5, "Health potion", "A potion with medicinal capabilities", 5, ingredientItem, ingredientName, "Potion", 0, 0, 0, craftQuantity, false, true);
+                if(CraftService.checkEnoughIngredients(quantity,5,craftQuantity,ingredientName,"Health potion")){
+                    UsableItem craftedItem = new UsableItem("Health potion", "Potion", "A potion with medicinal capabilities",5,craftQuantity,"heal some HP",10);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+                    //CraftService.crafting(player, quantity, 5, "Health potion", "A potion with medicinal capabilities", 5, ingredientItem, ingredientName, "Potion", 0, 0, 0, craftQuantity, false, true);
+                }
                 break;
             }
             case 2: {
                 ingredientName = "Clay";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 10, "Golem arm", "The arm of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                if(CraftService.checkEnoughIngredients(quantity,10,craftQuantity,ingredientName,"Golem arm")) {
+                    Item craftedItem = new Item("Golem arm", "Constructor", "The arm of a Golem", 20, craftQuantity);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+                    //CraftService.crafting(player, quantity, 10, "Golem arm", "The arm of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                }
                 break;
             }
             case 3: {
                 ingredientName = "Clay";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 10, "Golem leg", "The leg of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                if(CraftService.checkEnoughIngredients(quantity,10,craftQuantity,ingredientName,"Golem leg")) {
+                    Item craftedItem = new Item("Golem leg", "Constructor", "The leg of a Golem", 20, craftQuantity);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+                    //CraftService.crafting(player, quantity, 10, "Golem leg", "The leg of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                }
                 break;
             }
             case 4: {
                 ingredientName = "Clay";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 10, "Golem head", "The head of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                if(CraftService.checkEnoughIngredients(quantity,10,craftQuantity,ingredientName,"Golem head")) {
+                    Item craftedItem = new Item("Golem head", "Constructor", "The head of a Golem", 20, craftQuantity);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+//                CraftService.crafting(player, quantity, 10, "Golem head", "The head of a Golem", 20, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                }
                 break;
             }
             case 5: {
                 ingredientName = "Clay";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 20, "Golem body", "The body of a Golem", 40, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                if(CraftService.checkEnoughIngredients(quantity,20,craftQuantity,ingredientName,"Golem body")) {
+                    Item craftedItem = new Item("Golem body", "Constructor", "The body of a Golem", 40, craftQuantity);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+//                CraftService.crafting(player, quantity, 20, "Golem body", "The body of a Golem", 40, ingredientItem, ingredientName, "Constructor", 0, 0, 0, craftQuantity, false, false);
+                }
                 break;
             }
             case 6: {
                 ingredientName = "Fur";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 1, "Leather", "A piece of leather", 2, ingredientItem, ingredientName, "Material", 0, 0, 0, craftQuantity, false, false);
+                if(CraftService.checkEnoughIngredients(quantity,1,craftQuantity,ingredientName,"Leather")) {
+                    Item craftedItem = new Item("Leather",  "Material", "A piece of leather", 2, craftQuantity);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+//                CraftService.crafting(player, quantity, 1, "Leather", "A piece of leather", 2, ingredientItem, ingredientName, "Material", 0, 0, 0, craftQuantity, false, false);
+                }
                 break;
             }
             case 7: {
                 ingredientName = "Leather";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 3, "Leather helmet", "A basic helmet made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                if(CraftService.checkEnoughIngredients(quantity,3,craftQuantity,ingredientName,"Leather helmet")) {
+                    EquippableItem craftedItem = new EquippableItem("Leather helmet", "armour", "A basic helmet made of leather", 4, craftQuantity,0,0,2,0,0);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+//                CraftService.crafting(player, quantity, 3, "Leather helmet", "A basic helmet made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                }
                 break;
             }
             case 8: {
                 ingredientName = "Leather";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 4, "Leather gloves", "A basic pair of gloves made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                if(CraftService.checkEnoughIngredients(quantity,4,craftQuantity,ingredientName,"Leather gloves")) {
+                    EquippableItem craftedItem = new EquippableItem("Leather gloves", "armour", "A basic pair of gloves made of leather", 4, craftQuantity,0,0,2,0,0);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+//                CraftService.crafting(player, quantity, 4, "Leather gloves", "A basic pair of gloves made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                }
                 break;
             }
             case 9: {
                 ingredientName = "Leather";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 4, "Leather boots", "A basic pair of boots made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                if(CraftService.checkEnoughIngredients(quantity,4,craftQuantity,ingredientName,"Leather boots")) {
+                    EquippableItem craftedItem = new EquippableItem("Leather boots", "armour", "A basic pair of boots made of leather", 4, craftQuantity,0,0,2,0,0);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+//                CraftService.crafting(player, quantity, 4, "Leather boots", "A basic pair of boots made of leather", 4, ingredientItem, ingredientName, "armour", 0, 2, 0, craftQuantity, true, false);
+                }
                 break;
             }
             case 10: {
                 ingredientName = "Leather";
                 ingredientItem = InventoryService.searchItemByName(inventory,ingredientName);
                 if(ingredientItem != null) quantity = ingredientItem.getQuantity();
-                CraftService.crafting(player, quantity, 7, "Leather armour", "A basic armour made of leather", 6, ingredientItem, ingredientName, "armour", 0, 4, 0, craftQuantity, true, false);
+                if(CraftService.checkEnoughIngredients(quantity,7,craftQuantity,ingredientName,"Leather armour")) {
+                    EquippableItem craftedItem = new EquippableItem("Leather armour", "armour", "A basic armour made of leather", 6, craftQuantity,0,0,4,0,0);
+                    CraftService.crafting(player, quantity, craftedItem, ingredientItem, craftQuantity);
+//                CraftService.crafting(player, quantity, 7, "Leather armour", "A basic armour made of leather", 6, ingredientItem, ingredientName, "armour", 0, 4, 0, craftQuantity, true, false);
+                }
                 break;
             }
         }

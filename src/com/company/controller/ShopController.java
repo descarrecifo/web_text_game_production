@@ -3,18 +3,16 @@ package com.company.controller;
 import com.company.model.Inventory;
 import com.company.model.Item;
 import com.company.model.Player;
-import com.company.service.InventoryService;
-import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.company.service.InventoryService.compareItems;
 import static com.company.service.InventoryService.createItem;
-import static com.company.view.ShopView.*;
+import static com.company.view.ShopView.buyingAndSelling;
 
 public class ShopController {
-@Test
+
     public static void shopping(Player player, int value) {
         List<Item> items = new ArrayList<>(200);
         Inventory shopInventory = new Inventory(items, 200);

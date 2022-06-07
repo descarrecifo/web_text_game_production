@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 import static com.company.controller.CharacterController.createPlayer;
 import static com.company.utils.Utilities.*;
-import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
 import static com.company.view.IOView.menuOption;
 

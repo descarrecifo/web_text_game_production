@@ -9,7 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.company.controller.InventoryController.removeItemFromInventory;
 import static com.company.service.EquipmentService.equippingPlayer;
+import static com.company.utils.Utilities.ANSI_RESET;
+import static com.company.utils.Utilities.YELLOW_BRIGHT;
+import static com.company.view.InventoryView.inventoryMessage;
 
 public class InventoryService {
 
@@ -63,23 +67,20 @@ public class InventoryService {
 
     public static boolean compareItems(List<Item> items, Item newItemToAdd) {
         String name = newItemToAdd.getName();
-        if(searchItemByName(items,name) == null) return false;
-        return true;
-
+        return searchItemByName(items, name) != null;
     }
 
     public static void equippingOrUsingObject(Player player, int option) {
         List<Item> items = new ArrayList<>(player.getInventory().getItems());
         Item item = searchItem(items,option);
-        //if (!(item.isEquippable() || item.isUsable())) inventoryMessage(2, item);
-//        else {
-//            inventoryMessage(1, item);
-//            removeItemFromInventory(player.getInventory(), item);
-//            if (item.isEquippable()) equippingPlayer(player, item);
-//            else if (item.isUsable())
-//                System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
-//        }
-        equippingPlayer(player, item);
+        if (!(item.getClass() == EquippableItem.class) || (item.getClass() == UsableItem.class)) inventoryMessage(2, item);
+        else {
+            inventoryMessage(1, item);
+            removeItemFromInventory(player.getInventory(), item, 1);
+            if (item.getClass() == EquippableItem.class) equippingPlayer(player, item);
+            else if (item.getClass() == UsableItem.class)
+                System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
+        }
     }
 
     public static Item searchItem(List<Item> items, int itemIndex) {

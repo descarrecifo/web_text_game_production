@@ -1,7 +1,5 @@
 package com.company.model;
 
-import java.util.HashMap;
-
 public class Player extends Character {
     private Inventory inventory;
     private Equipment equipment;

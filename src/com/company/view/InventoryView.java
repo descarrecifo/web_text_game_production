@@ -1,6 +1,8 @@
 package com.company.view;
 
-import com.company.model.*;
+import com.company.model.EquippableItem;
+import com.company.model.Item;
+import com.company.model.Player;
 
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
