@@ -30,7 +30,7 @@ public class ShopView {
             item.setIndex(i.intValue());
             System.out.format(i.getAndIncrement() + ". Name: "
                     + item.getName()+ " | Quantity: x"+ item.getQuantity()+ "\n"
-                     "    Description: "+ item.getDescription() + "\n"
+                    + "    Description: "+ item.getDescription() + "\n"
                     + "    Price: "+ ((value == 1) ? itemPriceCalculation(1, item) : itemPriceCalculation(2, item))+ "\n");
             if (item.getClass() == EquippableItem.class){
                 if(((EquippableItem) item).getStrength() != 0) {

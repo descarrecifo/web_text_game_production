@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import static com.company.controller.InventoryController.removeItemFromInventory;
 import static com.company.service.EquipmentService.equippingPlayer;
 
 import static com.company.view.InventoryView.inventoryMessage;
@@ -77,7 +78,7 @@ public class InventoryService {
             removeItemFromInventory(player.getInventory(), item, 1);
             if (item.getClass() == EquippableItem.class) equippingPlayer(player, item);
             else if (item.getClass() == UsableItem.class)
-                System.out.println(YELLOW_BRIGHT + item.getName() + ANSI_RESET + " used.");
+                System.out.println(item.getName() + " used.");
         }
     }
 

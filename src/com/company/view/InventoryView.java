@@ -20,12 +20,8 @@ public class InventoryView {
 
 
     public static void showInventory(Player player) {
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED + ANSI_BOLD + "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println("INVENTORY");
         showInventoryLoop(player);
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println();
         System.out.println("Choose an item number to equip or use. Press 0 to return to Game Menu");
     }
 
@@ -38,7 +34,7 @@ public class InventoryView {
                     + " " + "    Description: " + item.getDescription() + " " + "\n");
             if (item.getClass() == EquippableItem.class){
                 if(((EquippableItem) item).getStrength() != 0) {
-                    System.out.format(" "  + "    Attack: "+ ((EquippableItem) item).getStrength() "\n");
+                    System.out.format(" "  + "    Attack: "+ ((EquippableItem) item).getStrength() + "\n");
                 }
             }
             if (item.getClass() == EquippableItem.class){
