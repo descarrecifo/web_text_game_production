@@ -16,7 +16,7 @@ public class ShopView {
     static Scanner reader = new Scanner(System.in);
     public static void menuShopView() {
         System.out.println();
-        System.out.println("SHOP");
+        System.out.println(" SHOP");
         System.out.println();
         System.out.println(" 1- Buy");
         System.out.println(" 2- Sell");
