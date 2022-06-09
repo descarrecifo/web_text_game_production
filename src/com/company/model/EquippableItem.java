@@ -6,9 +6,12 @@ public class EquippableItem extends Item{
             defense,
             speed,
             strength;
-
+    Item item;
     public EquippableItem(){
 
+    }
+    public EquippableItem(Item item){
+        this.item = item;
     }
     public EquippableItem(int dexterity, int charisma, int defense, int speed, int strength) {
         this.dexterity = dexterity;

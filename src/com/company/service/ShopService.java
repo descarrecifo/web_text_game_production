@@ -6,7 +6,6 @@ import com.company.model.Player;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static com.company.controller.InventoryController.addItemToInventory;
 import static com.company.controller.InventoryController.removeItemFromInventory;
@@ -32,7 +31,7 @@ public class ShopService {
         if (value != 1) {
             Item item = InventoryService.searchItem(items,itemIndex);
             System.out.println();
-            if (player.getInventory().getItems().get(2) < quantity)
+            if (player.getInventory().getItems().get(2).getQuantity() < quantity)
                 shopMessage(3, item.getName(), 0, quantity);
             else {
                 int price = itemPriceCalculation(2, item) * quantity;

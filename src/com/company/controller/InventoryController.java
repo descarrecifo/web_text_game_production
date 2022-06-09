@@ -3,7 +3,6 @@ package com.company.controller;
 import com.company.model.Inventory;
 import com.company.model.Item;
 
-import java.util.HashMap;
 import java.util.List;
 
 import static com.company.service.InventoryService.compareItems;

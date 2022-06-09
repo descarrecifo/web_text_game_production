@@ -1,7 +1,6 @@
 package com.company.view;
 
-import com.company.model.Item;
-import com.company.model.Player;
+import com.company.model.*;
 
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,6 +9,14 @@ import static com.company.service.InventoryService.equippingOrUsingObject;
 import static com.company.utils.Utilities.*;
 
 public class InventoryView {
+
+
+
+
+
+
+
+
     public static void showInventory(Player player) {
         System.out.println();
         System.out.println("INVENTORY");
@@ -19,6 +26,7 @@ public class InventoryView {
         System.out.println();
         System.out.println("Choose an item number to equip or use. Press 0 to return to Game Menu");
     }
+
 
     public static void showInventoryLoop(Player player){
         AtomicInteger i = new AtomicInteger(1);

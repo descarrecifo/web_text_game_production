@@ -1,6 +1,7 @@
 package com.company.view;
 
 import com.company.controller.ShopController;
+import com.company.model.EquippableItem;
 import com.company.model.Inventory;
 import com.company.model.Player;
 import com.company.service.ShopService;

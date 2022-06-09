@@ -17,7 +17,7 @@ CharacterController {
     public static Player createPlayer(String name, String charClass) {
         List<Item> items = new ArrayList<>();
         Inventory playerInventory = new Inventory(items, 10);
-        HashMap<String, Item> equipments = new HashMap<>();
+        List<Item> equipments = new ArrayList<>();
         Equipment playerEquipment = new Equipment(0, 0, 0, 0, equipments);
         Player newPlayer = new Player();
         switch (charClass) {
