@@ -10,20 +10,19 @@ import static com.company.utils.Utilities.*;
 public class CraftView {
 
     public static void craftMenuView() {
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                      " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "           " + BRONZE_UNDERLINED + ANSI_BOLD + "CRAFTING MENU" + ANSI_RESET + "            " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                    " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Health potion                   " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Golem arm                       " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 3- Golem leg                       " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 4- Golem head                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 5- Golem body                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 6- Leather                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 7- Leather helmet                  " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 8- Leather gloves                  " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 9- Leather boots                   " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 10- Leather armour                 " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                      " + ANSI_RESET);
+        System.out.println();
+        System.out.println("CRAFTING MENU");
+        System.out.println();
+        System.out.println(" 1- Health potion");
+        System.out.println(" 2- Golem arm");
+        System.out.println(" 3- Golem leg");
+        System.out.println(" 4- Golem head");
+        System.out.println(" 5- Golem body");
+        System.out.println(" 6- Leather");
+        System.out.println(" 7- Leather helmet");
+        System.out.println(" 8- Leather gloves" );
+        System.out.println(" 9- Leather boots");
+        System.out.println(" 10- Leather armour");
         System.out.println();
     }
 
@@ -49,7 +48,7 @@ public class CraftView {
     public static void craftingMessages(int value, String craftedItemName, int inventoryQuantity, int necessaryQuantity, String ingredientName, int craftQuantity) {
         switch (value) {
             case 1: {
-                System.out.println("You don't have enough ingredients, you need " + YELLOW_BRIGHT + (necessaryQuantity * craftQuantity - inventoryQuantity) + ANSI_RESET + " more of " + YELLOW_BRIGHT + ingredientName + ANSI_RESET + " to craft " + YELLOW_BRIGHT + craftQuantity + " " + craftedItemName + ANSI_RESET);
+                System.out.println("You don't have enough ingredients, you need "  + (necessaryQuantity * craftQuantity - inventoryQuantity)  + " more of "  + ingredientName  + " to craft "  + craftQuantity + " " + craftedItemName);
                 break;
             }
         }
