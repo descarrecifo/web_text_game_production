@@ -32,11 +32,8 @@ public class InventoryController {
 
     public static Inventory removeItemFromInventory(Inventory inventory, Item itemToRemove, int repetition){
         String name = itemToRemove.getName();
-//        System.out.println("cantidad antes: "+searchItemByName(inventory.getItems(),name).getQuantity()); TO-DO repetition
         inventory.getItems().stream().filter(z -> z.getName().equals(name)).forEach( x -> x.setQuantity(x.getQuantity()-repetition));
-        System.out.println("cantidad mid: "+searchItemByName(inventory.getItems(),name).getQuantity());
         inventory.setCapacity(inventory.getCapacity() + repetition);
-        System.out.println("cantidad: "+searchItemByName(inventory.getItems(),name).getQuantity());
         if (searchItemByName(inventory.getItems(),name).getQuantity() < 1) inventory.getItems().remove(itemToRemove);
         return inventory;
     }

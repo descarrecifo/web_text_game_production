@@ -27,31 +27,28 @@ public class ShopService {
     public static void shopping(int value, Inventory shopInventory, int itemIndex, Player player, int quantity) {
         List<Item> items = new ArrayList<>(player.getInventory().getItems());
         List<Item> shopItems = new ArrayList<>(shopInventory.getItems());
-
         if (value != 1) {
             Item item = InventoryService.searchItem(items,itemIndex);
-            System.out.println();
-            if (player.getInventory().getItems().get(2).getQuantity() < quantity)
+            if (player.getInventory().getItems().get(itemIndex-1).getQuantity() < quantity)
                 shopMessage(3, item.getName(), 0, quantity);
             else {
                 int price = itemPriceCalculation(2, item) * quantity;
                 shopMessage(1, item.getName(), price, quantity);
-                for (int i = 0; i < quantity; i++) {
+                for (int i = 0; i < quantity; i++) { //to do
                     addItemToInventory(shopInventory.getItems(), shopInventory, item);
                 }
-                    removeItemFromInventory(player.getInventory(), item, quantity);
+                removeItemFromInventory(player.getInventory(), item, quantity);
                 player.setMoney(player.getMoney() + price);
                 moneyMessage("2", player, null);
             }
         } else {
             Item item = InventoryService.searchItem(shopItems,itemIndex);
-            System.out.println();
             int price = itemPriceCalculation(1, item) * quantity;
             if (player.getMoney() < price || player.getInventory().getCapacity() < quantity)
                 shopMessage(2, item.getName(), price, quantity);
             else {
                 shopMessage(1, item.getName(), price, quantity);
-                for (int i = 0; i < quantity; i++) {
+                for (int i = 0; i < quantity; i++) { //to do
                     addItemToInventory(player.getInventory().getItems(), player.getInventory(), item);
                 }
                 removeItemFromInventory(shopInventory, item, quantity);
