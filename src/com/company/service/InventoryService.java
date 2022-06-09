@@ -11,6 +11,8 @@ import java.util.Random;
 
 import static com.company.service.EquipmentService.equippingPlayer;
 
+import static com.company.view.InventoryView.inventoryMessage;
+
 public class InventoryService {
 
     public static Item createItem() {

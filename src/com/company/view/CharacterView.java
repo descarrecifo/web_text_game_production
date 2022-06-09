@@ -7,47 +7,43 @@ import com.company.utils.Utilities;
 import java.util.Scanner;
 
 import static com.company.controller.CharacterController.createPlayer;
-import static com.company.utils.Utilities.*;
-import static com.company.utils.Utilities.ANSI_RESET;
 import static com.company.view.IOView.gameLoopView;
 import static com.company.view.IOView.menuOption;
 
 public class CharacterView {
     static Scanner reader = new Scanner(System.in);
     public static void showCharacter(Player player) {
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "      " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTERISTICS" + ANSI_RESET + "      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Name: " + YELLOW_BRIGHT + player.getName() + ANSI_RESET + " | Money: " + YELLOW_BRIGHT + player.getMoney() + ANSI_RESET + "     " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Level: " + YELLOW_BRIGHT + player.getLevel() + ANSI_RESET + " | Class: " + YELLOW_BRIGHT + player.getCharClass() + ANSI_RESET + "  " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Health Points: " + YELLOW_BRIGHT + player.getHealthPoints() + ANSI_RESET + "/" + YELLOW_BRIGHT + player.getMaxHealthPoints() + ANSI_RESET + "     " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Strength: " + YELLOW_BRIGHT + player.getStrength() + ((player.getEquipment().getTotalStrenght() != 0) ? " (" + ((player.getEquipment().getTotalStrenght() > 0) ? "+" : "") + player.getEquipment().getTotalStrenght() + ")" : "") + ANSI_RESET + "              " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Defense: " + YELLOW_BRIGHT + player.getDefense() + ((player.getEquipment().getTotalDefense() != 0) ? " (" + ((player.getEquipment().getTotalDefense() > 0) ? "+" : "") + player.getEquipment().getTotalDefense() + ")" : "") + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Speed: " + YELLOW_BRIGHT + player.getSpeed() + ((player.getEquipment().getTotalSpeed() != 0) ? " (" + ((player.getEquipment().getTotalSpeed() > 0) ? "+" : "") + player.getEquipment().getTotalSpeed() + ")" : "") + ANSI_RESET + "                 " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " Dexterity: " + YELLOW_BRIGHT + player.getDexterity() + ANSI_RESET + "             " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
+        System.out.println();
+        System.out.println("CHARACTERISTICS");
+        System.out.println();
+        System.out.println(" Name: " + player.getName() +  " | Money: "  + player.getMoney());
+        System.out.println(" Level: " + player.getLevel()  + " | Class: "  + player.getCharClass());
+        System.out.println(" Health Points: "  + player.getHealthPoints()  + "/"  + player.getMaxHealthPoints());
+        System.out.println(" Strength: "  + player.getStrength() + ((player.getEquipment().getTotalStrenght() != 0) ? " (" + ((player.getEquipment().getTotalStrenght() > 0) ? "+" : "") + player.getEquipment().getTotalStrenght() + ")" : ""));
+        System.out.println(" Defense: "  + player.getDefense() + ((player.getEquipment().getTotalDefense() != 0) ? " (" + ((player.getEquipment().getTotalDefense() > 0) ? "+" : "") + player.getEquipment().getTotalDefense() + ")" : ""));
+        System.out.println(" Speed: "  + player.getSpeed() + ((player.getEquipment().getTotalSpeed() != 0) ? " (" + ((player.getEquipment().getTotalSpeed() > 0) ? "+" : "") + player.getEquipment().getTotalSpeed() + ")" : ""));
+        System.out.println(" Dexterity: " +  player.getDexterity());
     }
 
     public static void showClass() {
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                     " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "     " + BRONZE_UNDERLINED + ANSI_BOLD + "CLASSES" + ANSI_RESET + "       " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                   " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Cleric         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Mage           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 3- Monk           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 4- Paladin        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 5- Ranger         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 6- Rogue          " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 7- Warrior        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                     " + ANSI_RESET);
+        System.out.println();
+        System.out.println("CLASSES");
+        System.out.println();
+        System.out.println(" 1- Cleric");
+        System.out.println(" 2- Mage");
+        System.out.println(" 3- Monk");
+        System.out.println(" 4- Paladin");
+        System.out.println(" 5- Ranger");
+        System.out.println(" 6- Rogue");
+        System.out.println(" 7- Warrior");
     }
 
     public static void moneyMessage(String value, Player player, NPC enemy) {
         switch (value) {
             case "1":
-                System.out.println("You gained " + YELLOW_BRIGHT + enemy.getMoney() + ((enemy.getMoney() == 1) ? " coin" : " coins") + ANSI_RESET + "! Now you have " + YELLOW_BRIGHT + player.getMoney() + ((player.getMoney() == 1) ? " coin" : " coins") + ANSI_RESET + ".");
+                System.out.println("You gained "  + enemy.getMoney() + ((enemy.getMoney() == 1) ? " coin" : " coins")  + "! Now you have "  + player.getMoney() + ((player.getMoney() == 1) ? " coin" : " coins") + ".");
             case "2":
-                System.out.println("Now you have " + YELLOW_BRIGHT + player.getMoney() + ((player.getMoney() == 1) ? " coin" : " coins") + ANSI_RESET + ".");
+                System.out.println("Now you have "  + player.getMoney() + ((player.getMoney() == 1) ? " coin" : " coins") +  ".");
         }
     }
 
@@ -59,11 +55,11 @@ public class CharacterView {
     }
 
     public static String baseText(Player player) {
-        return "You are " + YELLOW_BRIGHT + player.getName() + ANSI_RESET + ", a " + YELLOW_BRIGHT + player.getCharClass() + ANSI_RESET + ". ";
+        return "You are "  + player.getName()  + ", a "  + player.getCharClass()  + ". ";
     }
 
     public static void createCharacter() {
-        System.out.println("          " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER CREATION" + ANSI_RESET);
+        System.out.println("CHARACTER CREATION");
         String name = Utilities.ask(reader, "What's your name?");
         charClassElection(name);
     }
@@ -130,14 +126,13 @@ public class CharacterView {
     }
 
     public static void characterMenu(){
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "         " + BRONZE_UNDERLINED + ANSI_BOLD + "CHARACTER" + ANSI_RESET + "         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                           " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 1- Details Character      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 2- Equipment              " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " 0- Return to Game Menu    " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                             " + ANSI_RESET);
-    }
+        System.out.println();
+        System.out.println("CHARACTER");
+        System.out.println();
+        System.out.println(" 1- Details Character");
+        System.out.println(" 2- Equipment");
+        System.out.println(" 0- Return to Game Menu");
+     }
 
     public static void character(Player player) {
         while (true) {

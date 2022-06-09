@@ -18,11 +18,11 @@ public class InventoryView {
 
 
     public static void showInventory(Player player) {
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                       " + BRONZE_UNDERLINED + ANSI_BOLD + "INVENTORY" + ANSI_RESET + "                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+        System.out.println();
+        System.out.println("INVENTORY");
+        System.out.println();
         showInventoryLoop(player);
-        System.out.println(ANSI_BRONZE_BACKGROUND + "                                                        " + ANSI_RESET);
+        System.out.println();
         System.out.println();
         System.out.println("Choose an item number to equip or use. Press 0 to return to Game Menu");
     }
@@ -30,37 +30,32 @@ public class InventoryView {
 
     public static void showInventoryLoop(Player player){
         AtomicInteger i = new AtomicInteger(1);
-        player.getInventory().getItems().forEach(     (item) -> { item.setIndex(i.intValue());
-            System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " " + i.getAndIncrement() + ". Name: " + YELLOW_BRIGHT
-                    + item.getName() + ANSI_RESET + " | Quantity: x" + YELLOW_BRIGHT + item.getQuantity() + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
-                    + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Description: " + YELLOW_BRIGHT + item.getDescription() + ANSI_RESET + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
-            if (item.getClass() == EquippableItem.class){
-                if(((EquippableItem) item).getStrength() != 0) {
-                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + ((EquippableItem) item).getStrength()  + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
-                }
+        player.getInventory().getItems().forEach((k, v) -> {
+            k.setIndex(i.intValue());
+            System.out.format(i.getAndIncrement() + ". Name: " 
+                    + k.getName()  + " | Quantity: x"  + v  + "               "  + " "  + "\n"
+                    +  " "  + "    Description: "  + k.getDescription() + "\n");
+            if (k.getStrength() != 0) {
+                System.out.format("    Attack: "  + k.getStrength() + "\n");
             }
-            if (item.getClass() == EquippableItem.class){
-                if (((EquippableItem) item).getDefense() != 0) {
-                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Defense: " + YELLOW_BRIGHT + ((EquippableItem) item).getDefense() + "                                        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
-                }
+            if (k.getDefense() != 0) {
+                System.out.format("    Defense: "  + k.getDefense() + "\n");
             }
-            if (item.getClass() == EquippableItem.class) {
-                if (((EquippableItem) item).getSpeed() != 0) {
-                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Speed: " + YELLOW_BRIGHT + ((EquippableItem) item).getSpeed() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
-                }
+            if (k.getSpeed() != 0) {
+                System.out.format("    Speed: "  + k.getSpeed() + "\n");
             }
-            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+            System.out.println();
         });
     }
 
     public static void addItemToInventoryMessage(String value, Item newItem) {
         switch (value) {
             case "1": {
-                System.out.println("Same item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+                System.out.println("Same item: "  + newItem.getName() );
                 break;
             }
             case "2": {
-                System.out.println("New item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+                System.out.println("New item: "  + newItem.getName());
                 break;
             }
             case "3": {
@@ -87,7 +82,7 @@ public class InventoryView {
     public static void inventoryMessage(int value, Item item) {
         switch (value) {
             case 1: {
-                System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
+                System.out.println("The chosen object is: "  + item.getName());
                 break;
             }
             case 2: {

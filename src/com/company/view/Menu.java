@@ -1,29 +1,27 @@
 package com.company.view;
 
-import static com.company.utils.Utilities.*;
-
 public class Menu{
 
     public static void mainMenuView() {
-        System.out.println(ANSI_BRONZE_BACKGROUND+"                                      "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"             "+BRONZE_UNDERLINED+ANSI_BOLD+"MAIN MENU"+ANSI_RESET+"              "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                    "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1- New Game                        "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 0- Exit                            "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+"                                      "+ANSI_RESET);
+        System.out.println();
+        System.out.println("MAIN MENU");
+        System.out.println();
+        System.out.println(" 1- New Game");
+        System.out.println(" 0- Exit");
+        System.out.println();
     }
 
     public static void menuNewGameView() {
-        System.out.println(ANSI_BRONZE_BACKGROUND+"                                    "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"            "+BRONZE_UNDERLINED+ANSI_BOLD+"MAIN GAME"+ANSI_RESET+"             "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+"                                  "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 1- Fight                         "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 2- Inventory                     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 3- Character                     "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 4- Shop                          "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 5- Craft                         "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET+" 0- Return to Main Menu           "+ANSI_BRONZE_BACKGROUND+" "+ANSI_RESET);
-        System.out.println(ANSI_BRONZE_BACKGROUND+"                                    "+ANSI_RESET);
+        System.out.println();
+        System.out.println("MAIN GAME");
+        System.out.println();
+        System.out.println(" 1- Fight");
+        System.out.println(" 2- Inventory");
+        System.out.println(" 3- Character");
+        System.out.println(" 4- Shop");
+        System.out.println(" 5- Craft");
+        System.out.println(" 0- Return to Main Menu");
+        System.out.println();
     }
 
 }
