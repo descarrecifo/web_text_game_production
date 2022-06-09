@@ -9,10 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import static com.company.controller.InventoryController.removeItemFromInventory;
 import static com.company.service.EquipmentService.equippingPlayer;
-import static com.company.utils.Utilities.ANSI_RESET;
-import static com.company.utils.Utilities.YELLOW_BRIGHT;
+
 import static com.company.view.InventoryView.inventoryMessage;
 
 public class InventoryService {

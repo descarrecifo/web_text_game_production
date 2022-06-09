@@ -6,6 +6,10 @@ import com.company.model.Player;
 import java.util.Scanner;
 
 import static com.company.frontcontroller.FrontController.gameLoopController;
+import static com.company.utils.Utilities.*;
+import static com.company.view.Menu.*;
+
+
 import static com.company.frontcontroller.FrontController.mainLoopController;
 import static com.company.utils.Utilities.ask;
 //import static com.company.view.Menu.mainMenuView;

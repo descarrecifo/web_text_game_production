@@ -33,36 +33,36 @@ public class InventoryView {
     public static void showInventoryLoop(Player player){
         AtomicInteger i = new AtomicInteger(1);
         player.getInventory().getItems().forEach(     (item) -> { item.setIndex(i.intValue());
-            System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + " " + i.getAndIncrement() + ". Name: " + YELLOW_BRIGHT
-                    + item.getName() + ANSI_RESET + " | Quantity: x" + YELLOW_BRIGHT + item.getQuantity() + ANSI_RESET + "               " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n"
-                    + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Description: " + YELLOW_BRIGHT + item.getDescription() + ANSI_RESET + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+            System.out.format(i.getAndIncrement() + ". Name: "
+                    + item.getName()+ " | Quantity: x"+ item.getQuantity() + "               "+ " " + "\n"
+                    + " " + "    Description: " + item.getDescription() + " " + "\n");
             if (item.getClass() == EquippableItem.class){
                 if(((EquippableItem) item).getStrength() != 0) {
-                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Attack: " + YELLOW_BRIGHT + ((EquippableItem) item).getStrength()  + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                    System.out.format(" "  + "    Attack: "+ ((EquippableItem) item).getStrength() "\n");
                 }
             }
             if (item.getClass() == EquippableItem.class){
                 if (((EquippableItem) item).getDefense() != 0) {
-                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Defense: " + YELLOW_BRIGHT + ((EquippableItem) item).getDefense() + "                                        " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                    System.out.format( "    Defense: "+ ((EquippableItem) item).getDefense() + "\n");
                 }
             }
             if (item.getClass() == EquippableItem.class) {
                 if (((EquippableItem) item).getSpeed() != 0) {
-                    System.out.format(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "    Speed: " + YELLOW_BRIGHT + ((EquippableItem) item).getSpeed() + "                                         " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "\n");
+                    System.out.format( "    Speed: " + ((EquippableItem) item).getSpeed() + "\n");
                 }
             }
-            System.out.println(ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET + "                                                      " + ANSI_BRONZE_BACKGROUND + " " + ANSI_RESET);
+            System.out.println();
         });
     }
 
     public static void addItemToInventoryMessage(String value, Item newItem) {
         switch (value) {
             case "1": {
-                System.out.println("Same item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+                System.out.println("Same item: "  + newItem.getName() );
                 break;
             }
             case "2": {
-                System.out.println("New item: " + YELLOW_BRIGHT + newItem.getName() + ANSI_RESET);
+                System.out.println("New item: "  + newItem.getName());
                 break;
             }
             case "3": {
@@ -89,7 +89,7 @@ public class InventoryView {
     public static void inventoryMessage(int value, Item item) {
         switch (value) {
             case 1: {
-                System.out.println("The chosen object is: " + YELLOW_BRIGHT + item.getName() + ANSI_RESET);
+                System.out.println("The chosen object is: "  + item.getName());
                 break;
             }
             case 2: {
