@@ -2,7 +2,6 @@
 package com.company.view;
 
 import com.company.model.Player;
-import com.company.utils.Utilities;
 
 import java.util.Scanner;
 
