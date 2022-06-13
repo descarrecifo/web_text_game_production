@@ -69,15 +69,16 @@ public class InventoryService {
     public static void equippingOrUsingObject(Player player, int option) {
         List<Item> items = new ArrayList<>(player.getInventory().getItems());
         Item item = searchItem(items,option);
-        if (!(item.getClass() == EquippableItem.class) || (item.getClass() == UsableItem.class)) InventoryView.inventoryMessage(2, item);
+        if (!((item.getClass() == EquippableItem.class) || (item.getClass() == UsableItem.class))) InventoryView.inventoryMessage(2, item);
         else {
             InventoryView.inventoryMessage(1, item);
             InventoryController.removeItemFromInventory(player.getInventory(), item, 1);
             if (item.getClass() == EquippableItem.class) EquipmentService.equippingPlayer(player, item);
-            else if (item.getClass() == UsableItem.class)
-                System.out.println(item.getName() + " used.");
+            else ItemService.usingItem(player, item);
         }
     }
+
+
 
     public static Item searchItem(List<Item> items, int itemIndex) {
         return items.stream()

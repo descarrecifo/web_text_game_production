@@ -31,7 +31,7 @@ public class Character {
             totalStrength;
 
 
-    public Character(String name, int level, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money) {
+    public Character(String name, int level, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money, int experiencePoints, int charisma) {
         this.name = name;
         this.level = level;
         this.maxHealthPoints = maxHealthPoints;
@@ -45,6 +45,7 @@ public class Character {
         this.totalStrength = strength;
         this.totalDefense = defense;
         this.totalSpeed = speed;
+        this.experiencePoints = experiencePoints;
+        this.charisma = charisma;
     }
-
 }
