@@ -73,7 +73,7 @@ CharacterController {
         return newPlayer;
     }
 
-    public static NPC createEnemyPlaceholder() {
+    public static NPC createEnemyPlaceholder(int playerLevel) {
         NPC enemy;
 
         int value = new Random().nextInt((11 - 1) + 1);

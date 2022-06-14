@@ -9,7 +9,8 @@ import static main.com.company.service.FightService.initialTurn;
 public class FightController {
 
     public static Player fighting(Player player) {
-        NPC enemy = CharacterController.createEnemyPlaceholder();
+        int level = player.getLevel();
+        NPC enemy = CharacterController.createEnemyPlaceholder(level);
         FightView.enemyPresentationMessage(enemy);
         initialTurn(enemy, player, true);
         return player;
