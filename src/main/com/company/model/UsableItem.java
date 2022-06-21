@@ -1,6 +1,7 @@
 package main.com.company.model;
 
 import lombok.*;
+import org.hibernate.engine.spi.Status;
 
 import javax.persistence.*;
 
@@ -9,13 +10,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "usable_item")
+
 @DiscriminatorValue(value = "usableItem_itemc")
 public class UsableItem extends Item{
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idUsableItem", updatable = false, nullable = true)
-    private String idUsableItem;
     String use;
     int value;
 

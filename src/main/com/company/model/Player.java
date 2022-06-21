@@ -9,13 +9,9 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "player")
 @DiscriminatorValue(value = "player_har")
 public class Player extends Character {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idplayer", updatable = false, nullable = true)
-    private String idplayer;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY,optional = true)
     @JoinColumn(name = "inventory_fk")
     private Inventory inventory;

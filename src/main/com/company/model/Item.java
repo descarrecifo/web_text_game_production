@@ -11,12 +11,14 @@ import javax.persistence.*;
 @Entity
 @Table(name = "item")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "itemc",discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "iditem", updatable = false, nullable = true)
     private String iditem;
+    @Column(name = "type_item")
+    private boolean typeitem;
     private String description,
             name,
             type;

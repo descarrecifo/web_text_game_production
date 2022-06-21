@@ -10,14 +10,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "character")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "char",discriminatorType = DiscriminatorType.STRING)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
 public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idcharacter", updatable = false, nullable = false)
     private String idcharacter;
+    @Column(name = "type_npc_player")
+    private boolean type;
     private String charClass,
             name;
     private int charisma,
