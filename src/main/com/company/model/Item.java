@@ -2,12 +2,21 @@ package main.com.company.model;
 
 import lombok.*;
 
-@Getter
-@Setter
+import javax.persistence.*;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity
+@Table(name = "item")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "itemc",discriminatorType = DiscriminatorType.STRING)
 public class Item {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "iditem", updatable = false, nullable = true)
+    private String iditem;
     private String description,
             name,
             type;

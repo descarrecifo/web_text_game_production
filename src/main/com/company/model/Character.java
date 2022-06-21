@@ -3,12 +3,21 @@ package main.com.company.model;
 
 import lombok.*;
 
-@Getter
-@Setter
+import javax.persistence.*;
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Entity
+@Table(name = "character")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "char",discriminatorType = DiscriminatorType.STRING)
 public class Character {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "idcharacter", updatable = false, nullable = false)
+    private String idcharacter;
     private String charClass,
             name;
     private int charisma,
