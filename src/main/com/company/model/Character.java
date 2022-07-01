@@ -16,7 +16,7 @@ public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idcharacter", updatable = false, nullable = false)
-    private String idcharacter;
+    private int idcharacter;
     @Column(name = "type_npc_player")
     private boolean type;
     private String charClass,

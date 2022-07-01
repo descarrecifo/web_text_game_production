@@ -15,9 +15,9 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "idinventory", updatable = false, nullable = true)
-    private String idinventory;
+    private int idinventory;
     private int capacity;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "items_fk")
     private List<Item> items;
 

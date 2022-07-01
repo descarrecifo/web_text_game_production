@@ -16,7 +16,7 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "iditem", updatable = false, nullable = true)
-    private String iditem;
+    private int iditem;
     @Column(name = "type_item")
     private boolean typeitem;
     private String description,

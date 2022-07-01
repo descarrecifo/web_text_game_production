@@ -3,6 +3,8 @@ package main.com.company.controller;
 
 import main.com.company.model.*;
 import main.com.company.service.CharacterService;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +12,7 @@ import java.util.Random;
 
 import static main.com.company.service.InventoryService.createItem;
 
-public class
-
-CharacterController {
+public class CharacterController {
 
     public static Player createPlayer(String name, String charClass) {
         List<Item> items = new ArrayList<>();
