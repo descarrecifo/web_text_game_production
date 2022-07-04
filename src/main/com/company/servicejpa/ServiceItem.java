@@ -2,6 +2,7 @@ package main.com.company.servicejpa;
 
 import main.com.company.model.Equipment;
 import main.com.company.model.Item;
+import main.com.company.model.Player;
 import main.com.company.repository.RepositoryItem;
 import main.com.company.repository.Repositoryequipment;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,4 +17,6 @@ public class ServiceItem {
     public Item saveR(Item item ){
         return repoItem.save(item);
     }
+
+
 }

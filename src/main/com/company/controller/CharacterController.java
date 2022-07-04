@@ -2,7 +2,10 @@ package main.com.company.controller;
 
 
 import main.com.company.model.*;
+import main.com.company.repository.RepositoryPlayer;
 import main.com.company.service.CharacterService;
+import main.com.company.servicejpa.ServicePlayer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,16 +17,14 @@ import static main.com.company.service.InventoryService.createItem;
 
 public class CharacterController {
 
+
     public static Player createPlayer(String name, String charClass) {
 
-        Player newPlayer = new Player();
-        switch (charClass) {
-
-//                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-
-            }
-
-        return newPlayer;
+        ServicePlayer sp = new ServicePlayer();
+        Player p1 = sp.findBycharClass(name,charClass);
+        Item item = sp.getItem(p1);
+        Player p2  = CharacterService.createPlayer(new ArrayList<>(), item,p1,new Inventory(10, new ArrayList<>()));
+        return p2;
     }
 
     public static NPC createEnemyPlaceholder(int playerLevel) {
