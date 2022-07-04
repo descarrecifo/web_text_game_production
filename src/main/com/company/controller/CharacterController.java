@@ -15,61 +15,14 @@ import static main.com.company.service.InventoryService.createItem;
 public class CharacterController {
 
     public static Player createPlayer(String name, String charClass) {
-        List<Item> items = new ArrayList<>();
-        Inventory playerInventory = new Inventory(10, items);
-        List<EquippableItem> equipments = new ArrayList<>();
-        Equipment playerEquipment = new Equipment(0, 0, 0, 0, equipments);
+
         Player newPlayer = new Player();
         switch (charClass) {
-            case "Cleric": {
-                Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 10, 15, 20, 20, "Cleric", 5, 0, 0);
-                Item newItem = new EquippableItem("Tunic", "cloth", "A simple tunic", 2, 1, 0, 0, 1, 0, 0);
-                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-                break;
+
+//                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
+
             }
 
-            case "Mage": {
-                Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 10, 15, 25, 15, "Mage", 5, 0, 0);
-                Item newItem = new EquippableItem("Tunic", "cloth", "A simple tunic", 2, 1, 0, 0, 1, 0, 0);
-                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-                break;
-            }
-
-            case "Monk": {
-                Player player = new Player(name, 1, playerInventory, playerEquipment, 90, 90, 15, 10, 25, 25, "Monk", 5, 0, 0);
-                Item newItem = new EquippableItem("Wooden stick", "weapon", "A simple stick made of wood", 1, 1, 0, 0, 0, 0, 1);
-                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-                break;
-            }
-
-            case "Paladin": {
-                Player player = new Player(name, 1, playerInventory, playerEquipment, 120, 120, 15, 15, 15, 10, "Paladin", 5, 0, 0);
-                Item newItem = new EquippableItem("Sword", "weapon", "A simple sword", 7, 1, 0, 0, 0, 0, 4);
-                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-                break;
-            }
-
-            case "Ranger": {
-                Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 10, 10, 20, 25, "Hunter", 5, 0, 0);
-                Item newItem = new EquippableItem("Bow", "weapon", "A simple bow", 4, 1, 0, 0, 0, 0, 2);
-                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-                break;
-            }
-
-            case "Rogue": {
-                Player player = new Player(name, 1, playerInventory, playerEquipment, 90, 90, 15, 15, 20, 25, "Rogue", 5, 0, 0);
-                Item newItem = new EquippableItem("Dagger", "weapon", "A simple dagger", 3, 1, 0, 0, 0, 0, 2);
-                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-                break;
-            }
-
-            case "Warrior": {
-                Player player = new Player(name, 1, playerInventory, playerEquipment, 100, 100, 25, 15, 10, 15, "Warrior", 5, 0, 0);
-                Item newItem = new EquippableItem("Sword", "weapon", "A simple sword", 7, 1, 0, 0, 0, 0, 4);
-                newPlayer = CharacterService.createPlayer(items, newItem, player, playerInventory);
-                break;
-            }
-        }
         return newPlayer;
     }
 

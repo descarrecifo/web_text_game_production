@@ -1,6 +1,7 @@
 package main.com.company.model;
 
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -17,13 +18,14 @@ import java.util.List;
 public class Equipment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idequipment", updatable = false, nullable = true)
+    @Column(name = "idequipment")
     private int idequipment;
     private int quantityEquippedItems,
             totalDefense,
             totalSpeed,
             totalStrenght;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToMany(cascade = CascadeType.ALL,  fetch = FetchType.LAZY)
     @JoinColumn(name = "equipment_item_fk")
     private List<EquippableItem> equipments;
 

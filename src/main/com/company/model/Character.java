@@ -2,7 +2,6 @@ package main.com.company.model;
 
 
 import lombok.*;
-
 import javax.persistence.*;
 
 @Data
@@ -14,10 +13,10 @@ import javax.persistence.*;
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
 public class Character {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idcharacter", updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idcharacter")
     private int idcharacter;
-    @Column(name = "type_npc_player")
+    @Column(name = "npc_or_player")
     private boolean type;
     private String charClass,
             name;

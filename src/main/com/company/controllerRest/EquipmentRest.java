@@ -1,6 +1,6 @@
 package main.com.company.controllerRest;
 
-import main.com.company.dto.DtoEquipment;
+
 import main.com.company.model.Equipment;
 import main.com.company.model.EquippableItem;
 import main.com.company.model.Item;
@@ -15,11 +15,6 @@ import org.springframework.web.bind.annotation.*;
 public class EquipmentRest {
     @Autowired
     ServiceEquipment serveequipment;
-
-    @PostMapping("/add")
-    public Equipment saveE(@RequestBody DtoEquipment dto){
-        return serveequipment.createEquipment(dto);
-    }
 
     @PostMapping("/addE")
     public Equipment saveE(@RequestBody Equipment e){

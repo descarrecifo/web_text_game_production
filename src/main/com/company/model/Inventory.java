@@ -13,11 +13,12 @@ import java.util.List;
 @Table(name = "Inventory")
 public class Inventory {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idinventory", updatable = false, nullable = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idinventory")
     private int idinventory;
     private int capacity;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "items_fk")
     private List<Item> items;
 

@@ -14,8 +14,8 @@ import javax.persistence.*;
 @DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "iditem", updatable = false, nullable = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "iditem")
     private int iditem;
     @Column(name = "type_item")
     private boolean typeitem;
