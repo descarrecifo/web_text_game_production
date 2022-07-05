@@ -1,21 +1,20 @@
 package main.com.company.model;
 
 import lombok.*;
+import org.hibernate.annotations.Proxy;
+import org.hibernate.engine.spi.Status;
 
 import javax.persistence.*;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
-@Table(name = "usable_item")
+@Proxy(lazy = false)
+
 @DiscriminatorValue(value = "usableItem_itemc")
 public class UsableItem extends Item{
-
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idUsableItem", updatable = false, nullable = true)
-    private String idUsableItem;
     String use;
     int value;
 

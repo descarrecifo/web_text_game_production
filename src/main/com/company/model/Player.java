@@ -1,25 +1,25 @@
 package main.com.company.model;
 
 import lombok.*;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
-@Table(name = "player")
+@Proxy(lazy = false)
 @DiscriminatorValue(value = "player_har")
 public class Player extends Character {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idplayer", updatable = false, nullable = true)
-    private String idplayer;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY,optional = true)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY )
     @JoinColumn(name = "inventory_fk")
     private Inventory inventory;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY,optional = true)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "equipment_fk")
     private Equipment equipment;
 
