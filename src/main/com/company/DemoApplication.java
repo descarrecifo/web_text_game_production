@@ -107,7 +107,7 @@ public class DemoApplication {
 			NPC enemy8 = new NPC("Wendigo", 5, fur, 25, 25, 25, 5, 25, 5, "beast", 0, 5, 0,8);
 			NPC enemy9 = new NPC("Golem", 5, clay, 45, 45, 35, 25, 10, 10, null, 0, 5, 0,9);
 			NPC enemy10 = new NPC("Cave lion", 5, fur, 15, 15, 15, 15, 25, 5, "beast", 0, 5, 0,10);
-
+			NPC enemy11 = new NPC("Soldier", 5, createItem(), 50, 50, 25, 15, 5, 20, null, 15, 5, 0,11);
 			reponpc.save(enemy1);
 			reponpc.save(enemy2);
 			reponpc.save(enemy3);
@@ -118,6 +118,7 @@ public class DemoApplication {
 			reponpc.save(enemy8);
 			reponpc.save(enemy9);
 			reponpc.save(enemy10);
+			reponpc.save(enemy11);
 
 
 

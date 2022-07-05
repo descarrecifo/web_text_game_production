@@ -49,13 +49,9 @@ public class CharacterController {
 
     public static NPC createEnemyPlaceholder(int playerLevel) {
 
-        int value = new Random().nextInt((11 - 1) + 1);
+        int value = new Random().nextInt(1, 11);
         NPC npc =  snpc.findbyChoise(value);
-        if(npc.getChoise() != 99999){
-            return npc;
-        }
-        NPC enemy = new NPC("Soldier", 5, createItem(), 50, 50, 25, 15, 5, 20, null, 15, 5, 0,99999);
-        return enemy;
+        return npc;
 
 
     }
