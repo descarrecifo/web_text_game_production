@@ -1,14 +1,16 @@
 package main.com.company.model;
 
 import lombok.*;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
+@Proxy(lazy = false)
 @DiscriminatorValue(value = "npc_char")
 public class NPC extends Character {
 

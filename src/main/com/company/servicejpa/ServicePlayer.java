@@ -5,51 +5,71 @@ import main.com.company.model.Player;
 import main.com.company.repository.RepositoryItem;
 import main.com.company.repository.RepositoryPlayer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.PostConstruct;
+import java.util.Optional;
+
+@Service
 public class ServicePlayer {
 
+
+
     @Autowired
-    static RepositoryPlayer repoPlayer;
+    private RepositoryPlayer repoPlayer;
     @Autowired
-    static RepositoryItem repoItem;
+    private  RepositoryItem repoItem;
+    private  static RepositoryPlayer repoP;
+    private static RepositoryItem repoI;
+
+    private static  Optional<Item> i ;
+
+    @PostConstruct
+    public void init(){
+        this.repoP = repoPlayer;
+        this.repoI = repoItem;
+
+    }
 
 
     public  Player findBycharClass(String name,String charClass ){
-        Player p = repoPlayer.findBycharClass(charClass);
-        p.setName(name);
-        return p;
+        Optional<Player> p = repoP.findBycharClass(charClass);
+        Player k = p.get();
+        k.setName(name);
+        return k;
     }
 
 
 
     public Item getItem(Player p ){
-        Item i = new Item();
+
 
         if(p.getCharClass() == "Cleric"){
-            i = repoItem.findByName("Tunic");
+            i = repoI.findByName("Tunic");
         }
         if(p.getCharClass() == "Mage"){
-             i=  repoItem.findByName("Tunic");
+             i=  repoI.findByName("Tunic");
         }
         if(p.getCharClass() == "Monk"){
-             i=   repoItem.findByName("Wooden stick");
+             i=   repoI.findByName("Wooden stick");
         }
         if(p.getCharClass() == "Paladin"){
-             i=   repoItem.findByName("Sword");
+             i=   repoI.findByName("Sword");
         }
         if(p.getCharClass() == "Hunter"){
-             i=   repoItem.findByName("Bow");
+             i=   repoI.findByName("Bow");
         }
         if(p.getCharClass() == "Hunter"){
-             i=   repoItem.findByName("Bow");
+             i=   repoI.findByName("Bow");
         }
         if(p.getCharClass() == "Rogue"){
-             i=   repoItem.findByName("Dagger");
+             i=   repoI.findByName("Dagger");
         }
         if(p.getCharClass() == "Warrior"){
-             i=  repoItem.findByName("Sword");
+             i=  repoI.findByName("Sword");
         }
 
-        return i;
+        return i.get();
     }
 }

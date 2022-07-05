@@ -33,8 +33,9 @@ public class DemoApplication {
 	public static void main(String[] args)  {
 
 		SpringApplication.run(DemoApplication.class, args);
-//		IOView.mainLoopView();
 		save(repoplayer,repoitem);
+		IOView.mainLoopView();
+
 
 
 

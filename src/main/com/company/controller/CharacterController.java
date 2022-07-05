@@ -2,25 +2,42 @@ package main.com.company.controller;
 
 
 import main.com.company.model.*;
+import main.com.company.repository.RepositoryItem;
 import main.com.company.repository.RepositoryPlayer;
 import main.com.company.service.CharacterService;
 import main.com.company.servicejpa.ServicePlayer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.repository.RepositoryDefinition;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import static main.com.company.service.InventoryService.createItem;
-
+@Controller
 public class CharacterController {
+
+    @Autowired
+    private ServicePlayer servPlayer;
+
+    private  static ServicePlayer sp;
+
+
+    @PostConstruct
+    public void init(){
+        this.sp = servPlayer;
+    }
 
 
     public static Player createPlayer(String name, String charClass) {
 
-        ServicePlayer sp = new ServicePlayer();
+
         Player p1 = sp.findBycharClass(name,charClass);
         Item item = sp.getItem(p1);
         Player p2  = CharacterService.createPlayer(new ArrayList<>(), item,p1,new Inventory(10, new ArrayList<>()));
