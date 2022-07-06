@@ -2,13 +2,25 @@ package main.com.company.model;
 
 
 import lombok.*;
+import org.hibernate.annotations.Proxy;
 
-@Getter
-@Setter
+import javax.persistence.*;
+
+@Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Proxy(lazy = false)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
 public class Character {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idcharacter")
+    private int idcharacter;
+    @Column(name = "npc_or_player")
+    private boolean type;
     private String charClass,
             name;
     private int charisma,
