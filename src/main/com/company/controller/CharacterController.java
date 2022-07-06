@@ -51,6 +51,20 @@ public class CharacterController {
 
         int value = new Random().nextInt(1, 11);
         NPC npc =  snpc.findbyChoise(value);
+
+        if(npc.getCharClass().equals("beast")){
+            Item fur = new Item("Fur", "material", "The fur of an wild animal", 1, 1);
+            npc.setTreasure(fur);
+            return npc;
+        }else if(npc.getCharClass().equals("golem")){
+            Item clay = new Item("Clay", "material", "A handful of clay", 1, 1);
+            npc.setTreasure(clay);
+            return npc;
+        }
+
+
+        Item i = createItem();
+        npc.setTreasure(i);
         return npc;
 
 

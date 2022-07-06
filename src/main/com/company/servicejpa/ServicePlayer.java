@@ -1,5 +1,6 @@
 package main.com.company.servicejpa;
 
+import main.com.company.model.EquippableItem;
 import main.com.company.model.Item;
 import main.com.company.model.Player;
 import main.com.company.repository.RepositoryItem;
@@ -23,7 +24,7 @@ public class ServicePlayer {
     private  static RepositoryPlayer repoP;
     private static RepositoryItem repoI;
 
-    private static  Optional<Item> i ;
+
 
     @PostConstruct
     public void init(){
@@ -41,35 +42,9 @@ public class ServicePlayer {
     }
 
 
-
     public Item getItem(Player p ){
+      Optional<Item>  i = repoI.findByName(p.getNameItem());
+      return i.get();
 
-
-        if(p.getCharClass() == "Cleric"){
-            i = repoI.findByName("Tunic");
-        }
-        if(p.getCharClass() == "Mage"){
-             i=  repoI.findByName("Tunic");
-        }
-        if(p.getCharClass() == "Monk"){
-             i=   repoI.findByName("Wooden stick");
-        }
-        if(p.getCharClass() == "Paladin"){
-             i=   repoI.findByName("Sword");
-        }
-        if(p.getCharClass() == "Hunter"){
-             i=   repoI.findByName("Bow");
-        }
-        if(p.getCharClass() == "Hunter"){
-             i=   repoI.findByName("Bow");
-        }
-        if(p.getCharClass() == "Rogue"){
-             i=   repoI.findByName("Dagger");
-        }
-        if(p.getCharClass() == "Warrior"){
-             i=  repoI.findByName("Sword");
-        }
-
-        return i.get();
     }
 }
