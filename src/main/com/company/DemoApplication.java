@@ -1,9 +1,8 @@
 package main.com.company;
 
 import main.com.company.model.*;
+import main.com.company.repository.RepositoryChar;
 import main.com.company.repository.RepositoryItem;
-import main.com.company.repository.RepositoryNPC;
-import main.com.company.repository.RepositoryPlayer;
 import main.com.company.view.IOView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +11,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,12 +21,12 @@ import static main.com.company.service.InventoryService.createItem;
 @SpringBootApplication
 public class DemoApplication {
 	@Autowired
-	static RepositoryPlayer repoplayer;
+	static RepositoryChar repoChar;
 	@Autowired
+
 	static RepositoryItem repoitem;
 
-	@Autowired
-	static RepositoryNPC reponpc;
+
 
 
 	private static final Logger logger = LoggerFactory.getLogger(DemoApplication.class);
@@ -39,7 +35,7 @@ public class DemoApplication {
 	public static void main(String[] args)  {
 
 		SpringApplication.run(DemoApplication.class, args);
-		save(repoplayer,repoitem,reponpc);
+		save(repoChar,repoitem);
 		IOView.mainLoopView();
 
 
@@ -49,7 +45,7 @@ public class DemoApplication {
 	}
 	@Bean
 
-	public  static CommandLineRunner save(RepositoryPlayer repoplayer, RepositoryItem repoitem, RepositoryNPC reponpc)  {
+	public  static CommandLineRunner save(RepositoryChar repoc,RepositoryItem repoitem)  {
 
 		return args -> {
 			List<Item> items = new ArrayList<>();
@@ -75,7 +71,7 @@ public class DemoApplication {
 			players.add(player7);
 
 
-			repoplayer.saveAll(players);
+			repoc.saveAll(players);
 
 
 
@@ -110,17 +106,17 @@ public class DemoApplication {
 			NPC enemy9 = new NPC("Golem", 5, clay, 45, 45, 35, 25, 10, 10, "golem", 0, 5, 0,9);
 			NPC enemy10 = new NPC("Cave lion", 5, fur, 15, 15, 15, 15, 25, 5, "beast", 0, 5, 0,10);
 			NPC enemy11 = new NPC("Soldier", 5, createItem(), 50, 50, 25, 15, 5, 20, "enemy", 15, 5, 0,11);
-			reponpc.save(enemy1);
-			reponpc.save(enemy2);
-			reponpc.save(enemy3);
-			reponpc.save(enemy4);
-			reponpc.save(enemy5);
-			reponpc.save(enemy6);
-			reponpc.save(enemy7);
-			reponpc.save(enemy8);
-			reponpc.save(enemy9);
-			reponpc.save(enemy10);
-			reponpc.save(enemy11);
+			repoc.save(enemy1);
+			repoc.save(enemy2);
+			repoc.save(enemy3);
+			repoc.save(enemy4);
+			repoc.save(enemy5);
+			repoc.save(enemy6);
+			repoc.save(enemy7);
+			repoc.save(enemy8);
+			repoc.save(enemy9);
+			repoc.save(enemy10);
+			repoc.save(enemy11);
 
 
 

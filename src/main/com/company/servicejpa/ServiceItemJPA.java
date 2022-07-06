@@ -1,11 +1,9 @@
 package main.com.company.servicejpa;
 
-import main.com.company.model.Equipment;
 import main.com.company.model.EquippableItem;
 import main.com.company.model.Item;
 import main.com.company.model.Player;
 import main.com.company.repository.RepositoryItem;
-import main.com.company.repository.Repositoryequipment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +11,7 @@ import javax.annotation.PostConstruct;
 import java.util.Optional;
 
 @Service
-public class ServiceItem {
+public class ServiceItemJPA {
 
     @Autowired
     private RepositoryItem repoeitem;
@@ -32,6 +30,12 @@ public class ServiceItem {
         Optional<EquippableItem> o = repoei.findByChoise(choise);
         EquippableItem n = o.get();
         return n;
+    }
+
+    public Item getItem(Player p ){
+        Optional<Item>  i = repoei.findByName(p.getNameItem());
+        return i.get();
+
     }
 
 
