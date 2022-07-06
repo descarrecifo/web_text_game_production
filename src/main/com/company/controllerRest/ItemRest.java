@@ -14,11 +14,11 @@ public class ItemRest {
     @Autowired
     ServiceItem serviceItem;
 
-    @PostMapping("/add")
-    public Item saveE(@RequestBody Item item){
-
-        return serviceItem.saveR(item);
-    }
+//    @PostMapping("/add")
+//    public Item saveE(@RequestBody Item item){
+//
+//        return serviceItem.saveR(item);
+//    }
 
 
 }

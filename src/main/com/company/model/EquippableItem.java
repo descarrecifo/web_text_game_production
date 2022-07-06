@@ -18,7 +18,8 @@ public class EquippableItem extends Item{
             charisma,
             defense,
             speed,
-            strength;
+            strength,
+            choise;
 
 
     public EquippableItem(String name, String type, String description, int price, int quantity, int dexterity, int charisma, int defense, int speed, int strength) {
@@ -28,6 +29,16 @@ public class EquippableItem extends Item{
         this.defense = defense;
         this.speed = speed;
         this.strength = strength;
+    }
+
+    public EquippableItem(String name, String type, String description, int price, int quantity, int dexterity, int charisma, int defense, int speed, int strength, int choise) {
+        super(name, type, description, price, quantity);
+        this.dexterity = dexterity;
+        this.charisma = charisma;
+        this.defense = defense;
+        this.speed = speed;
+        this.strength = strength;
+        this.choise = choise;
     }
 
 }

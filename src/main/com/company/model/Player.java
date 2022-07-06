@@ -23,10 +23,19 @@ public class Player extends Character {
     @JoinColumn(name = "equipment_fk")
     private Equipment equipment;
 
+    private  String nameItem;
+
     public Player(String name, int level, Inventory inventory, Equipment equipment, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money, int experiencePoints, int charisma) {
         super(name, level, maxHealthPoints, healthPoints, strength, defense, speed, dexterity, charClass, money, experiencePoints, charisma);
         this.inventory = inventory;
         this.equipment = equipment;
+    }
+
+    public Player(String name, int level, Inventory inventory, Equipment equipment, int maxHealthPoints, int healthPoints, int strength, int defense, int speed, int dexterity, String charClass, int money, int experiencePoints, int charisma, String nameItem) {
+        super(name, level, maxHealthPoints, healthPoints, strength, defense, speed, dexterity, charClass, money, experiencePoints, charisma);
+        this.inventory = inventory;
+        this.equipment = equipment;
+        this.nameItem = nameItem;
     }
 
 }

@@ -1,6 +1,8 @@
 package main.com.company.repository;
 
+import main.com.company.model.EquippableItem;
 import main.com.company.model.Item;
+import main.com.company.model.NPC;
 import main.com.company.model.Player;
 
 
@@ -17,4 +19,7 @@ public interface RepositoryItem extends JpaRepository<Item,Integer> {
 
 @Query( "select l from Item l where l.name = ?1")
     public Optional<Item>  findByName( String name);
+
+    @Query("select x from EquippableItem x where x.choise = ?1")
+    public Optional<EquippableItem> findByChoise(int choise);
 }
