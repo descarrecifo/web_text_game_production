@@ -1,26 +1,13 @@
 package main.com.company.model;
 
 import lombok.*;
-import org.hibernate.annotations.Proxy;
 
-import javax.persistence.*;
-
-@Entity
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Proxy(lazy = false)
-@Table(name = "item")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(discriminatorType = DiscriminatorType.STRING)
 public class Item {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "iditem")
-    private int iditem;
-    @Column(name = "type_item")
-    private boolean typeitem;
     private String description,
             name,
             type;
